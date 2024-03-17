@@ -1,0 +1,322 @@
+
+#img-container a.link {
+  color: white;
+  text-decoration: none;
+  border: 3px solid #4b4237;
+  border-radius: 15px;
+  display: inline-block;
+  transition: transform 0.8s; 
+}
+
+#img-container a.link:hover {
+  color: white;
+  background-color: #4b4237;
+  transform: scale(1.09); 
+
+}
+.sibling{
+  padding: 0 3px 0 3px;
+}
+.fadein-sibling {
+  animation: fadeIn cubic-bezier(1, 0, 1, 1) 0.8s forwards;
+}
+.fadeout-sibling {
+  animation: fadeOut cubic-bezier(1, 0, 1, 1) 0.5s forwards;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  animation: fadeIn ease 1s forwards;
+  font-family: 'Raleway', sans-serif;
+}
+#img-container {
+  background-image: url("imgs/bg.jpg");
+  height: 125vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+background-position: right top;
+display: flex;
+
+
+
+  
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+nav {
+
+  position: fixed;
+  background-color: #4b4237;
+  box-shadow: -2px -2px 5px #ede7d9, 2px -2px 5px #ede7d9;
+  z-index: 99;
+  width: 100%;
+  display: flex;
+  max-height: 60px;
+}
+
+#logo {
+  line-height: 60px;
+  font-size: 30px;
+  padding: 0 50px;
+  color: white;
+  width: 40%;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px;
+}
+nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  position: absolute;
+  right: 50px;
+}
+nav > ul > li {
+  line-height: 60px;
+  margin: 0 0px;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  min-width: 120px;
+  cursor: pointer;
+}
+nav > ul > li > a {
+  position: relative;
+  margin: 0 20px;
+  color: #ede7d9;
+}
+nav > ul > li:hover {
+  border-bottom: 2px solid #ede7d9;
+  background-color: #d5a021;
+}
+nav > ul > .dropdown:hover {
+  border-bottom: none;
+}
+nav > ul > .dropdown:hover > .dd {
+  display: block;
+}
+.dropdown:hover > a .fa-caret-down {
+  display: none;
+}
+a {
+  text-decoration: none;
+}
+nav > ul > li > div {
+  position: absolute;
+  padding: 0 10px;
+  background-color: black;
+  display: none;
+  background-color: aliceblue;
+  min-width: 100px;
+}
+nav > ul > li > div > ul {
+  margin: 0px 0 10px 0;
+  padding: 0;
+  list-style: none;
+}
+#u_a_c {
+  position: relative;
+  width: 100%;
+}
+#up_arrow {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  left: 42%;
+  top: -10px;
+  background-color: aliceblue;
+  transform: rotate(45deg);
+}
+nav > ul > li > div > ul > li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+nav > ul > li > div > ul > li > a {
+  padding: 5px;
+  color: black;
+}
+/* Hamburger Menu Styles */
+
+.navbar-mobile {
+  display: none;
+  background: none;
+  border: none;
+  color: #ede7d9;
+  font-size: 24px;
+  cursor: pointer;
+  
+}
+
+.navbar-list.active {
+  display: flex;
+}
+.navbar-list.active .dropdown:hover > .dd {
+  display: block;
+  position: relative;
+}
+.navbar-list.active .dropdown:hover > a {
+  border-bottom: none;
+}
+.navbar-list .dropdown:hover > .dd{
+position: relative;
+}
+
+
+
+@media screen and (max-width: 950px) {
+  nav{
+    justify-content: end;
+  }
+  #logo{
+  padding-right: 85%;
+  }
+  nav > ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #4b4237;
+    box-shadow: -2px -2px 5px #ede7d9, 2px -2px 5px #ede7d9;
+  }
+  nav > ul > li {
+    width: 100%;
+    text-align: center;
+  }
+ 
+  .navbar-mobile {
+    display: block;
+    padding-right: 5%;
+
+  }
+  #up_arrow{
+    display: none;
+  }
+}
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadein {
+  animation: fadeIn cubic-bezier(1, 0, 1, 1) 1.5s forwards;
+}
+#quotation{
+  z-index: 1;
+ padding-top: 10%;
+ padding-left: 4%;
+ color: white;
+ font-size:150%;
+ height: inherit;
+ width: 60%;
+
+}
+.quotes{
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+
+@media screen and (max-width:980px){
+  #img-container{
+    zoom: 80%;
+  }
+}
+@media screen and (max-width:795px){
+  #img-container{
+    zoom: 60%;
+  }
+}
+@media screen and (max-width:600px){
+  #img-container{
+    zoom: 40%;
+    height: 150vh;
+  }
+  #quotation{
+    padding-top: 15%;
+  }
+}
+@media screen and (max-width:450px){
+  #img-container{
+    zoom: 20%;
+    height: 250vh;
+  }
+  #quotation{
+    width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+    
+  }
+ #img-container h2 div:nth-child(2){
+  font-size: 200% !important;
+  padding-left: 20px;
+ }
+  #landing-title{
+    font-size: 200px !important;
+   
+  }
+  .link{
+    font-size:300%;
+  }
+  .quotes-2{
+    padding: 0;
+    padding-right: 50px;
+  }
+  #img-container h2 span{
+    display: none;
+  }
+}
+
+/* slide animation */
+.showdown{
+  transform: translateY(-200%);
+  animation: showdown 2s forwards;
+}
+
+@keyframes showdown {
+  0% { opacity: 0; transform: translateY(-200%); }  
+  100% { opacity: 1; transform: translateY(0%); }
+}
+
+#landing-title{
+  font-size: 100px;
+  letter-spacing: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
