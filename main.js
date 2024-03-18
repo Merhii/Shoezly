@@ -4,6 +4,11 @@ $(document).ready(function() {
     $("#navbarList").toggleClass("active");
   });
 
+  $("#loginbtn").click(function(){
+    console.log("clicked")
+    $(".logsign").toggle();
+    $(".modallogsign").toggle();
+  })
 });
 // Our shoes link show quotation
 function showSiblings(){
@@ -18,4 +23,5 @@ function hideSiblings(){
     sibling.classList.add("fadeout-sibling");
       sibling.classList.remove("fadein-sibling");
   })
+
 }
