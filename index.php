@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
   <nav class="fadein">
     <div id="logo">Shoezly</div>
@@ -46,7 +47,24 @@
           </ul>
         </div>
       </li>
+      <li id="logintxt" class="text-center d-flex justify-content-center"></li>
+
     </ul>
+    <?php
+session_start(); 
+
+if(isset($_SESSION['User'])) {
+    $userName = $_SESSION['User'];
+    echo '<script>
+            $(document).ready(function() {
+                $.get("welcome.php", function(data) {
+                    $("#logintxt").text("Welcome Back ' . $userName . '");
+                    console.log("hello");
+                });
+            });
+          </script>';
+}
+?>
   </nav>
 
   <div class="modallogsign">
@@ -63,12 +81,29 @@
         </div>
   
         <div class="login">
-          <form>
+          <form action="login.php" method="post">
             <label for="chk" aria-hidden="true">Login</label>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <button id="loginbtn">Login</button>
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="pswd" placeholder="Password">
+            <button id="loginbtn" name="loginbtn">Login</button>
           </form>
+          <?php
+          if(@$_GET['Empty']==true){
+            ?>
+            //todo : add ajax
+            <div class="alert-light text-danger text-center"><?php echo $_GET['Empty']?></div>
+          <?php
+          }
+          ?>
+
+          <?php
+          if(@$_GET['Invalid']==true){
+            ?>
+            //todo : add ajax
+            <div class="alert-light text-danger text-center"><?php echo $_GET['Invalid']?></div>
+          <?php
+          }
+          ?>
         </div>
     </div>
     </div>

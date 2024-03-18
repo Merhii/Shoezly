@@ -3,12 +3,14 @@ $(document).ready(function() {
   $("#menu-trigger").click(function() {
     $("#navbarList").toggleClass("active");
   });
-
+  $(".logsign").hide();
+  $(".modallogsign").hide();
   $("#loginbtn").click(function(){
     console.log("clicked")
     $(".logsign").toggle();
     $(".modallogsign").toggle();
   })
+
 });
 // Our shoes link show quotation
 function showSiblings(){
