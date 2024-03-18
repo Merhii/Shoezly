@@ -56,7 +56,6 @@ display: flex;
 }
 
 nav {
-
   position: fixed;
   background-color: #4b4237;
   box-shadow: -2px -2px 5px #ede7d9, 2px -2px 5px #ede7d9;
@@ -157,7 +156,6 @@ nav > ul > li > div > ul > li > a {
   cursor: pointer;
   
 }
-
 .navbar-list.active {
   display: flex;
 }
