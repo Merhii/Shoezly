@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav&footer.css">
+  <link rel="stylesheet" href="index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
@@ -51,7 +52,7 @@
 
     </ul>
     <?php
-session_start(); 
+
 
 if(isset($_SESSION['User'])) {
     $userName = $_SESSION['User'];
@@ -131,6 +132,99 @@ if(isset($_SESSION['User'])) {
   Labore accusamus blanditiis repellendus ut quidem, hic explicabo ea, reprehenderit, corporis corrupti ullam doloribus qui? Exercitationem voluptatibus, dignissimos commodi, quos inventore nisi quasi, natus dolores corrupti asperiores a vitae sit!
   Unde asperiores sunt excepturi ducimus explicabo laboriosam, temporibus dicta at tempora doloremque necessitatibus nihil expedita fugiat iste nulla aliquid deleniti exercitationem error totam sapiente ex beatae. Aliquid tenetur facilis magnam!</p>
 <a href="" class="link">sad</a>
+
+
+    <!-- Footer -->
+    <footer
+      class="text-center text-lg-start text-white footerFont"
+      style="background-color: #A49694"
+    >
+      <!-- Grid container -->
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Shoezly
+            </h6>
+            <p class="footerFont mt-5">"Celebrate Every Purchase, Every Step, Every Story."</p>
+          </div>
+
+          <div class="col-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Contact Information
+            </h6>
+            <p>Phone Number: <i class="fas fa-phone"></i>+961 71642456</p>
+            <p>Fax: <i class="fas fa-fax"></i> +961 07324417</p>
+            <p>Email: <i class="fas fa-envelope"></i>Shoezly@gmail.com</p>
+          </div>
+
+          <div class="col-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Help Center</h6>
+            <p>
+              <a href="Aboutus.html#contactus" class="footerLinks"
+                >Contact Us</a
+              >
+            </p>
+            <p><a href="Aboutus.html#FAQ" class="footerLinks">FAQs</a></p>
+          
+          </div>
+
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <h6 class="text-uppercase mb-4 font-weight-bold ms-4 pe-4">
+              &darr; Follow us &darr;
+            </h6>
+
+            <!-- Facebook -->
+            <div>
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #3b5998"
+                href="#!"
+                role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+
+              <!-- Twitter -->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #55acee"
+                href="#!"
+                role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
+
+              <!-- Google -->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #dd4b39"
+                href="#!"
+                role="button"
+                ><i class="fab fa-google"></i
+              ></a>
+
+              <!-- Instagram -->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #ac2bac"
+                href="#!"
+                role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+
+           
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © Shoezly
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- https://codepen.io/scanfcode/pen/MEZPNd -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
