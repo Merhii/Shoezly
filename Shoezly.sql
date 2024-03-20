@@ -4,61 +4,55 @@ CREATE DATABASE IF NOT EXISTS shoezly_db;
 -- Use the database
 USE shoezly_db;
 
-CREATE TABLE Customers (
-  customer_id INT AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  phone_number VARCHAR(255) UNIQUE,
-  password VARCHAR(255) NOT NULL
-);
-CREATE TABLE Products (
-  product_id INT AUTO_INCREMENT PRIMARY KEY,
-  product_name VARCHAR(255) NOT NULL,
-  description TEXT,
-  price DECIMAL(10, 2) NOT NULL,
-  stock_quantity INT NOT NULL
-);
-CREATE TABLE Orders (
-  order_id INT AUTO_INCREMENT PRIMARY KEY,
-  customer_id INT,
-  order_date DATETIME NOT NULL,
-  order_status VARCHAR(255) NOT NULL,
-  total_amount DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
-);
-CREATE TABLE Payments (
-  payment_id INT AUTO_INCREMENT PRIMARY KEY,
-  customer_id INT,
-  amount DECIMAL(10, 2) NOT NULL,
-  payment_type VARCHAR(255) NOT NULL,
-  payment_status VARCHAR(255) NOT NULL,
-  payment_date DATETIME NOT NULL,
-  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
-);
+CREATE TABLE `admin` (
+  `Admin_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL
+) 
+CREATE TABLE `customers` (
+  `customer_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL
+) 
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `order_date` datetime NOT NULL,
+  `order_status` varchar(255) NOT NULL,
+  `total_amount` decimal(10,2) NOT NULL
+) 
+CREATE TABLE `order_details` (
+  `order_details_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL
+)
+CREATE TABLE `payments` (
+  `payment_id` int(11) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `payment_type` varchar(255) NOT NULL,
+  `payment_status` varchar(255) NOT NULL,
+  `payment_date` datetime NOT NULL
+) 
 
-CREATE TABLE Order_Details (
-  order_details_id INT AUTO_INCREMENT PRIMARY KEY,
-  order_id INT,
-  product_id INT,
-  quantity INT NOT NULL,
-  price DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
-  FOREIGN KEY (product_id) REFERENCES Products(product_id)
-);
-CREATE TABLE Shipments (
-  shipment_id INT AUTO_INCREMENT PRIMARY KEY,
-  order_id INT,
-  shipment_status VARCHAR(255) NOT NULL,
-  tracking_number VARCHAR(255) UNIQUE NOT NULL,
-  estimated_delivery DATE NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
-);
-CREATE TABLE Admin (
-  Admin_id INT AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  phone_number VARCHAR(255) UNIQUE,
-  password VARCHAR(255) NOT NULL
-);
+
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `shoe_size` decimal(10,2) NOT NULL,
+  `description` text DEFAULT NULL,
+  `Brand` varchar(50) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `imageURL` text NOT NULL,
+  `stock_quantity` int(11) NOT NULL,
+  `gender` varchar(10) NOT NULL
+)
