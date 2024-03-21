@@ -19,9 +19,9 @@
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
-      <li><a href="#">Home</a></li>
+      <li><a href="index.php">Home</a></li>
       <li class="dropdown">
-        <a href="#">Shop </a>
+        <a href="shop.php">Shop </a>
         <div class="dd">
           <div id="up_arrow"></div>
           <ul>
@@ -31,30 +31,32 @@
           </ul>
         </div>
       </li>
-      <li><a href="#">Brands</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="brands.php">Brands</a></li>
+     
       
       <li class="dropdown" id="loginbtn" >
         <a href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="-3 -3 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" style="
+            padding-bottom: 5px; margin-bottom:5px;" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="-3 -3 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
           </svg> 
         </a>
-        <div class="dd">
+        <!-- <div class="dd">
           <div id="u_a_c"><div id="up_arrow"></div></div>
           <ul>
             <li><a href="#">Log In</a></li>
             <li><a href="#">Sign Up</a></li>
           </ul>
-        </div>
+        </div> -->
       </li>
-      <li id="logintxt" class="text-center d-flex justify-content-center"></li>
+     
 
-    </ul>
+   
     <?php
 
 
 if(isset($_SESSION['User'])) {
+  echo '  <li id="logintxt" class="text-center d-flex justify-content-center"></li>';
     $userName = $_SESSION['User'];
     echo '<script>
             $(document).ready(function() {
@@ -66,6 +68,7 @@ if(isset($_SESSION['User'])) {
           </script>';
 }
 ?>
+ </ul>
   </nav>
 
   <div class="modallogsign">
@@ -131,101 +134,87 @@ if(isset($_SESSION['User'])) {
   Pariatur mollitia nisi voluptate exercitationem dolorum, fugiat a repellendus architecto deleniti enim quidem doloribus consequatur ipsum? Id veniam explicabo vel, ab magnam eligendi dicta, a repudiandae voluptas placeat minima et?
   Labore accusamus blanditiis repellendus ut quidem, hic explicabo ea, reprehenderit, corporis corrupti ullam doloribus qui? Exercitationem voluptatibus, dignissimos commodi, quos inventore nisi quasi, natus dolores corrupti asperiores a vitae sit!
   Unde asperiores sunt excepturi ducimus explicabo laboriosam, temporibus dicta at tempora doloremque necessitatibus nihil expedita fugiat iste nulla aliquid deleniti exercitationem error totam sapiente ex beatae. Aliquid tenetur facilis magnam!</p>
-<a href="" class="link">sad</a>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aperiam tempora quasi libero ducimus, et tenetur eveniet possimus sed debitis earum magni unde similique quas. Eligendi iste quia laborum. Quod.
+Asperiores accusantium, totam maxime perferendis eos sit harum odit praesentium voluptas voluptates molestias doloremque delectus nihil tempora dolore id voluptatibus quam deserunt nemo. Inventore, hic? Tempore natus velit voluptatibus rerum.
+Sapiente facilis iusto quos ad, ut ipsa tempore aut laborum autem. Deleniti voluptatibus quia, et, quod quisquam porro quis voluptate accusantium temporibus aliquid eaque consequuntur similique ut, in molestiae iste.
+Omnis enim iusto placeat possimus voluptatum, minima est veniam amet quas? Maxime aspernatur culpa quisquam et, quos perferendis fugiat iste animi consectetur nemo placeat omnis, sed vero minima quam minus.
+Veniam, sint ad tempore excepturi non qui. Neque accusantium facilis voluptatem, cum doloremque amet ullam explicabo eius nobis quibusdam, dolores consectetur ipsam at nam deleniti vero alias sit? Architecto, pariatur?
+Voluptate rem iste deleniti possimus dicta asperiores necessitatibus eos, animi laborum saepe labore tenetur totam facere quia? Iusto incidunt velit cupiditate officiis voluptatem eius delectus eos magnam! Facere, iste illo!
+Exercitationem ea ad doloribus tempore eveniet quisquam, tenetur accusantium odit a veniam vel pariatur eligendi, aperiam commodi totam praesentium aliquid rem incidunt animi. Quas excepturi odit corrupti dicta eius. Autem.
+Sed facilis a inventore dicta maxime aliquam minus mollitia accusantium ipsum cum iure tempora commodi rerum dignissimos, vitae sequi cupiditate optio incidunt eligendi doloremque pariatur nesciunt ducimus atque illo? Voluptatibus.</p>
 
 
-    <!-- Footer -->
-    <footer
-      class="text-center text-lg-start text-white footerFont"
-      style="background-color: #A49694"
-    >
-      <!-- Grid container -->
-      <div class="container p-4">
+      <!-- Site footer -->
+      <footer class="site-footer">
+      <div class="container">
         <div class="row">
-          <div class="col-4">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Shoezly
-            </h6>
-            <p class="footerFont mt-5">"Celebrate Every Purchase, Every Step, Every Story."</p>
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">
+Welcome to Shoezly, your premier destination for footwear! With multiple convenient locations and an easy-to-navigate website, we're dedicated to providing top-quality shoes for every occasion. At Shoezly, we believe that everyone deserves to step out in confidence, and we're here to make that happen. Experience the difference in quality, service, and selection when you shop with us.</p>
           </div>
 
-          <div class="col-4">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Contact Information
-            </h6>
-            <p>Phone Number: <i class="fas fa-phone"></i>+961 71642456</p>
-            <p>Fax: <i class="fas fa-fax"></i> +961 07324417</p>
-            <p>Email: <i class="fas fa-envelope"></i>Shoezly@gmail.com</p>
+          <div class="col-xs-6 col-md-3">
+            <h6>Locations</h6>
+            <ul class="footer-links">
+              <li>Saida-Nejme Square</li>
+              <li>Beirut-Verdun</li>
+              <li>Tyre-Bourj El Chmali</li>
+            
+            </ul>
           </div>
 
-          <div class="col-4">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Help Center</h6>
-            <p>
-              <a href="Aboutus.html#contactus" class="footerLinks"
-                >Contact Us</a
-              >
+          <div class="col-xs-6 col-md-3">
+            <h6>Help Center</h6>
+            <ul class="footer-links">
+              <li><a href="contactus.php">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Our Policies</a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; Shoezly
             </p>
-            <p><a href="Aboutus.html#FAQ" class="footerLinks">FAQs</a></p>
-          
           </div>
 
-          <div
-            class="d-flex flex-column justify-content-center align-items-center"
-          >
-            <h6 class="text-uppercase mb-4 font-weight-bold ms-4 pe-4">
-              &darr; Follow us &darr;
-            </h6>
-
-            <!-- Facebook -->
-            <div>
-              <a
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li> <a
                 class="btn btn-primary btn-floating m-1"
                 style="background-color: #3b5998"
                 href="#!"
                 role="button"
                 ><i class="fab fa-facebook-f"></i
-              ></a>
-
-              <!-- Twitter -->
-              <a
+              ></a></li>
+              <li> <a
                 class="btn btn-primary btn-floating m-1"
                 style="background-color: #55acee"
                 href="#!"
                 role="button"
                 ><i class="fab fa-twitter"></i
-              ></a>
-
-              <!-- Google -->
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style="background-color: #dd4b39"
-                href="#!"
-                role="button"
-                ><i class="fab fa-google"></i
-              ></a>
-
-              <!-- Instagram -->
-              <a
+              ></a></li>
+              <li><a
                 class="btn btn-primary btn-floating m-1"
                 style="background-color: #ac2bac"
                 href="#!"
                 role="button"
                 ><i class="fab fa-instagram"></i
-              ></a>
-
-           
-            </div>
+              ></a></li>
+    
+            </ul>
           </div>
         </div>
       </div>
-
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © Shoezly
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- https://codepen.io/scanfcode/pen/MEZPNd -->
+</footer>
+   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="main.js"></script>
+  <script src="index.js"></script>
+  <script src="nav&signin.js"></script>
 </body>
 </html>
