@@ -165,7 +165,7 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Help Center</h6>
+            <h6>Support Center</h6>
             <ul class="footer-links">
               <li><a href="contactus.php">Contact Us</a></li>
               <li><a href="">FAQs</a></li>

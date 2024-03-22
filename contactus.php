@@ -77,9 +77,9 @@ if(isset($_SESSION['User'])) {
           <div class="left-container">
             <div class="left-inner-container">
             <h2>Let's Chat</h2>
-            <p>Whether you have a question, want to start a project or simply want to connect.</p>
+            <p>Whether you have a question, want to report something or simply want to connect.</p>
               <br>
-              <p>Feel free to send me a message in the contact form</p>
+              <p>Feel free to send us a message in the contact form</p>
           </div>
             </div>
           <div class="right-container">
@@ -100,6 +100,114 @@ if(isset($_SESSION['User'])) {
         </div>
       </div>
   </div>
+<div id="white-bg">
+<h1 class="text-center pt-3 fadein " style="color: #4b4237;">Frequently Asked Questions</h1>
+
+<div class="faqs-container fadein">
+	<div class="faq active">
+		<h3 class="faq-title">
+			Why shouldn't we trust atoms?
+		</h3>
+		<p class="faq-text">
+			They make up everything.
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	
+	<div class="faq">
+		<h3 class="faq-title">
+			What do you call someone with no body and no nose?
+		</h3>
+		<p class="faq-text">
+			Nobody knows.
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	
+	<div class="faq">
+		<h3 class="faq-title">
+			What's the object-oriented way to become wealthy?
+		</h3>
+		<p class="faq-text">
+			Inheritance.
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	
+	<div class="faq">
+		<h3 class="faq-title">
+			How many tickles does it take to tickle an octopus?
+		</h3>
+		<p class="faq-text">
+			Ten-tickles!
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	
+	<div class="faq">
+		<h3 class="faq-title">
+			What is: 1 + 1?
+		</h3>
+		<p class="faq-text">
+			Depends on who are you asking.
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+</div>
+<h2 class="text-center pt-5 pb-2 fs-1 fadein" style="color: #4b4237;">Our Policies</h2>
+<div id="policies" class="d-flex justify-content-center fadein">
+
+  <div class="row" style="--bs-gutter-x:0;">
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
+   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
+   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
+   - Returns and exchanges can be made in-store or online. <br>
+   - A 10% restocking fee applies to all returns made after 30 days. <br>
+
+    </div>
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
+   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
+   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
+   - Returns and exchanges can be made in-store or online. <br>
+   - A 10% restocking fee applies to all returns made after 30 days. <br>
+
+    </div>
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
+   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
+   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
+   - Returns and exchanges can be made in-store or online. <br>
+   - A 10% restocking fee applies to all returns made after 30 days. <br>
+    </div>
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
+   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
+   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
+   - Returns and exchanges can be made in-store or online. <br>
+   - A 10% restocking fee applies to all returns made after 30 days. <br>
+    </div>
+  </div>
+  
+</div>
+</div>
+
   <script src="nav&signin.js"></script>
   <script src="contactus.js"></script>
 </body>
