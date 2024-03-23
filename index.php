@@ -3,6 +3,7 @@
 <html>
 <head>
   <title>Home</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -128,21 +129,121 @@ if(isset($_SESSION['User'])) {
   </div>
   </div>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id necessitatibus, sint libero molestiae error animi nostrum, laudantium facere, perferendis repellat at porro magnam? Architecto asperiores nihil iste aspernatur quam minus!
-  Ipsum dolorem est nesciunt magni porro fugiat, expedita quam ratione inventore delectus quo asperiores culpa, exercitationem quae iste at quod labore libero nostrum corporis reprehenderit sequi quia. Laboriosam, magni fuga?
-  Architecto, maiores voluptates mollitia, necessitatibus laborum quasi doloremque amet ad beatae voluptatum soluta dicta nam iusto eligendi harum corrupti quaerat culpa alias rem dolorem quam. Sapiente quas voluptas mollitia vero?
-  Pariatur mollitia nisi voluptate exercitationem dolorum, fugiat a repellendus architecto deleniti enim quidem doloribus consequatur ipsum? Id veniam explicabo vel, ab magnam eligendi dicta, a repudiandae voluptas placeat minima et?
-  Labore accusamus blanditiis repellendus ut quidem, hic explicabo ea, reprehenderit, corporis corrupti ullam doloribus qui? Exercitationem voluptatibus, dignissimos commodi, quos inventore nisi quasi, natus dolores corrupti asperiores a vitae sit!
-  Unde asperiores sunt excepturi ducimus explicabo laboriosam, temporibus dicta at tempora doloremque necessitatibus nihil expedita fugiat iste nulla aliquid deleniti exercitationem error totam sapiente ex beatae. Aliquid tenetur facilis magnam!</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aperiam tempora quasi libero ducimus, et tenetur eveniet possimus sed debitis earum magni unde similique quas. Eligendi iste quia laborum. Quod.
-Asperiores accusantium, totam maxime perferendis eos sit harum odit praesentium voluptas voluptates molestias doloremque delectus nihil tempora dolore id voluptatibus quam deserunt nemo. Inventore, hic? Tempore natus velit voluptatibus rerum.
-Sapiente facilis iusto quos ad, ut ipsa tempore aut laborum autem. Deleniti voluptatibus quia, et, quod quisquam porro quis voluptate accusantium temporibus aliquid eaque consequuntur similique ut, in molestiae iste.
-Omnis enim iusto placeat possimus voluptatum, minima est veniam amet quas? Maxime aspernatur culpa quisquam et, quos perferendis fugiat iste animi consectetur nemo placeat omnis, sed vero minima quam minus.
-Veniam, sint ad tempore excepturi non qui. Neque accusantium facilis voluptatem, cum doloremque amet ullam explicabo eius nobis quibusdam, dolores consectetur ipsam at nam deleniti vero alias sit? Architecto, pariatur?
-Voluptate rem iste deleniti possimus dicta asperiores necessitatibus eos, animi laborum saepe labore tenetur totam facere quia? Iusto incidunt velit cupiditate officiis voluptatem eius delectus eos magnam! Facere, iste illo!
-Exercitationem ea ad doloribus tempore eveniet quisquam, tenetur accusantium odit a veniam vel pariatur eligendi, aperiam commodi totam praesentium aliquid rem incidunt animi. Quas excepturi odit corrupti dicta eius. Autem.
-Sed facilis a inventore dicta maxime aliquam minus mollitia accusantium ipsum cum iure tempora commodi rerum dignissimos, vitae sequi cupiditate optio incidunt eligendi doloremque pariatur nesciunt ducimus atque illo? Voluptatibus.</p>
-
+ <!-- testimonials -->
+ <div id="testimonials" class="white-bg">
+ <div class="responsive-container-block bg">
+    <p class="text-blk title">Testimonials</p>
+    <div class="btn-testimonials ">
+      <div class="container-block swiper-button-prevs">
+        <img class="image-block pagination-button" src="imgs/pagination-left.png">
+      </div>
+      <div class="container-block swiper-button-nexts">
+        <img class="image-block pagination-button" src="imgs/pagination-right.png">
+      </div>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+           
+            <p class="text-blk info">
+              Lorem ipsum dolor sit amet, consectvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+            </p>
+           <h3>Rating: 5/5</h3>
+            <p class="text-blk name">
+              Jane Doe
+            </p>
+           
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="responsive-container-block content">
+            <p class="text-blk quotes">
+              “
+            </p>
+           
+            <p class="text-blk info">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elemsadsad  sad sad sad sad sad sadvdsfdsfentum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+            </p>
+              <h3>Rating: 5/5</h3>
+            <p class="text-blk name">
+              Jane Doe
+            </p>
+           
+          </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="responsive-container-block content">
+          <p class="text-blk quotes">
+            “
+          </p>
+         
+          <p class="text-blk info">
+            Lorem ipsum dols elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+          </p>
+            <h3>Rating: 5/5</h3>
+          <p class="text-blk name">
+            Jane Doe
+          </p>
+         
+        </div>
+        </div>
+        <div class="swiper-slide">
+         <div class="responsive-container-block content">
+          <p class="text-blk quotes">
+            “
+          </p>
+         
+          <p class="text-blk info">
+           sadsadsa Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+          </p>
+            <h3>Rating: 5/5</h3>
+          <p class="text-blk name">
+            Jane Doe
+          </p>
+         
+        </div>
+         </div>
+         <div class="swiper-slide">
+         <div class="responsive-container-block content">
+          <p class="text-blk quotes">
+            “
+          </p>
+         
+          <p class="text-blk info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+          </p>
+            <h3>Rating: 5/5</h3>
+          <p class="text-blk name">
+            Jane Doe
+          </p>
+         
+        </div>
+         </div>
+         <div class="swiper-slide">
+         <div class="responsive-container-block content">
+          <p class="text-blk quotes">
+            “
+          </p>
+         
+          <p class="text-blk info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+          </p>
+            <h3>Rating: 5/5</h3>
+          <p class="text-blk name">
+            Jane Doe
+          </p>
+         
+        </div>
+         </div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
 
       <!-- Site footer -->
       <footer class="site-footer">
@@ -213,6 +314,7 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
       </div>
 </footer>
    
+<!-- testimonials carousel swiper--><script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="index.js"></script>
   <script src="nav&signin.js"></script>

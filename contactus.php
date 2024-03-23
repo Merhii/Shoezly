@@ -100,7 +100,7 @@ if(isset($_SESSION['User'])) {
         </div>
       </div>
   </div>
-<div id="white-bg">
+<div class="white-bg">
 <h1 class="text-center pt-3 fadein " style="color: #4b4237;">Frequently Asked Questions</h1>
 
 <div class="faqs-container fadein">
@@ -207,7 +207,74 @@ if(isset($_SESSION['User'])) {
   
 </div>
 </div>
+  <!-- Site footer -->
+  <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">
+Welcome to Shoezly, your premier destination for footwear! With multiple convenient locations and an easy-to-navigate website, we're dedicated to providing top-quality shoes for every occasion. At Shoezly, we believe that everyone deserves to step out in confidence, and we're here to make that happen. Experience the difference in quality, service, and selection when you shop with us.</p>
+          </div>
 
+          <div class="col-xs-6 col-md-3">
+            <h6>Locations</h6>
+            <ul class="footer-links">
+              <li>Saida-Nejme Square</li>
+              <li>Beirut-Verdun</li>
+              <li>Tyre-Bourj El Chmali</li>
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Support Center</h6>
+            <ul class="footer-links">
+              <li><a href="contactus.php">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Our Policies</a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; Shoezly
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li> <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #3b5998"
+                href="#!"
+                role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a></li>
+              <li> <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #55acee"
+                href="#!"
+                role="button"
+                ><i class="fab fa-twitter"></i
+              ></a></li>
+              <li><a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #ac2bac"
+                href="#!"
+                role="button"
+                ><i class="fab fa-instagram"></i
+              ></a></li>
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
   <script src="nav&signin.js"></script>
   <script src="contactus.js"></script>
 </body>
