@@ -32,6 +32,7 @@
           </ul>
         </div>
       </li>
+
       <li><a href="brands.php">Brands</a></li>
      
       
@@ -57,13 +58,22 @@
 
 
 if(isset($_SESSION['User'])) {
-  echo '  <li id="logintxt" class="text-center d-flex justify-content-center"></li>';
+  echo '  <li  class="text-center dropdown">
+  <a href="#" id="logintxt"></a>
+  <div class="dd">
+  <div id="up_arrow"></div>
+  <ul>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</div>
+  </li>';
     $userName = $_SESSION['User'];
     echo '<script>
             $(document).ready(function() {
                 $.get("welcome.php", function(data) {
-                    $("#logintxt").text("Welcome Back ' . $userName . '");
+                    $("#logintxt").text("Welcome ' . $userName . '");
                     console.log("hello");
+                $("#loginbtn").hide();
                 });
             });
           </script>';
@@ -76,13 +86,23 @@ if(isset($_SESSION['User'])) {
     <div class="logsign">  	
       <input type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
-          <form>
+        <form method="post" action="signup.php">
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="txt" placeholder="User name" required="">
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <button id="signupbtn">Sign up</button>
+            <input type="text" name="fnsignup" placeholder="First name">
+            <input type="text" name="lnsignup" placeholder="Last name">
+            <input type="email" name="emailsignup" placeholder="Email">
+            <input type="tel" name="phonesignup" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+          <input type="password" name="pswdsignup" placeholder="Password">
+            <button id="signupbtn" name="signupbtn">Sign up</button>
           </form>
+          <?php
+          if(@$_GET['SignupEmpty']==true){
+            ?>
+            <!-- todo : add ajax -->
+            <div class="alert-light text-danger text-center"><?php echo $_GET['SignupEmpty']?></div>
+          <?php
+          }
+          ?>
         </div>
   
         <div class="login">
@@ -95,7 +115,7 @@ if(isset($_SESSION['User'])) {
           <?php
           if(@$_GET['Empty']==true){
             ?>
-            //todo : add ajax
+            <!-- todo : add ajax -->
             <div class="alert-light text-danger text-center"><?php echo $_GET['Empty']?></div>
           <?php
           }
@@ -104,7 +124,7 @@ if(isset($_SESSION['User'])) {
           <?php
           if(@$_GET['Invalid']==true){
             ?>
-            //todo : add ajax
+            <!-- todo : add ajax -->
             <div class="alert-light text-danger text-center"><?php echo $_GET['Invalid']?></div>
           <?php
           }
