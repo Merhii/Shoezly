@@ -71,7 +71,7 @@ if(isset($_SESSION['User'])) {
 ?>
  </ul>
   </nav>
-
+<!-- log and sign in pop up -->
   <div class="modallogsign">
     <div class="logsign">  	
       <input type="checkbox" id="chk" aria-hidden="true">
@@ -112,6 +112,40 @@ if(isset($_SESSION['User'])) {
         </div>
     </div>
     </div>
+
+    <!-- rate us pop up -->
+    <div id="rateUsModal" class="rate-us">
+  <div class="rate-us-content">
+    <h2 class="text-center">Rate Us</h2>
+    <form id="rateUsForm" action="">
+    <div class="ratings-wrapper">
+   <div data-productid="39" class="ratings">
+      <span data-rating="5">★</span>
+      <span data-rating="4">★</span>
+      <span data-rating="3">★</span>
+      <span data-rating="2">★</span>
+      <span data-rating="1">★</span>
+   </div>
+</div>
+<div class="pt-2" id="testimonial">
+<h5 style="color: white;" class="text-center">&darr; Write Us a Testimonial &darr;</h5>
+<textarea class="m-4" name="" id="" cols="10" rows="7" placeholder="Share Your Thoughts!"></textarea>
+<div class="d-flex justify-content-center">
+  <button type="submit"  class="submit-btn">
+    <p id="btnText">Submit</p>
+    <div class="checked">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+        <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+      </svg>
+    </div>
+  </button>
+  </div>
+
+</div>
+</form>
+  </div>
+</div>
+
 
   <div id="img-container">
     <div class="overlay"></div>
@@ -271,6 +305,7 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
               <li><a href="contactus.php">Contact Us</a></li>
               <li><a href="">FAQs</a></li>
               <li><a href="">Our Policies</a></li>
+              <li><a href="" id="rate-us-link">Rate Us</a></li>
              
             </ul>
           </div>
