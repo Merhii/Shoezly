@@ -3,41 +3,52 @@ $(document).ready(function() {
   $("#menu-trigger").click(function() {
     $("#navbarList").toggleClass("active");
   });
-
+// log and sign functionality
   $(".logsign").hide();
   $(".modallogsign").hide();
 
   $("#loginbtn").click(function(){
-    console.log("clicked")
     $(".logsign").toggle();
     $(".modallogsign").toggle();
   });
-  
+   // Close Rate Us modal if clicked outside of it
+   $(window).click(function(event) {
+      if (event.target == $(".modallogsign")[0]) {
+         $(".logsign").toggle();
+         $(".modallogsign").toggle();
+      }
+  });
+  $("#X-btn2").click(function(){
+   $(".logsign").toggle();
+    $(".modallogsign").toggle();
+  })
 
   $(".dropdown > a").click(function(event) {
     event.preventDefault();
     $(this).parent().toggleClass("active");
   });
 
-  // Rate Us modal functionality
+  // Rate Us functionality
   $("#rateUsModal").hide();
   $(".rate-us-content").hide();
   $("#rate-us-link").click(function(event) {
- 
-
       event.preventDefault(); 
       $("#rateUsModal").toggle();
       $(".rate-us-content").toggle();
   });
-
- 
-
   // Close Rate Us modal if clicked outside of it
   $(window).click(function(event) {
       if (event.target == $("#rateUsModal")[0]) {
-          $("#rateUsModal").hide();
+          $("#rateUsModal").toggle();
+          $(".rate-us-content").toggle();
       }
   });
+
+  $("#X-btn1").click(function(){
+   $("#rateUsModal").toggle();
+          $(".rate-us-content").toggle();
+  })
+  
   // rate us stars
   let stars = document.querySelectorAll(".ratings span");
   let products = document.querySelectorAll(".ratings");
@@ -77,7 +88,7 @@ $(document).ready(function() {
         }
      }
   }
-
+// rate us submit
   $("#rateUsForm").submit(function(event) {
    event.preventDefault(); 
    var btn = document.querySelector(".submit-btn");

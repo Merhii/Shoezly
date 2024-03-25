@@ -517,7 +517,7 @@ justify-content: center;
   stroke-dashoffset: 34;
   stroke-linecap: round;
 }
-.active {
+#testimonial .active {
   background:#d5a021;
   transition: 1s;
 }
@@ -539,5 +539,8 @@ justify-content: center;
 .submit-btn p{
 margin: 0;
 padding: 0;
+}
+.X-btn{
+  transform: translate3d(345px, -230px, 10px);
 }
 

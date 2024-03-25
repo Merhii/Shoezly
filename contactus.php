@@ -101,7 +101,7 @@ if(isset($_SESSION['User'])) {
       </div>
   </div>
 <div class="white-bg">
-<h1 class="text-center pt-3 fadein " style="color: #4b4237;">Frequently Asked Questions</h1>
+<h1 class="text-center pt-3 fadein " id="faq" style="color: #4b4237;">Frequently Asked Questions</h1>
 
 <div class="faqs-container fadein">
 	<div class="faq active">
@@ -169,7 +169,7 @@ if(isset($_SESSION['User'])) {
 		</button>
 	</div>
 </div>
-<h2 class="text-center pt-5 pb-2 fs-1 fadein" style="color: #4b4237;">Our Policies</h2>
+<h2 class="text-center pt-5 pb-2 fs-1 fadein" style="color: #4b4237;" id="our-policies">Our Policies</h2>
 <div id="policies" class="d-flex justify-content-center fadein">
 
   <div class="row" style="--bs-gutter-x:0;">
@@ -207,8 +207,8 @@ if(isset($_SESSION['User'])) {
   
 </div>
 </div>
-  <!-- Site footer -->
-  <footer class="site-footer">
+   <!-- Site footer -->
+   <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -231,8 +231,9 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
             <h6>Support Center</h6>
             <ul class="footer-links">
               <li><a href="contactus.php">Contact Us</a></li>
-              <li><a href="">FAQs</a></li>
-              <li><a href="">Our Policies</a></li>
+              <li><a href="contactus.php#faq">FAQs</a></li>
+              <li><a href="contactus.php#our-policies">Our Policies</a></li>
+              <li><a href="" id="rate-us-link">Rate Us</a></li>
              
             </ul>
           </div>

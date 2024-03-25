@@ -83,6 +83,7 @@ if(isset($_SESSION['User'])) {
   </nav>
 <!-- log and sign in pop up -->
   <div class="modallogsign">
+  <button type="button" id="X-btn2"  class="btn-close X-btn" aria-label="Close"></button>
     <div class="logsign">  	
       <input type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
@@ -135,6 +136,7 @@ if(isset($_SESSION['User'])) {
 
     <!-- rate us pop up -->
     <div id="rateUsModal" class="rate-us">
+    <button type="button" id="X-btn1"  class="btn-close X-btn" aria-label="Close"></button>
   <div class="rate-us-content">
     <h2 class="text-center">Rate Us</h2>
     <form id="rateUsForm" action="">
@@ -323,8 +325,8 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
             <h6>Support Center</h6>
             <ul class="footer-links">
               <li><a href="contactus.php">Contact Us</a></li>
-              <li><a href="">FAQs</a></li>
-              <li><a href="">Our Policies</a></li>
+              <li><a href="contactus.php#faq">FAQs</a></li>
+              <li><a href="contactus.php#our-policies">Our Policies</a></li>
               <li><a href="" id="rate-us-link">Rate Us</a></li>
              
             </ul>
