@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2024 at 01:13 AM
+-- Generation Time: Mar 30, 2024 at 09:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,6 +47,19 @@ CREATE TABLE `Brand` (
   `Brand_Name` varchar(50) NOT NULL,
   `img_URL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Brand`
+--
+
+INSERT INTO `Brand` (`id`, `Brand_Name`, `img_URL`) VALUES
+(1, 'ADIDAS', 'Adidas-logo.webp'),
+(2, 'NIKE', 'swoosh-logo-black.jpeg'),
+(3, 'HUSHPUPPIES', 'png-clipart-hush-puppies-logo-icons-logos-emojis-shop-logos-thumbnail.png'),
+(4, 'Puma', '6ccdc81387540fceb241474103f0af5f.w828.h828.png'),
+(5, 'New Balance', 'new-balance.jpg'),
+(6, 'Vans', 'png-clipart-vans-t-shirt-logo-shoe-brand-t-shirt-angle-text.png'),
+(7, 'Skechers', 'Skechers-logo.jpg');
 
 -- --------------------------------------------------------
 
@@ -148,7 +161,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `shoe_size`, `description`
 (34, 'Nike Mercurial Vapor 13 Elite Tech Craft FG', 44.00, 'ABC', 'NIKE', 145.00, 'FOOTBALL', 'Nike Mercurial Vapor.jpg', 3, 'MEN'),
 (35, 'Nike Mercurial Superfly 7 Pro MDS FG', 42.00, 'ABC', 'NIKE', 137.00, 'FOOTBALL', 'Nike Mercurial Superfly.jpg', 3, 'MEN'),
 (36, 'Nike Air Force 1', 30.00, 'ABC', 'NIKE', 90.00, 'CASUAL', 'Nike Air Force 1.jpg', 3, 'KIDS'),
-(37, 'Nike Renew Run', 32.00, 'ABC', 'NIKE', 80.00, 'RUNNING', 'Nike Renew Run\\.jpg', 3, 'KIDS'),
+(37, 'Nike Renew Run', 32.00, 'ABC', 'NIKE', 80.00, 'RUNNING', 'Nike Renew Run.jpg', 3, 'KIDS'),
 (38, 'Bridgeport Advice', 43.00, 'ABC', 'HUSHPUPPIES', 30.00, 'FORMAL', 'Bridgeport Advice.jpeg', 4, 'MEN'),
 (39, 'Beck', 43.00, 'ABC', 'HUSHPUPPIES', 80.00, 'FORMAL', 'Beck.jpg', 5, 'MEN'),
 (40, 'Fester', 46.00, 'ABC', 'HUSHPUPPIES', 70.00, 'FORMAL', 'Fester.webp', 6, 'MEN'),
@@ -292,7 +305,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `Brand`
 --
 ALTER TABLE `Brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customers`
