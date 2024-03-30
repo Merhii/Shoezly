@@ -23,10 +23,7 @@ $(document).ready(function() {
     $(".modallogsign").toggle();
   })
 
-  $(".dropdown > a").click(function(event) {
-    event.preventDefault();
-    $(this).parent().toggleClass("active");
-  });
+
 
   // Rate Us functionality
   $("#rateUsModal").hide();

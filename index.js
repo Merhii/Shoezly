@@ -16,6 +16,7 @@ function hideSiblings(){
 }
 
 // testimonials
+
 var swiper = new Swiper(".swiper-container", {
   slidesPerView: 1, // Set a default value for smaller screen sizes
   spaceBetween: 5,
@@ -27,7 +28,7 @@ var swiper = new Swiper(".swiper-container", {
     nextEl: ".swiper-button-nexts",
     prevEl: ".swiper-button-prevs",
   },
-  mousewheel: true,
+  mousewheel: false, // Disable mousewheel swiping
   keyboard: true,
   loop: true,
   breakpoints: {
@@ -41,4 +42,5 @@ var swiper = new Swiper(".swiper-container", {
     },
   },
 });
+
 

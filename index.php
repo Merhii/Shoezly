@@ -26,7 +26,7 @@
         <div class="dd">
           <div id="up_arrow"></div>
           <ul>
-            <li><a href="#">Men</a></li>
+            <li><a href="shop.php">Men</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Children</a></li>
           </ul>
@@ -92,7 +92,7 @@ if(isset($_SESSION['User'])) {
             <input type="text" name="fnsignup" placeholder="First name">
             <input type="text" name="lnsignup" placeholder="Last name">
             <input type="email" name="emailsignup" placeholder="Email">
-            <input type="tel" name="phonesignup" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            <input type="tel" name="phonesignup" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
           <input type="password" name="pswdsignup" placeholder="Password">
             <button id="signupbtn" name="signupbtn">Sign up</button>
           </form>
@@ -180,7 +180,7 @@ if(isset($_SESSION['User'])) {
       </h2>
    
       <h2 class="quotes-2  pt-5 fadein">
-       <span class="sibling" style="opacity:0">Let</span> <a onmouseenter="showSiblings()" onmouseleave="hideSiblings()" style="opacity:1" class="link p-2">Our Shoes &#8599;</a> <span class="sibling" style="opacity:0">Be Your Canvas</span>
+       <span class="sibling" style="opacity:0">Let</span> <a onmouseenter="showSiblings()" onmouseleave="hideSiblings()" style="opacity:1" class="link p-2" href="shop.php">Our Shoes &#8599;</a> <span class="sibling" style="opacity:0">Be Your Canvas</span>
       </h2>
   </div>
   </div>
@@ -222,7 +222,7 @@ if(isset($_SESSION['User'])) {
             </p>
            
             <p class="text-blk info">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elemsadsad  sad sad sad sad sad sadvdsfdsfentum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elemsadsad  sad sad sad sad sad sadvdsfdsfentum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed estsads sadsadsad sadsa dsad sad sadas daa aa.
             </p>
               <h3>Rating: 5/5</h3>
             <p class="text-blk name">
