@@ -195,4 +195,7 @@
     background-color: rgba(0, 0, 0, 0.08);
     transition: filter 0ms ease-in-out 0ms;
   }
-  
+#shoeimg{
+width: 200px;
+height: 200px;
+}

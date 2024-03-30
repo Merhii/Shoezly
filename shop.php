@@ -89,61 +89,7 @@ if(isset($_SESSION['User'])) {
         
         class="d-flex justify-content-center flex-wrap"
       >
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
-
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
-        <div class="ca">
-          <div class="card-header">
-            <img src="imgs/Adidas.png" alt="" />
-            <h5>50$</h5>
-          </div>
-          <h4 class="text-center">KENZO ELEPHANT WHITE ESPADRILLES</h4>
-          <img src="imgs/image-removebg-preview.png" alt="" />
-          <button class="view-product-btn">View Product</button>
-        </div>
+        
       </div>
     </div>
 
@@ -272,5 +218,6 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+  <script src="shop.js"></script>
   <script src="nav&signin.js"></script>
 </html>
