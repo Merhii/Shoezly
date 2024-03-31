@@ -85,29 +85,34 @@ if(isset($_SESSION['User'])) {
   </nav>
  
     <div class="main" style="padding-top: 6%;">
-    <!-- filtering nav -->
-    <div class="filtering">
-        <ul>
-            <li class="filterItem"><a href="">Men</a></li>
-            <li class="filterItem"><a href="">Women</a></li>
-            <li class="filterItem"><a href="">Kids</a></li>
-        </ul>
-        <p class="togglefilteringdrop">Filter according to your interest</p>
-        <div class="filteringdrop">
+      <!-- filtering nav -->
+      <div class="filtering">
           <ul>
-            <li class="filterItem"><a href="">Category</a></li>
-            <li class="filterItem"><a href="">Price & Size</a></li>
+              <li class="filterItem"><a href="">Men</a></li>
+              <li class="filterItem"><a href="">Women</a></li>
+              <li class="filterItem"><a href="">Kids</a></li>
           </ul>
+          <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray;">Filter according to your interest</p>
+          <div class="filteringdrop">
+            <ul>
+              <li class="filterItem"><a href="">Category</a></li>
+              <li class="filterItem"><a href="">Price</a></li>
+              <li class="filterItem"><a href="">Size</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      
-      <div class="category-popup">
-        Category Popup Content
-      </div>
-      
-      <div class="pricesize-popup">
-        Price & Size Popup Content  
-    </div>
+        
+        <div class="category-popup">
+          <div class="allcat"></div>
+        </div>
+        
+        <div class="price-popup">
+          Price Popup Content  
+        </div>
+
+        <div class="size-popup">
+          Size Popup Content
+        </div>
 
     <!-- cards -->
     <div class="cards-container d-flex justify-content-center flex-wrap">
@@ -283,27 +288,50 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
       categoryItem.classList.remove('category-hover');
     });
 
-    let pricesizeItem = document.querySelector('.filteringdrop .filterItem:nth-child(2)');
-    let pricesizePopup = document.querySelector('.pricesize-popup');
+    let priceItem = document.querySelector('.filteringdrop .filterItem:nth-child(2)');
+    let pricePopup = document.querySelector('.price-popup');
 
-    pricesizeItem.addEventListener('mouseover', function() {
-      pricesizePopup.classList.add('prsishowdropdown');
-      pricesizeItem.classList.add('pricesize-hover');
+    priceItem.addEventListener('mouseover', function() {
+      pricePopup.classList.add('priceshowdropdown');
+      priceItem.classList.add('price-hover');
     });
 
-    pricesizeItem.addEventListener('mouseleave', function() {
-      pricesizePopup.classList.remove('prsishowdropdown');
-      pricesizeItem.classList.remove('pricesize-hover');
+    priceItem.addEventListener('mouseleave', function() {
+      pricePopup.classList.remove('priceshowdropdown');
+      priceItem.classList.remove('price-hover');
     });
 
-    pricesizePopup.addEventListener('mouseover', function() {
+    pricePopup.addEventListener('mouseover', function() {
       filteringdrop.classList.add('showfilterdrop');
-      pricesizeItem.classList.add('pricesize-hover');
+      priceItem.classList.add('price-hover');
     });
-    pricesizePopup.addEventListener('mouseleave', function() {
+    pricePopup.addEventListener('mouseleave', function() {
       filteringdrop.classList.remove('showfilterdrop');
-      pricesizeItem.classList.remove('pricesize-hover');
+      priceItem.classList.remove('price-hover');
     });
+
+    let sizeItem = document.querySelector('.filteringdrop .filterItem:nth-child(3)');
+    let sizePopup = document.querySelector('.size-popup');
+
+    sizeItem.addEventListener('mouseover', function() {
+      sizePopup.classList.add('sizeshowdropdown');
+      sizeItem.classList.add('size-hover');
+    });
+
+    sizeItem.addEventListener('mouseleave', function() {
+      sizePopup.classList.remove('sizeshowdropdown');
+      sizeItem.classList.remove('size-hover');
+    });
+
+    sizePopup.addEventListener('mouseover', function() {
+      filteringdrop.classList.add('showfilterdrop');
+      sizeItem.classList.add('size-hover');
+    });
+    sizePopup.addEventListener('mouseleave', function() {
+      filteringdrop.classList.remove('showfilterdrop');
+      sizeItem.classList.remove('size-hover');
+    });
+
     // end filtering nav
     document
       .querySelector(".view-product-btn")

@@ -7,5 +7,11 @@ $(document).ready(function(){
             $('.cards-container').append(data); 
     }
 });
-
+    $.ajax({
+        type: 'GET',
+        url: 'getCatForFiltering.php',
+        success: function(data) {
+            $('.allcat').append(data); 
+    }
+    });
 });
