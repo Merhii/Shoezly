@@ -4,7 +4,7 @@ $(document).ready(function(){
         type: 'GET',
         url: 'getShopCards.php',
         success: function(data) {
-            $('.cards-container').html(data); 
+            $('.cards-container').append(data); 
     }
 });
 

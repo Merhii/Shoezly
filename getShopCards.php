@@ -10,10 +10,12 @@ while ($row = mysqli_fetch_assoc($result)) {
     $card.='<div class="ca">
     <div class="card-header">
       <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt=""/>
-      <h5 id="price">'.$row['price'].''.$row['shoe_size'].''.$row['category'].''.$row['stock_quantity'].'$</h5>
+      <h5 id="price">'.$row['price'].'$</h5>
     </div>
-    <h4 class="text-center" id="imgtxt">'.$row['product_name'].'</h4>
-    <img  id="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="" />
+    <h4 class="shoe-name text-center">'.$row['product_name'].'</h4>
+    <div class="d-flex justify-content-center">
+    <img  class="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="" />
+    </div>
     <button class="view-product-btn">View Product</button>
   </div>';
 }
