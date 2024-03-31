@@ -111,7 +111,7 @@ if(isset($_SESSION['User'])) {
         </div>
 
         <div class="size-popup">
-          Size Popup Content
+          <div class="allsizes"></div>
         </div>
 
     <!-- cards -->

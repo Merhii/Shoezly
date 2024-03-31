@@ -116,18 +116,18 @@
   justify-content: center;
 }
 
-.allcat{
+.allcat, .allsizes{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
-.filtercategories:first-child{
+.filtercategories:first-child, .filtersizes:first-child{
   border: none;
 }
 
-.filtercategories{
+.filtercategories, .filtersizes{
   cursor: pointer;
   margin-right: 20px;
   border: 1px solid gray;
@@ -135,7 +135,7 @@
   border-radius: 15px;
 }
 
-.filtercategories:hover{
+.filtercategories:hover, .filtersizes:hover{
   background-color: rgb(191, 191, 191);
 }
 /* cards */

@@ -6,12 +6,19 @@ $(document).ready(function(){
         success: function(data) {
             $('.cards-container').append(data); 
     }
-});
+    });
     $.ajax({
         type: 'GET',
         url: 'getCatForFiltering.php',
         success: function(data) {
             $('.allcat').append(data); 
+    }
+    });
+    $.ajax({
+        type: 'GET',
+        url: 'getSizesforFiltering.php',
+        success: function(data) {
+            $('.allsizes').append(data); 
     }
     });
 });
