@@ -117,7 +117,7 @@
     justify-content: center;
 }
 
-.allcat, .allsizes{
+.allcat, .allsizes, .pricefilter{
     display: flex;
     flex-wrap: wrap;
     width: 70%;
@@ -130,7 +130,7 @@
     border: none;
 }
 
-.filtercategories, .filtersizes{
+.filtercategories, .filtersizes, .ascdesc{
     cursor: pointer;
     margin-right: 20px;
     border: 1px solid gray;
@@ -139,7 +139,7 @@
     margin: 5px;
 }
 
-.filtercategories:hover, .filtersizes:hover{
+.filtercategories:hover, .filtersizes:hover, .ascdesc:hover{
     background-color: rgb(191, 191, 191);
 }
 

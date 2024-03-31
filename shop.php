@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="nav&footer.css">
     <link rel="stylesheet" href="shop.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
   </head>
   <body>
   <nav class="fadein">
@@ -107,7 +108,10 @@ if(isset($_SESSION['User'])) {
         </div>
         
         <div class="price-popup">
-          Price Popup Content  
+          <div class="pricefilter">
+            <div class="ascdesc" id="ascending">Ascending</div>
+            <div class="ascdesc" id="descending">Descending</div>
+          </div>
         </div>
 
         <div class="size-popup">
@@ -251,88 +255,6 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
  
   </body>
   <script>
-    // filtering nav
-    let filteringdrop = document.querySelector('.filteringdrop');
-    document.querySelector('.togglefilteringdrop').addEventListener('mouseover', function() {
-      filteringdrop.classList.add('showfilterdrop');
-    });
-    document.querySelector('.togglefilteringdrop').addEventListener('mouseleave', function() {
-      filteringdrop.classList.remove('showfilterdrop');
-    });
-    filteringdrop.addEventListener('mouseover', function() {
-      filteringdrop.classList.add('showfilterdrop');
-    })
-    filteringdrop.addEventListener('mouseleave', function() {
-      filteringdrop.classList.remove('showfilterdrop');
-    })
-  
-    let categoryItem = document.querySelector('.filteringdrop .filterItem:nth-child(1)');
-    let categoryPopup = document.querySelector('.category-popup');
-
-    categoryItem.addEventListener('mouseover', function() {
-      categoryPopup.classList.add('catshowdropdown'); 
-      categoryItem.classList.add('category-hover');
-    });
-
-    categoryItem.addEventListener('mouseleave', function() {
-      categoryPopup.classList.remove('catshowdropdown');
-      categoryItem.classList.remove('category-hover');
-    });
-
-    categoryPopup.addEventListener('mouseover', function() {
-      filteringdrop.classList.add('showfilterdrop');
-      categoryItem.classList.add('category-hover');
-    });
-    categoryPopup.addEventListener('mouseleave', function() {
-      filteringdrop.classList.remove('showfilterdrop');
-      categoryItem.classList.remove('category-hover');
-    });
-
-    let priceItem = document.querySelector('.filteringdrop .filterItem:nth-child(2)');
-    let pricePopup = document.querySelector('.price-popup');
-
-    priceItem.addEventListener('mouseover', function() {
-      pricePopup.classList.add('priceshowdropdown');
-      priceItem.classList.add('price-hover');
-    });
-
-    priceItem.addEventListener('mouseleave', function() {
-      pricePopup.classList.remove('priceshowdropdown');
-      priceItem.classList.remove('price-hover');
-    });
-
-    pricePopup.addEventListener('mouseover', function() {
-      filteringdrop.classList.add('showfilterdrop');
-      priceItem.classList.add('price-hover');
-    });
-    pricePopup.addEventListener('mouseleave', function() {
-      filteringdrop.classList.remove('showfilterdrop');
-      priceItem.classList.remove('price-hover');
-    });
-
-    let sizeItem = document.querySelector('.filteringdrop .filterItem:nth-child(3)');
-    let sizePopup = document.querySelector('.size-popup');
-
-    sizeItem.addEventListener('mouseover', function() {
-      sizePopup.classList.add('sizeshowdropdown');
-      sizeItem.classList.add('size-hover');
-    });
-
-    sizeItem.addEventListener('mouseleave', function() {
-      sizePopup.classList.remove('sizeshowdropdown');
-      sizeItem.classList.remove('size-hover');
-    });
-
-    sizePopup.addEventListener('mouseover', function() {
-      filteringdrop.classList.add('showfilterdrop');
-      sizeItem.classList.add('size-hover');
-    });
-    sizePopup.addEventListener('mouseleave', function() {
-      filteringdrop.classList.remove('showfilterdrop');
-      sizeItem.classList.remove('size-hover');
-    });
-
-    // end filtering nav
     document
       .querySelector(".view-product-btn")
       .addEventListener("click", function () {
