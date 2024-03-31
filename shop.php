@@ -118,7 +118,7 @@ if(isset($_SESSION['User'])) {
         </div>
 
     <!-- cards -->
-    <div class="cards-container d-flex justify-content-center flex-wrap">
+    <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
         
     </div>
     </div>

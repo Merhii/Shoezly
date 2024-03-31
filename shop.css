@@ -149,12 +149,12 @@
 }
 
 .ca {
-    height: 450px;
-    min-width: 350px;
-    width: 350px;
+    height: 350px;
+    min-width: 250px;
+    width: 250px;
     margin: 0px 20px 30px 0px;
     border-radius: 20px;
-    border: 3px solid #4b4237;
+ background-color: rgb(177, 177, 177, 0.297);
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -176,6 +176,7 @@
 .card-header img {
     width: 80px;
     height: 80px;
+    mix-blend-mode: darken;
 }
 
 .card-header h5 {
@@ -183,17 +184,19 @@
     text-align: center;
 }
 .shoeimg{
-    width: 300px;
+    width: 200px;
     height: 200px;
+    mix-blend-mode: darken;
+    transform: translateY(-70px);
 }
 .shoe-name{
-    min-height: 58px;
+    min-height: 49px;
 }
 
 .view-product-btn {
     width: 80%;
     align-self: center;
-    margin-top: 20px;
+   transform: translateY(-80px);
     border: 1px solid gray;
     border-radius: 20px;
     padding: 5px 10px;

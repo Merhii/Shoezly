@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_assoc($result)) {
       <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt=""/>
       <h5 id="price">'.$row['price'].'$</h5>
     </div>
-    <h4 class="shoe-name text-center">'.$row['product_name'].'</h4>
+    <h5 class="shoe-name text-center">'.$row['product_name'].'</h5>
     <div class="d-flex justify-content-center">
     <img  class="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="" />
     </div>
