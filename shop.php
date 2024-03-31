@@ -85,9 +85,34 @@ if(isset($_SESSION['User'])) {
   </nav>
  
     <div class="main" style="padding-top: 6%;">
-      <div class="cards-container d-flex justify-content-center flex-wrap">
-        
+    <!-- filtering nav -->
+    <div class="filtering">
+        <ul>
+            <li class="filterItem"><a href="">Men</a></li>
+            <li class="filterItem"><a href="">Women</a></li>
+            <li class="filterItem"><a href="">Kids</a></li>
+        </ul>
+        <p class="togglefilteringdrop">Filter according to your interest</p>
+        <div class="filteringdrop">
+          <ul>
+            <li class="filterItem"><a href="">Category</a></li>
+            <li class="filterItem"><a href="">Price & Size</a></li>
+          </ul>
+        </div>
       </div>
+      
+      <div class="category-popup">
+        Category Popup Content
+      </div>
+      
+      <div class="pricesize-popup">
+        Price & Size Popup Content  
+    </div>
+
+    <!-- cards -->
+    <div class="cards-container d-flex justify-content-center flex-wrap">
+        
+    </div>
     </div>
 
     <div class="popup">
@@ -120,6 +145,33 @@ if(isset($_SESSION['User'])) {
         </div>
       </div>
       <button class="close-popup-btn">&times;</button>
+    </div>
+
+    <!-- cart -->
+    <div class="cartPOPUP">
+        <h1>Shopping Cart</h1>
+        <div class="CartItems">
+            <div class="item">
+                <div class="image">
+                    <img src="image.png">
+                </div>
+                <div class="name">NAME
+                </div>
+                <div class="totalPrice">50$</div>
+                <div class="remove">
+                    <button>&times;</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="btn">
+            <button class="close">Close</button>
+            <button class="checkOut">Check Out</button>
+        </div>
+    </div>
+
+    <div class="shopping-cart" data-product-count="0">
+        <span class="cart-icon" onclick="toggleCart()">&#128722;</span>
     </div>
      <!-- Site footer -->
      <footer class="site-footer">
@@ -194,6 +246,65 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
  
   </body>
   <script>
+    // filtering nav
+    let filteringdrop = document.querySelector('.filteringdrop');
+    document.querySelector('.togglefilteringdrop').addEventListener('mouseover', function() {
+      filteringdrop.classList.add('showfilterdrop');
+    });
+    document.querySelector('.togglefilteringdrop').addEventListener('mouseleave', function() {
+      filteringdrop.classList.remove('showfilterdrop');
+    });
+    filteringdrop.addEventListener('mouseover', function() {
+      filteringdrop.classList.add('showfilterdrop');
+    })
+    filteringdrop.addEventListener('mouseleave', function() {
+      filteringdrop.classList.remove('showfilterdrop');
+    })
+  
+    let categoryItem = document.querySelector('.filteringdrop .filterItem:nth-child(1)');
+    let categoryPopup = document.querySelector('.category-popup');
+
+    categoryItem.addEventListener('mouseover', function() {
+      categoryPopup.classList.add('catshowdropdown'); 
+      categoryItem.classList.add('category-hover');
+    });
+
+    categoryItem.addEventListener('mouseleave', function() {
+      categoryPopup.classList.remove('catshowdropdown');
+      categoryItem.classList.remove('category-hover');
+    });
+
+    categoryPopup.addEventListener('mouseover', function() {
+      filteringdrop.classList.add('showfilterdrop');
+      categoryItem.classList.add('category-hover');
+    });
+    categoryPopup.addEventListener('mouseleave', function() {
+      filteringdrop.classList.remove('showfilterdrop');
+      categoryItem.classList.remove('category-hover');
+    });
+
+    let pricesizeItem = document.querySelector('.filteringdrop .filterItem:nth-child(2)');
+    let pricesizePopup = document.querySelector('.pricesize-popup');
+
+    pricesizeItem.addEventListener('mouseover', function() {
+      pricesizePopup.classList.add('prsishowdropdown');
+      pricesizeItem.classList.add('pricesize-hover');
+    });
+
+    pricesizeItem.addEventListener('mouseleave', function() {
+      pricesizePopup.classList.remove('prsishowdropdown');
+      pricesizeItem.classList.remove('pricesize-hover');
+    });
+
+    pricesizePopup.addEventListener('mouseover', function() {
+      filteringdrop.classList.add('showfilterdrop');
+      pricesizeItem.classList.add('pricesize-hover');
+    });
+    pricesizePopup.addEventListener('mouseleave', function() {
+      filteringdrop.classList.remove('showfilterdrop');
+      pricesizeItem.classList.remove('pricesize-hover');
+    });
+    // end filtering nav
     document
       .querySelector(".view-product-btn")
       .addEventListener("click", function () {
@@ -208,7 +319,36 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
         document.querySelector(".popup").classList.remove("show");
         document.body.classList.remove("modal-open");
         document.body.style.overflow = "";
-      });
+    });
+
+    // cart
+    let shopping_cart = document.querySelector('.shopping-cart');
+    let cart_btns = document.querySelectorAll('.addToCart');
+
+    for (const cart_btn of cart_btns) {
+        cart_btn.onclick = (e) => {
+            let product_count = Number(shopping_cart.getAttribute('data-product-count')) || 0;
+            let qtyInput = cart_btn.parentNode.parentNode.querySelector('.quantity-input');
+            let quantity = parseInt(qtyInput.value);
+            shopping_cart.setAttribute('data-product-count', product_count + quantity);
+            shopping_cart.classList.add('active');
+            setTimeout(() => {
+            shopping_cart.classList.remove('active');
+            }, 1000);
+        };
+    }
+
+    function toggleCart() {
+        var cartPopup = document.querySelector('.cartPOPUP');
+        cartPopup.classList.toggle('open');
+    }
+
+    document.querySelector('.close').addEventListener('click', function() {
+        var cartPopup = document.querySelector('.cartPOPUP');
+        cartPopup.classList.remove('open');
+    });
+    // end cart
+
   </script>
      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
