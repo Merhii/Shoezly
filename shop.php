@@ -92,7 +92,7 @@ if(isset($_SESSION['User'])) {
               <li class="filterItem"><a href="">Women</a></li>
               <li class="filterItem"><a href="">Kids</a></li>
           </ul>
-          <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray;">Filter according to your interest</p>
+          <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray; min-width: 500px">Filter according to your interest</p>
           <div class="filteringdrop">
             <ul>
               <li class="filterItem"><a href="">Category</a></li>
