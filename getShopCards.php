@@ -4,7 +4,7 @@ include "config.php";
 
 $sql="SELECT products.*,Brand.Brand_Name,Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand";
 $result = mysqli_query($conn, $sql);
-
+$card = '';
 // brands_imgs/Adidas-logo.webp
 while ($row = mysqli_fetch_assoc($result)) {
     $card.='<div class="ca">

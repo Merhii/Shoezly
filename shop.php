@@ -85,10 +85,7 @@ if(isset($_SESSION['User'])) {
   </nav>
  
     <div class="main" style="padding-top: 6%;">
-      <div
-        
-        class="d-flex justify-content-center flex-wrap"
-      >
+      <div class="cards-container d-flex justify-content-center flex-wrap">
         
       </div>
     </div>
