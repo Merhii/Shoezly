@@ -7,4 +7,11 @@ $(document).ready(function(){
             $('.logos-slide').append(data); 
     }
     });
+    $.ajax({
+        type: 'GET',
+        url: 'getBrandCards.php',
+        success: function(data) {
+            $('.all-cards-container').append(data); 
+    }
+    });
 })

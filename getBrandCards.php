@@ -2,11 +2,11 @@
 
 include "config.php";
 
-$sql = "SELECT DISTINCT gender FROM `products`";
+$sql = "SELECT Brand_Name FROM `brand`";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
-    $gender = $row['gender'];
-    $sqlproduct = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE gender = '$gender'";
+    $brandName = $row['Brand_Name'];
+    $sqlproduct = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE Brand.Brand_Name = '$brandName'";
     $resultproduct = mysqli_query($conn, $sqlproduct);
     $card = '';
     while ($rowproduct = mysqli_fetch_assoc($resultproduct)) {
@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>';
     }
     echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
-    <h2> <strong>'. $gender. '</strong></h2>
+    <h2> <strong>'. $brandName. '</strong></h2>
 </div>
 <div style="padding-left: 10%; padding-right:10%;" class="cards-container women-container d-flex justify-content-center flex-wrap">
  '. $card . '</div>';
@@ -31,3 +31,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 mysqli_close($conn);
+?>
+

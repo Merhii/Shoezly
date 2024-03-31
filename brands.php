@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,19 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="nav&footer.css">
-    <link rel="stylesheet" href="filteringnav.css" />
+    <link rel="stylesheet" href="brands.css">
     <link rel="stylesheet" href="Card&Cart.css">
+    <link rel="stylesheet" href="filteringnav.css">
+    <link rel="stylesheet" href="nav&footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-      * {
-          margin: 0px;
-          padding: 0;
-        }
-    </style>
-  </head>
-  <body>
-  <nav class="fadein">
+</head>
+<body>
+<nav class="fadein">
     <div id="logo">Shoezly</div>
     <button class="navbar-mobile " type="button" id="menu-trigger">
       <i class="fas fa-bars"></i>
@@ -90,8 +85,30 @@ if(isset($_SESSION['User'])) {
 ?>
  </ul>
   </nav>
- 
-    <div class="main" style="padding-top: 7%;">
+
+
+<div class="coverContainer">
+        <img src="imgs/coverBrand.png" alt="">
+        <div style="display: flex; justify-content: center;">
+            <div class="quote-container">
+                <p class="quote-text">"Style is a way to say who you are without having to speak."</p>
+                <p class="quote-author">- Rachel Zoe</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="brands">
+        <div class="brands-list">
+            <div class="logos">
+                <div class="logos-slide">
+                </div>
+                <div class="logos-slide">
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="main" style="padding-top: 2%;">
       <!-- filtering nav -->
       <div class="filtering">
           <ul>
@@ -255,61 +272,8 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
         </div>
       </div>
 </footer>
-
- 
-  </body>
-  <script>
-    document
-      .querySelector(".view-product-btn")
-      .addEventListener("click", function () {
-        document.querySelector(".popup").classList.add("show");
-        document.body.classList.add("modal-open");
-        document.body.style.overflow = "hidden";
-      });
-
-    document
-      .querySelector(".close-popup-btn")
-      .addEventListener("click", function () {
-        document.querySelector(".popup").classList.remove("show");
-        document.body.classList.remove("modal-open");
-        document.body.style.overflow = "";
-    });
-
-    // cart
-    let shopping_cart = document.querySelector('.shopping-cart');
-    let cart_btns = document.querySelectorAll('.addToCart');
-
-    for (const cart_btn of cart_btns) {
-        cart_btn.onclick = (e) => {
-            let product_count = Number(shopping_cart.getAttribute('data-product-count')) || 0;
-            let qtyInput = cart_btn.parentNode.parentNode.querySelector('.quantity-input');
-            let quantity = parseInt(qtyInput.value);
-            shopping_cart.setAttribute('data-product-count', product_count + quantity);
-            shopping_cart.classList.add('active');
-            setTimeout(() => {
-            shopping_cart.classList.remove('active');
-            }, 1000);
-        };
-    }
-
-    function toggleCart() {
-        var cartPopup = document.querySelector('.cartPOPUP');
-        cartPopup.classList.toggle('open');
-    }
-
-    document.querySelector('.close').addEventListener('click', function() {
-        var cartPopup = document.querySelector('.cartPOPUP');
-        cartPopup.classList.remove('open');
-    });
-    // end cart
-
-  </script>
-     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  <script src="shop.js"></script>
-  <script src="filteringnav.js"></script>
-  <script src="nav&signin.js"></script>
+</body>
+<script src="brands.js"></script>
+<script src="filteringnav.js"></script>
+<script src="nav&signin.js"></script>
 </html>
