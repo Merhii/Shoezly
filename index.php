@@ -20,8 +20,8 @@
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
-      <li><a href="index.php">Home</a></li>
-      <li class="dropdown">
+      <li><a href="index.php" >Home </a></li>
+      <!-- <li class="dropdown">
         <a href="shop.php">Shop </a>
         <div class="dd">
           <div id="up_arrow"></div>
@@ -31,8 +31,8 @@
             <li><a href="#">Children</a></li>
           </ul>
         </div>
-      </li>
-
+      </li> -->
+      <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>
      
       

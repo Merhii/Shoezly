@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
     <h2> <strong>'. $brandName. '</strong></h2>
 </div>
-<div style="padding-left: 10%; padding-right:10%;" class="cards-container women-container d-flex justify-content-center flex-wrap">
+<div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
  '. $card . '</div>';
 
 }

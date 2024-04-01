@@ -18,25 +18,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<nav class="fadein">
+<nav style="background-color: rgb(124, 110, 91);" class="fadein">
     <div id="logo">Shoezly</div>
     <button class="navbar-mobile " type="button" id="menu-trigger">
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
-      <li><a href="index.php">Home</a></li>
-      <li class="dropdown">
+      <li><a href="index.php" >Home </a></li>
+      <!-- <li class="dropdown">
         <a href="shop.php">Shop </a>
         <div class="dd">
           <div id="up_arrow"></div>
           <ul>
-            <li><a href="#">Men</a></li>
+            <li><a href="shop.php">Men</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Children</a></li>
           </ul>
         </div>
-      </li>
-
+      </li> -->
+      <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>
      
       

@@ -1,3 +1,13 @@
+$(document).ready(function(){
+// nav bar background on scroll
+$(function () {
+  $(document).scroll(function () {
+      $nav = $("nav");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+});
+})
+
 
 // Our shoes link show quotation
 function showSiblings(){

@@ -19,18 +19,19 @@
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
-      <li><a href="index.php">Home</a></li>
-      <li class="dropdown">
+      <li><a href="index.php" >Home </a></li>
+      <!-- <li class="dropdown">
         <a href="shop.php">Shop </a>
         <div class="dd">
           <div id="up_arrow"></div>
           <ul>
-            <li><a href="#">Men</a></li>
+            <li><a href="shop.php">Men</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Children</a></li>
           </ul>
         </div>
-      </li>
+      </li> -->
+      <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>
      
       
@@ -49,20 +50,29 @@
           </ul>
         </div> -->
       </li>
-    
+     
 
    
     <?php
 
 
 if(isset($_SESSION['User'])) {
-  echo '  <li id="logintxt" class="text-center d-flex justify-content-center"></li>';
+  echo '  <li  class="text-center dropdown">
+  <a href="#" id="logintxt"></a>
+  <div class="dd">
+  <div id="up_arrow"></div>
+  <ul>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</div>
+  </li>';
     $userName = $_SESSION['User'];
     echo '<script>
             $(document).ready(function() {
                 $.get("welcome.php", function(data) {
-                    $("#logintxt").text("Welcome Back ' . $userName . '");
+                    $("#logintxt").text("Welcome ' . $userName . '");
                     console.log("hello");
+                $("#loginbtn").hide();
                 });
             });
           </script>';
