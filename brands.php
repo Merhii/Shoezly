@@ -108,20 +108,20 @@ if(isset($_SESSION['User'])) {
         </div>
     </div>
 
-    <div class="main" style="padding-top: 2%;">
+    <div class="main" style="padding-top: 7%;">
       <!-- filtering nav -->
       <div class="filtering">
           <ul>
-              <li class="filterItem"><a href="">Men</a></li>
-              <li class="filterItem"><a href="">Women</a></li>
-              <li class="filterItem"><a href="">Kids</a></li>
+              <li class="filterItem">Men</li>
+              <li class="filterItem">Women</li>
+              <li class="filterItem">Kids</li>
           </ul>
           <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray; min-width: 500px">Filter according to your interest</p>
           <div class="filteringdrop">
             <ul>
-              <li class="filterItem"><a href="">Category</a></li>
-              <li class="filterItem"><a href="">Price</a></li>
-              <li class="filterItem"><a href="">Size</a></li>
+              <li class="togglefilterItem">Category</li>
+              <li class="togglefilterItem">Price</li>
+              <li class="togglefilterItem">Size</li>
             </ul>
           </div>
         </div>
@@ -132,8 +132,8 @@ if(isset($_SESSION['User'])) {
         
         <div class="price-popup">
           <div class="pricefilter">
-            <div class="ascdesc" id="ascending">Ascending</div>
-            <div class="ascdesc" id="descending">Descending</div>
+            <div class="ascdesc togglefiltersubitem" id="ascending">Ascending</div>
+            <div class="ascdesc togglefiltersubitem" id="descending">Descending</div>
           </div>
         </div>
 

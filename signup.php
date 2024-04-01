@@ -35,4 +35,3 @@ if(isset($_POST['signupbtn']))
 else{
 echo "not working";
 }
-?>

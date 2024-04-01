@@ -7,7 +7,7 @@ $result = mysqli_query($conn, $sql);
 $divforsizes = '<div class="filtersizes">All</div>';
 
 while ($row = mysqli_fetch_assoc($result)) {
-    $divforsizes .= '<div class="filtersizes" id="' . $row['shoe_size'] . '">' . $row['shoe_size'] . '</div>';
+    $divforsizes .= '<div class="filtersizes togglefiltersubitem" id="' . $row['shoe_size'] . '">' . $row['shoe_size'] . '</div>';
 }
 
 echo $divforsizes;

@@ -26,7 +26,7 @@ $(document).ready(function(){
         $(this).removeClass('showfilterdrop');
     });
       
-    $('.filteringdrop .filterItem:nth-child(1)').hover(function() {
+    $('.filteringdrop .togglefilterItem:nth-child(1)').hover(function() {
         $('.category-popup').addClass('catshowdropdown');
         $(this).addClass('category-hover');
     }, function() {
@@ -36,13 +36,13 @@ $(document).ready(function(){
       
     $('.category-popup').hover(function() {
         $('.filteringdrop').addClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(1)').addClass('category-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(1)').addClass('category-hover');
     }, function() {
         $('.filteringdrop').removeClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(1)').removeClass('category-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(1)').removeClass('category-hover');
     });
       
-    $('.filteringdrop .filterItem:nth-child(2)').hover(function() {
+    $('.filteringdrop .togglefilterItem:nth-child(2)').hover(function() {
         $('.price-popup').addClass('priceshowdropdown');
         $(this).addClass('price-hover');
     }, function() {
@@ -52,13 +52,13 @@ $(document).ready(function(){
       
     $('.price-popup').hover(function() {
         $('.filteringdrop').addClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(2)').addClass('price-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(2)').addClass('price-hover');
     }, function() {
         $('.filteringdrop').removeClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(2)').removeClass('price-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(2)').removeClass('price-hover');
     });
       
-    $('.filteringdrop .filterItem:nth-child(3)').hover(function() {
+    $('.filteringdrop .togglefilterItem:nth-child(3)').hover(function() {
         $('.size-popup').addClass('sizeshowdropdown');
         $(this).addClass('size-hover');
     }, function() {
@@ -68,9 +68,9 @@ $(document).ready(function(){
       
     $('.size-popup').hover(function() {
         $('.filteringdrop').addClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(3)').addClass('size-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(3)').addClass('size-hover');
     }, function() {
         $('.filteringdrop').removeClass('showfilterdrop');
-        $('.filteringdrop .filterItem:nth-child(3)').removeClass('size-hover');
+        $('.filteringdrop .togglefilterItem:nth-child(3)').removeClass('size-hover');
     });
 })

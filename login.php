@@ -26,4 +26,3 @@ if(isset($_POST['loginbtn']))
 else{
 echo "not working";
 }
-?>

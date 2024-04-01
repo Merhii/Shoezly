@@ -5,4 +5,3 @@ if(isset($_SESSION['User']))
     echo $_SESSION['User'];
 
 }
-?>

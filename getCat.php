@@ -13,4 +13,3 @@ while ($row = mysqli_fetch_assoc($result)) {
 echo $options;
 
 mysqli_close($conn);
-?>

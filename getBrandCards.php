@@ -31,5 +31,3 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 mysqli_close($conn);
-?>
-

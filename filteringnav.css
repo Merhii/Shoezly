@@ -17,25 +17,24 @@
     margin: 0;
 }
 
-.filterItem {
+.filterItem, .togglefilterItem{
     margin-right: 100px;
     position: relative;
     padding: 10px;
-    }
-
-.filterItem:last-child {
-    margin-right: 0;
-}
-
-.filterItem a {
     padding-left: 5px;
     padding-right: 10px;
     color: black;
-    text-decoration: none;
     padding-bottom: 5px;
+    border-bottom: none;
+    cursor: pointer;
 }
 
-.filterItem::after {
+.filterItem:last-child, .togglefilterItem:last-child {
+    margin-right: 0;
+}
+
+
+.filterItem::after, .togglefilterItem::after {
     content: '';
     position: absolute;
     left: 0;
@@ -60,15 +59,15 @@
     background-color: white;
 }
 
-.filterItem.category-hover::after {
+.togglefilterItem.category-hover::after {
     width: 100%;
 }
 
-.filterItem.price-hover::after {
+.togglefilterItem.price-hover::after {
     width: 100%;
 }
 
-.filterItem.size-hover::after {
+.togglefilterItem.size-hover::after {
     width: 100%;
 }
 
