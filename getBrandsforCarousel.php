@@ -8,7 +8,7 @@ $result = mysqli_query($conn, $sql);
 $img = '';
 
 while ($row = mysqli_fetch_assoc($result)) {
-    $img .= '<img src="' . $row['img_URL'] . '"></img>';
+    $img .= '<img src="brands_imgs/' . $row['img_URL'] . '"></img>';
 }
 
 echo $img;
