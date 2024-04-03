@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2024 at 11:59 PM
+-- Generation Time: Apr 04, 2024 at 12:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -140,16 +140,15 @@ INSERT INTO `products` (`product_id`, `product_name`, `shoe_size`, `description`
 (27, 'Nike React Infinity Run Flyknit', 40.50, 'ABC', 'NIKE', 160.00, 'RUNNING', 'Nike React.webp', 3, 'MEN'),
 (28, 'Nike React Miler', 39.50, 'ABC', 'NIKE', 130.00, 'RUNNING', 'Nike React Miler.jpg', 3, 'MEN'),
 (29, 'Nike Air Zoom Pegasus 37', 37.00, 'ABC', 'NIKE', 120.00, 'RUNNING', 'Nike Air Zoom.jpg', 3, 'WOMEN'),
-(30, 'Nike Joyride Run Flyknit', 36.50, 'ABC', 'NIKE', 180.00, 'RUNNING', 'Nike Joyride Run', 3, 'WOMEN'),
+(30, 'Nike Joyride Run Flyknit', 36.50, 'ABC', 'NIKE', 180.00, 'RUNNING', 'Nike Joyride Run.jpg', 3, 'WOMEN'),
 (31, 'Nike Mercurial Vapor 13 Elite FG', 35.00, 'ABC', 'NIKE', 250.00, 'FOOTBALL', 'Nike Mercurial.jpg', 3, 'WOMEN'),
 (32, 'Nike Phantom Vision Elite Dynamic Fit FG', 37.00, 'ABC', 'NIKE', 150.00, 'FOOTBALL', 'Nike Phantom.jpeg', 3, 'WOMEN'),
 (33, 'Nike Phantom Venom Academy FG', 37.50, 'ABC', 'NIKE', 80.00, 'FOOTBALL', 'Nike Phantom Venom.jpg', 3, 'WOMEN'),
 (34, 'Nike Mercurial Vapor 13 Elite Tech Craft FG', 44.00, 'ABC', 'NIKE', 145.00, 'FOOTBALL', 'Nike Mercurial Vapor.jpg', 3, 'MEN'),
-(35, 'Nike Mercurial Superfly 7 Pro MDS FG', 42.00, 'ABC', 'NIKE', 137.00, 'FOOTBALL', 'Nike Mercurial Superfly.jpg', 3, 'MEN'),
+(35, 'Nike Mercurial Superfly 7 Pro MDS FG', 42.00, 'ABC', 'NIKE', 137.00, 'FOOTBALL', 'Nike Merurial Superfly.jpg', 3, 'MEN'),
 (36, 'Nike Air Force 1', 30.00, 'ABC', 'NIKE', 90.00, 'CASUAL', 'Nike Air Force 1.jpg', 3, 'KIDS'),
 (37, 'Nike Renew Run', 32.00, 'ABC', 'NIKE', 80.00, 'RUNNING', 'Nike Renew Run.jpg', 3, 'KIDS'),
 (38, 'Bridgeport Advice', 43.00, 'ABC', 'HUSHPUPPIES', 30.00, 'FORMAL', 'Bridgeport Advice.jpeg', 4, 'MEN'),
-(39, 'Beck', 43.00, 'ABC', 'HUSHPUPPIES', 80.00, 'FORMAL', 'Beck.jpg', 5, 'MEN'),
 (40, 'Fester', 46.00, 'ABC', 'HUSHPUPPIES', 70.00, 'FORMAL', 'Fester.webp', 6, 'MEN'),
 (41, 'Pixel', 41.00, 'ABC', 'HUSHPUPPIES', 75.00, 'FORMAL', 'Pixel.jpeg', 7, 'MEN'),
 (42, 'Austin', 45.00, 'ABC', 'HUSHPUPPIES', 75.00, 'FORMAL', 'Austin.webp', 2, 'MEN'),
@@ -171,16 +170,16 @@ INSERT INTO `products` (`product_id`, `product_name`, `shoe_size`, `description`
 (60, 'J.Crew 620', 36.00, 'ABC', 'New Balance', 100.00, 'CASUAL', 'J.Crew 620.webp', 22, 'WOMEN'),
 (61, '574 Core Jr', 33.00, 'ABC', 'New Balance', 90.00, 'CASUAL', '574 Core Jr.webp', 10, 'KIDS'),
 (62, '480 Sneakers Shoes', 32.00, 'ABC', 'New Balance', 60.00, 'Running', '480 Sneakers Shoes.jpg', 3, 'KIDS'),
-(63, 'Vans #36', 40.00, 'ABC', 'Vans', 75.00, 'CASUAL', 'Vans #36.webp', 7, 'MEN'),
+(63, 'Vans #36', 40.00, 'ABC', 'Vans', 75.00, 'CASUAL', 'Vans36.webp', 7, 'MEN'),
 (64, 'Classic Slip-On Checkerboard Shoe', 43.00, 'ABC', 'Vans', 60.00, 'CASUAL', 'Classic Slip-On Checkerboard Shoe.webp', 17, 'MEN'),
 (65, 'Knu Skool Shoe', 43.00, 'ABC', 'Vans', 75.00, 'CASUAL', 'Knu Skool Shoe.webp', 7, 'MEN'),
 (66, 'Skate Old Skool', 45.00, 'ABC', 'Vans', 80.00, 'CASUAL', 'Skate Old Skool.webp', 3, 'MEN'),
 (67, 'Toddler Pastel Block Slip-On V', 32.00, 'ABC', 'Vans', 55.00, 'CASUAL', 'Vans Pastel.webp', 5, 'KIDS'),
 (68, 'Uno - Night Shades', 40.00, 'ABC', 'Skechers', 85.00, 'CASUAL', 'Uno - Night Shades.jpg', 34, 'MEN'),
-(69, 'Skechers Flutter Heart', 32.00, 'ABC', 'Skechers', 115.00, 'CASUAL', 'Skechers Flutter Heart', 14, 'KIDS'),
+(69, 'Skechers Flutter Heart', 32.00, 'ABC', 'Skechers', 115.00, 'CASUAL', 'Skechers Flutter Heart.jpeg', 14, 'KIDS'),
 (70, 'SLIP-INS RF: D\'LUX WALKER - ORFORD', 45.00, 'ABC', 'Skechers', 80.00, 'CASUAL', 'D\'LUX WALKER - ORFORD.jpg', 3, 'MEN'),
-(71, 'Slip-ins: GO WALK 6', 37.00, 'ABC', 'Skechers', 120.00, 'CASUAL', '124569_GRY', 15, 'WOMEN'),
-(72, 'Viper Court - Pickleball', 43.00, 'ABC', 'Skechers', 95.00, 'CASUAL', 'Viper Court - Pickleball', 34, 'MEN'),
+(71, 'Slip-ins: GO WALK 6', 37.00, 'ABC', 'Skechers', 120.00, 'CASUAL', '124569_GRY.jpg', 15, 'WOMEN'),
+(72, 'Viper Court - Pickleball', 43.00, 'ABC', 'Skechers', 95.00, 'CASUAL', 'Viper Court - Pickleball.jpeg', 34, 'MEN'),
 (73, 'White-Highes', 41.00, 'ABC', 'Skechers', 180.00, 'CASUAL', 'White-Highes.jpg', 12, 'MEN');
 
 -- --------------------------------------------------------

@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     while ($rowproduct = mysqli_fetch_assoc($resultproduct)) {
       $card.='<div class="ca">
         <div class="card-header">
-          <img id="logoimg" src="/brands_imgs/'.$rowproduct['img_URL'].'" alt=""/>
+          <img id="logoimg" src="brands_imgs/'.$rowproduct['img_URL'].'" alt=""/>
           <h5 id="price">'.$rowproduct['price'].'$</h5>
         </div>
         <h5 class="shoe-name text-center">'.$rowproduct['product_name'].'</h5>
