@@ -107,29 +107,13 @@ if(isset($_SESSION['User'])) {
         </div>
   
         <div class="login">
-          <form action="login.php" method="post">
+          <form id="loginForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <label for="chk" aria-hidden="true">Login</label>
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="pswd" placeholder="Password">
-            <button id="loginbtn" name="loginbtn">Login</button>
+            <button id="userloginbtn" name="loginbtn">Login</button>
           </form>
-          <?php
-          if(@$_GET['Empty']==true){
-            ?>
-            <!-- todo : add ajax -->
-            <div class="alert-light text-danger text-center"><?php echo $_GET['Empty']?></div>
-          <?php
-          }
-          ?>
-
-          <?php
-          if(@$_GET['Invalid']==true){
-            ?>
-            <!-- todo : add ajax -->
-            <div class="alert-light text-danger text-center"><?php echo $_GET['Invalid']?></div>
-          <?php
-          }
-          ?>
+          <div id="responseMessage" class="alert-light text-danger text-center"></div>
         </div>
     </div>
     </div>
