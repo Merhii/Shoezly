@@ -27,7 +27,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 </div>
 <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
  '. $card . '</div>';
-
 }
 
 mysqli_close($conn);
