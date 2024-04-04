@@ -2,83 +2,56 @@
 
 include "config.php";
 
-$sql = "SELECT Brand_Name FROM `brand`";
-$result = mysqli_query($conn, $sql);
-while ($row = mysqli_fetch_assoc($result)) {
-    $brandName = $row['Brand_Name'];
-    $sql = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE Brand.Brand_Name = '$brandName'";
+$sqlBrand = "SELECT Brand_Name FROM `brand`";
+$resultBrand = mysqli_query($conn, $sqlBrand);
+
+while ($rowBrand = mysqli_fetch_assoc($resultBrand)) {
+    $brandName = $rowBrand['Brand_Name'];
+
+    $sqlProduct = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE Brand.Brand_Name = ?";
+
     if(isset($_GET['price'])){
         $price = $_GET['price'];
-        $sql.=" ORDER BY price $price";
-        $resultproduct = mysqli_query($conn, $sql);
-        $card = '';
-        while ($rowproduct = mysqli_fetch_assoc($resultproduct)) {
-        $card.='<div class="ca">
-            <div class="card-header">
-            <img id="logoimg" src="brands_imgs/'.$rowproduct['img_URL'].'" alt=""/>
-            <h5 id="price">'.$rowproduct['price'].'$</h5>
-            </div>
-            <h5 class="shoe-name text-center">'.$rowproduct['product_name'].'</h5>
-            <div class="d-flex justify-content-center">
-            <img  class="shoeimg" src="shoes_imgs/'.$rowproduct['imageURL'].'" alt="" />
-            </div>
-            <button class="view-product-btn">View Product</button>
-            </div>';
-        }
-        echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
-        <h2> <strong>'. $brandName. '</strong></h2>
-        </div>
-            <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
-            '. $card . '</div>';
+        $sqlProduct .= " ORDER BY price $price";
     }
     else if(isset($_GET['category'])) {
         $category = $_GET['category'];
-        $sql.=" AND category = '$category'";    
-        $resultproduct = mysqli_query($conn, $sql);
-        $card = '';
-        while ($rowproduct = mysqli_fetch_assoc($resultproduct)) {
+        $sqlProduct .= " AND category = ?";
+    }
+
+    $stmtProduct = mysqli_prepare($conn, $sqlProduct);
+
+    if(isset($_GET['category'])) {
+        mysqli_stmt_bind_param($stmtProduct, "ss", $brandName, $category);
+    } else {
+        mysqli_stmt_bind_param($stmtProduct, "s", $brandName);
+    }
+
+    mysqli_stmt_execute($stmtProduct);
+    $resultProduct = mysqli_stmt_get_result($stmtProduct);
+
+    $card = '';
+    while ($rowProduct = mysqli_fetch_assoc($resultProduct)) {
         $card.='<div class="ca">
             <div class="card-header">
-            <img id="logoimg" src="brands_imgs/'.$rowproduct['img_URL'].'" alt=""/>
-            <h5 id="price">'.$rowproduct['price'].'$</h5>
+            <img id="logoimg" src="brands_imgs/'.$rowProduct['img_URL'].'" alt=""/>
+            <h5 id="price">'.$rowProduct['price'].'$</h5>
             </div>
-            <h5 class="shoe-name text-center">'.$rowproduct['product_name'].'</h5>
+            <h5 class="shoe-name text-center">'.$rowProduct['product_name'].'</h5>
             <div class="d-flex justify-content-center">
-            <img  class="shoeimg" src="shoes_imgs/'.$rowproduct['imageURL'].'" alt="" />
+            <img  class="shoeimg" src="shoes_imgs/'.$rowProduct['imageURL'].'" alt="" />
             </div>
             <button class="view-product-btn">View Product</button>
             </div>';
-        }
-        echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
+    }
+
+    echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
         <h2> <strong>'. $brandName. '</strong></h2>
         </div>
-            <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
-            '. $card . '</div>';
-    }
-    // else if(isset($_GET['size'])) {
-    //     $size = $_GET['size'];
-    //     $sql.=" AND size = $size";
-    //     $resultproduct = mysqli_query($conn, $sql);
-    //     $card = '';
-    //     while ($rowproduct = mysqli_fetch_assoc($resultproduct)) {
-    //     $card.='<div class="ca">
-    //         <div class="card-header">
-    //         <img id="logoimg" src="brands_imgs/'.$rowproduct['img_URL'].'" alt=""/>
-    //         <h5 id="price">'.$rowproduct['price'].'$</h5>
-    //         </div>
-    //         <h5 class="shoe-name text-center">'.$rowproduct['product_name'].'</h5>
-    //         <div class="d-flex justify-content-center">
-    //         <img  class="shoeimg" src="shoes_imgs/'.$rowproduct['imageURL'].'" alt="" />
-    //         </div>
-    //         <button class="view-product-btn">View Product</button>
-    //         </div>';
-    //     }
-    //     echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
-    //     <h2> <strong>'. $brandName. '</strong></h2>
-    //     </div>
-    //         <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
-    //         '. $card . '</div>';
-    // }
+        <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
+        '. $card . '</div>';
+
+    mysqli_stmt_close($stmtProduct);
 }
 
 mysqli_close($conn);
