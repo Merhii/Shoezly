@@ -9,7 +9,7 @@ if(isset($_GET['product_id'])) {
     $product_name = $row['product_name'];
     $price = $row['price'];
     $size = $row['shoe_size'];
-    echo '<div class="shoe">
+    echo '<div class="shoe ' . $product_id . '">
             <img src="shoes_imgs/'.$row['imageURL'].'" alt="" />
           </div>
           <div class="popup-container">
@@ -26,7 +26,7 @@ if(isset($_GET['product_id'])) {
             </div>
             <div class="d-flex mb-2">
               <h5 class="mb-0 me-2">Quantity:</h5>
-              <input type="number" name="quantity" value="1" />
+              <input id="quantity-input" type="number" name="quantity" value="1" />
             </div>
             <div class="add-to-cart-c text-center">
               <button class="add-to-cart">Add to Cart</button>

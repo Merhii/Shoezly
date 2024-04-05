@@ -303,4 +303,5 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
   <script src="filteringnav.js"></script>
   <script src="nav&signin.js"></script>
   <script src="login.js"></script>
+  <script src="Card&Cart.js"></script>
 </html>
