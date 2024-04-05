@@ -39,20 +39,24 @@
 
 
 if(isset($_SESSION['User'])) {
-  echo '  <li  class="text-center dropdown">
-  <a href="#" id="logintxt"></a>
-  <div class="dd">
-  <div id="up_arrow"></div>
-  <ul>
-    <li><a href="logout.php">Logout</a></li>
+  echo '  <li  class="dropdown">
+  <div style="background: none; color:white;" class="btn-group">
+  <button style="background:none;border:0;color:white;" type="button" id="logintxt" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+</button>
+  <ul class="dropdown-menu ">
+    <li class="dd-container text-center"><a class="dd" href="logout.php">Logout</a></li>
+
   </ul>
-</div>
-  </li>';
+  </div>
+  </li>
+  ';
+
     $userName = $_SESSION['User'];
     echo '<script>
             $(document).ready(function() {
                 $.get("welcome.php", function(data) {
-                    $("#logintxt").text("Welcome ' . $userName . '");
+                    $("#logintxt").text("' . $userName . '");
                     console.log("hello");
                 $("#loginbtn").hide();
                 });

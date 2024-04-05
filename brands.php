@@ -59,20 +59,24 @@ if (isset($_GET['logout'])) {
 
 
 if(isset($_SESSION['User'])) {
-  echo '  <li  class="text-center dropdown">
-  <a href="#" id="logintxt"></a>
-  <div class="dd">
-  <div id="up_arrow"></div>
-  <ul>
-    <li><a href="logout.php">Logout</a></li>
+  echo '  <li  class="dropdown">
+  <div style="background: none; color:white;" class="btn-group">
+  <button style="background:none;border:0;color:white;" type="button" id="logintxt" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+</button>
+  <ul class="dropdown-menu ">
+    <li class="dd-container text-center"><a class="dd" href="logout.php">Logout</a></li>
+
   </ul>
-</div>
-  </li>';
+  </div>
+  </li>
+  ';
+
     $userName = $_SESSION['User'];
     echo '<script>
             $(document).ready(function() {
                 $.get("welcome.php", function(data) {
-                    $("#logintxt").text("Welcome ' . $userName . '");
+                    $("#logintxt").text("' . $userName . '");
                     console.log("hello");
                 $("#loginbtn").hide();
                 });
@@ -306,6 +310,7 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
       </div>
 </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="brands.js"></script>
 <script src="filteringnav.js"></script>
 <script src="nav&signin.js"></script>

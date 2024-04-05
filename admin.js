@@ -5,7 +5,8 @@ $(document).ready(function() {
         url: 'getBrands.php',
         success: function(data) {
             $('#Brand').html(data);
-            
+        }
+    });
             $.ajax({
                 type: 'GET',
                 url: 'getCat.php',
@@ -22,6 +23,5 @@ $(document).ready(function() {
                 }
             });
 
-        }
-    });
+      
 });
