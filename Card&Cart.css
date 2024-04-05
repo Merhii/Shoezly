@@ -75,6 +75,7 @@
     box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 999;
+    overflow: hidden;
 }
 .popup-container{
     margin: 5% 0 0 10%;
