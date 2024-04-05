@@ -29,9 +29,9 @@ if ($category !== '') {
 if ($price !== '') {
     $sqlproduct .= " ORDER BY price $price";
 }
-// if ($size !== '') {
-//     $sqlproduct .= " AND size = '$size'";
-// }
+if ($size !== '') {
+    $sqlproduct .= " AND shoe_size = '$size'";
+}
 
 
 if ($brand == '') {
@@ -65,6 +65,7 @@ if ($brand == '') {
     }
 }
 else{
+    $card = "";
     $result = $conn->query($sqlproduct);
     while ($rowproduct = mysqli_fetch_assoc($result)) {
         $card .= '<div class="ca ' . $rowproduct['product_id'] . '">
@@ -80,7 +81,7 @@ else{
             </div>';
     }
     echo '<div style="display:flex; justify-content:center;margin-top: 30px;margin-left: 10%; margin-right:10%;border-bottom:2px solid gray;">
-        <h2> <strong>' . $brandName . '</strong></h2>
+        <h2> <strong>' . $brand . '</strong></h2>
     </div>
     <div style="padding-left: 10%; padding-right:10%;" class="cards-container d-flex justify-content-center flex-wrap">
     ' . $card . '</div>';

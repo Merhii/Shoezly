@@ -18,6 +18,15 @@ $(document).ready(function(){
 
     let selectedFilters = {};
     
+    $('.logos').on('click', '.brandlogo', function(e) {
+        e.preventDefault();
+        let brand = $(this).attr("id");
+        selectedFilters.brand = brand;
+
+        applyFilters(selectedFilters);
+    });
+
+
     $('.filterItem').on('click', function(e) {
         e.preventDefault();
         let gender = $(this).text();
@@ -43,6 +52,12 @@ $(document).ready(function(){
                 price = "DESC";
             }
             selectedFilters.price = price;
+    
+            applyFilters(selectedFilters);
+        }
+        else if ($(this).hasClass('filtersizes')){
+            let size = $(this).text();
+            selectedFilters.size = size;
     
             applyFilters(selectedFilters);
         }

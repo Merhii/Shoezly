@@ -23,9 +23,9 @@ if ($category !== '') {
 if ($price !== '') {
     $sqlproduct .= " ORDER BY price $price";
 }
-// if ($size !== '') {
-//     $sqlproduct .= " AND size = '$size'";
-// }
+if ($size !== '') {
+    $sqlproduct .= " AND shoe_size = '$size'";
+}
 
 
 if ($gender == '') {

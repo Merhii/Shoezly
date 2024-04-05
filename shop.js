@@ -38,6 +38,12 @@ $(document).ready(function(){
     
             applyFilters(selectedFilters);
         }
+        else if ($(this).hasClass('filtersizes')){
+            let size = $(this).text();
+            selectedFilters.size = size;
+    
+            applyFilters(selectedFilters);
+        }
     });
 
     function applyFilters(filters) {
