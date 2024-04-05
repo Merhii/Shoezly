@@ -15,32 +15,15 @@
     <link rel="stylesheet" href="filteringnav.css" />
     <link rel="stylesheet" href="Card&Cart.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-      * {
-          margin: 0px;
-          padding: 0;
-        }
-    </style>
   </head>
   <body>
   <nav style="background-color: rgb(124, 110, 91);" class="fadein">
-    <div id="logo">Shoezly</div>
+  <div id="logo">Shoezly</div>
     <button class="navbar-mobile " type="button" id="menu-trigger">
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
       <li><a href="index.php" >Home </a></li>
-      <!-- <li class="dropdown">
-        <a href="shop.php">Shop </a>
-        <div class="dd">
-          <div id="up_arrow"></div>
-          <ul>
-            <li><a href="shop.php">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Children</a></li>
-          </ul>
-        </div>
-      </li> -->
       <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>
      
@@ -52,13 +35,6 @@
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
           </svg> 
         </a>
-        <!-- <div class="dd">
-          <div id="u_a_c"><div id="up_arrow"></div></div>
-          <ul>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
-          </ul>
-        </div> -->
       </li>
      
 
@@ -90,8 +66,77 @@ if(isset($_SESSION['User'])) {
 ?>
  </ul>
   </nav>
- 
-    <div class="main" style="padding-top: 7%;">
+ <!-- log and sign in pop up -->
+ <div class="modallogsign">
+  <button type="button" id="X-btn2"  class="btn-close X-btn" aria-label="Close"></button>
+    <div class="logsign">  	
+      <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+        <form method="post" action="signup.php">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="fnsignup" placeholder="First name">
+            <input type="text" name="lnsignup" placeholder="Last name">
+            <input type="email" name="emailsignup" placeholder="Email">
+            <input type="tel" name="phonesignup" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+          <input type="password" name="pswdsignup" placeholder="Password">
+            <button id="signupbtn" name="signupbtn">Sign up</button>
+          </form>
+          <?php
+          if(@$_GET['SignupEmpty']==true){
+            ?>
+            <!-- todo : add ajax -->
+            <div class="alert-light text-danger text-center"><?php echo $_GET['SignupEmpty']?></div>
+          <?php
+          }
+          ?>
+        </div>
+  
+        <div class="login">
+          <form id="loginForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="pswd" placeholder="Password">
+            <button id="userloginbtn" name="loginbtn">Login</button>
+          </form>
+          <div id="responseMessage" class="alert-light text-danger text-center"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- rate us pop up -->
+    <div id="rateUsModal" class="rate-us">
+    <button type="button" id="X-btn1"  class="btn-close X-btn" aria-label="Close"></button>
+  <div class="rate-us-content">
+    <h2 class="text-center">Rate Us</h2>
+    <form id="rateUsForm" action="">
+    <div class="ratings-wrapper">
+   <div data-productid="39" class="ratings">
+      <span data-rating="5">★</span>
+      <span data-rating="4">★</span>
+      <span data-rating="3">★</span>
+      <span data-rating="2">★</span>
+      <span data-rating="1">★</span>
+   </div>
+</div>
+<div class="pt-2" id="testimonial">
+<h5 style="color: white;" class="text-center">&darr; Write Us a Testimonial &darr;</h5>
+<textarea class="m-4" name="" id="" cols="10" rows="7" placeholder="Share Your Thoughts!"></textarea>
+<div class="d-flex justify-content-center">
+  <button type="submit"  class="submit-btn">
+    <p id="btnText">Submit</p>
+    <div class="checked">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+        <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+      </svg>
+    </div>
+  </button>
+  </div>
+
+</div>
+</form>
+  </div>
+</div>
+    <div class="main" style="padding-top: 80px;">
       <!-- filtering nav -->
       <div class="filtering">
           <ul>
@@ -99,7 +144,7 @@ if(isset($_SESSION['User'])) {
               <li class="filterItem">Women</li>
               <li class="filterItem">Kids</li>
           </ul>
-          <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray; min-width: 500px">Filter according to your interest</p>
+          <p class="togglefilteringdrop" style="width: 30%; text-align:center; border-bottom: 1px solid gray; min-width: 300px">Filter according to your interest</p>
           <div class="filteringdrop">
             <ul>
               <li class="togglefilterItem">Category</li>

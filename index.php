@@ -21,17 +21,6 @@
     </button>
     <ul class="navbar-list" id="navbarList">
       <li><a href="index.php" >Home </a></li>
-      <!-- <li class="dropdown">
-        <a href="shop.php">Shop </a>
-        <div class="dd">
-          <div id="up_arrow"></div>
-          <ul>
-            <li><a href="shop.php">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Children</a></li>
-          </ul>
-        </div>
-      </li> -->
       <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>
      
@@ -43,13 +32,6 @@
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
           </svg> 
         </a>
-        <!-- <div class="dd">
-          <div id="u_a_c"><div id="up_arrow"></div></div>
-          <ul>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
-          </ul>
-        </div> -->
       </li>
      
 
