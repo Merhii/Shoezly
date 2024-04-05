@@ -128,36 +128,7 @@ if(isset($_SESSION['User'])) {
     <div class="all-cards-container"></div>
     </div>
 
-    <div class="popup">
-      <div class="shoe">
-        <img src="imgs/image-removebg-preview.png" alt="" />
-      </div>
-      <div class="popup-container">
-        <h2>KENZO ELEPHANT WHITE ESPADRILLES</h2>
-        <div class="d-flex mb-1">
-          <h5 class="me-5">Price:</h5>
-          <h5>50$</h5>
-        </div>
-        <div class="d-flex size">
-          <h5>Size:</h5>
-          <div class="sizes">
-            <div class="size-box">10</div>
-            <div class="size-box">10</div>
-            <div class="size-box">10</div>
-            <div class="size-box">10</div>
-          </div>
-        </div>
-
-        <div class="d-flex">
-          <h5 class="mb-0 me-2">Quantity:</h5>
-
-          <input type="number" name="quantity" value="1" />
-        </div>
-        <div class="add-to-cart-c text-center">
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-      </div>
-      <button class="close-popup-btn">&times;</button>
+    <div class="product-popup">
     </div>
 
     <!-- cart -->
@@ -258,52 +229,6 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
 
  
   </body>
-  <script>
-    document
-      .querySelector(".view-product-btn")
-      .addEventListener("click", function () {
-        document.querySelector(".popup").classList.add("show");
-        document.body.classList.add("modal-open");
-        document.body.style.overflow = "hidden";
-      });
-
-    document
-      .querySelector(".close-popup-btn")
-      .addEventListener("click", function () {
-        document.querySelector(".popup").classList.remove("show");
-        document.body.classList.remove("modal-open");
-        document.body.style.overflow = "";
-    });
-
-    // cart
-    let shopping_cart = document.querySelector('.shopping-cart');
-    let cart_btns = document.querySelectorAll('.addToCart');
-
-    for (const cart_btn of cart_btns) {
-        cart_btn.onclick = (e) => {
-            let product_count = Number(shopping_cart.getAttribute('data-product-count')) || 0;
-            let qtyInput = cart_btn.parentNode.parentNode.querySelector('.quantity-input');
-            let quantity = parseInt(qtyInput.value);
-            shopping_cart.setAttribute('data-product-count', product_count + quantity);
-            shopping_cart.classList.add('active');
-            setTimeout(() => {
-            shopping_cart.classList.remove('active');
-            }, 1000);
-        };
-    }
-
-    function toggleCart() {
-        var cartPopup = document.querySelector('.cartPOPUP');
-        cartPopup.classList.toggle('open');
-    }
-
-    document.querySelector('.close').addEventListener('click', function() {
-        var cartPopup = document.querySelector('.cartPOPUP');
-        cartPopup.classList.remove('open');
-    });
-    // end cart
-
-  </script>
      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

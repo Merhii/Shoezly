@@ -53,4 +53,56 @@ $(document).ready(function(){
             }
         });
     }
+
+    // Show product popup
+    $('.main').on('click', '.view-product-btn', function(e) {
+        e.preventDefault();
+        let product_id = $(this).closest('.ca').attr('class').split(' ')[1];
+
+        $.ajax({
+            url: 'product-popup.php',
+            type: 'GET',
+            data: { product_id: product_id },
+            success: function(response) {
+                $(".product-popup").html(response).addClass("show");
+                $("body").addClass("modal-open").css("overflow", "hidden");
+            }
+        });
+    });
+
+    // Close product popup
+    $('.product-popup').on('click', '.close-popup-btn', function(e) {
+        e.preventDefault();
+        $(".product-popup").removeClass("show");
+        $("body").removeClass("modal-open").css("overflow", "");
+    });
+
+
+    // Cart
+    let shopping_cart = $('.shopping-cart');
+    let cart_btns = $('.addToCart');
+
+    cart_btns.click(function(e) {
+        let product_count = parseInt(shopping_cart.attr('data-product-count')) || 0;
+        let qtyInput = $(this).closest('.product').find('.quantity-input');
+        let quantity = parseInt(qtyInput.val());
+        shopping_cart.attr('data-product-count', product_count + quantity);
+        shopping_cart.addClass('active');
+        setTimeout(() => {
+        shopping_cart.removeClass('active');
+        }, 1000);
+    });
+
+    // Toggle cart popup
+    function toggleCart() {
+        var cartPopup = $('.cartPOPUP');
+        cartPopup.toggleClass('open');
+    }
+
+    // Close cart popup
+    $('.close').click(function() {
+        var cartPopup = $('.cartPOPUP');
+        cartPopup.removeClass('open');
+    });
 });
+

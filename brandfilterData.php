@@ -44,7 +44,7 @@ if ($brand == '') {
 
         if ($result->num_rows > 0) {
             while ($rowproduct = mysqli_fetch_assoc($result)) {
-                $card .= '<div class="ca">
+                $card .= '<div class="ca ' . $rowproduct['product_id'] . '">
                     <div class="card-header">
                     <img id="logoimg" src="brands_imgs/' . $rowproduct['img_URL'] . '" alt=""/>
                     <h5 id="price">' . $rowproduct['price'] . '$</h5>
@@ -67,7 +67,7 @@ if ($brand == '') {
 else{
     $result = $conn->query($sqlproduct);
     while ($rowproduct = mysqli_fetch_assoc($result)) {
-        $card .= '<div class="ca">
+        $card .= '<div class="ca ' . $rowproduct['product_id'] . '">
             <div class="card-header">
             <img id="logoimg" src="brands_imgs/' . $rowproduct['img_URL'] . '" alt=""/>
             <h5 id="price">' . $rowproduct['price'] . '$</h5>
