@@ -23,8 +23,6 @@ $(document).ready(function() {
     $(".modallogsign").toggle();
   })
 
-
-
   // Rate Us functionality
   $("#rateUsModal").hide();
   $(".rate-us-content").hide();

@@ -63,6 +63,7 @@ if(isset($_SESSION['User'])) {
 ?>
  </ul>
   </nav>
+
 <!-- log and sign in pop up -->
   <div class="modallogsign">
   <button type="button" id="X-btn2"  class="btn-close X-btn" aria-label="Close"></button>
@@ -336,10 +337,10 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
         </div>
       </div>
 </footer>
-   
+</body>
 <!-- testimonials carousel swiper--><script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="index.js"></script>
   <script src="nav&signin.js"></script>
-</body>
+  <script src="login.js"></script>
 </html>

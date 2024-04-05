@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if(isset($_SESSION['User'])) {
+    $userName = $_SESSION['User'];
+}
+
+if (isset($_GET['logout'])) {
+  session_unset();
+  session_destroy();
+  header("Location: login.php");
+  exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -282,4 +298,5 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
   <script src="shop.js"></script>
   <script src="filteringnav.js"></script>
   <script src="nav&signin.js"></script>
+  <script src="login.js"></script>
 </html>

@@ -7,6 +7,7 @@ $(document).ready(function(){
             $('.logos-slide').append(data); 
     }
     });
+
     $.ajax({
         type: 'GET',
         url: 'getBrandCards.php',
@@ -99,6 +100,10 @@ $(document).ready(function(){
         shopping_cart.removeClass('active');
         }, 1000);
     });
+
+    shopping_cart.click(function() {
+        toggleCart();
+    })
 
     // Toggle cart popup
     function toggleCart() {

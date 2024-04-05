@@ -82,7 +82,7 @@ $(document).ready(function(){
     let shopping_cart = $('.shopping-cart');
     let cart_btns = $('.addToCart');
 
-    cart_btns.click(function(e) {
+    cart_btns.click(function() {
         let product_count = parseInt(shopping_cart.attr('data-product-count')) || 0;
         let qtyInput = $(this).closest('.product').find('.quantity-input');
         let quantity = parseInt(qtyInput.val());
@@ -93,6 +93,10 @@ $(document).ready(function(){
         }, 1000);
     });
 
+
+    shopping_cart.click(function() {
+        toggleCart();
+    })
     // Toggle cart popup
     function toggleCart() {
         var cartPopup = $('.cartPOPUP');
