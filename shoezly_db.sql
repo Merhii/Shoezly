@@ -56,7 +56,7 @@ CREATE TABLE `Brand` (
 INSERT INTO `Brand` (`id`, `Brand_Name`, `img_URL`) VALUES
 (1, 'ADIDAS', 'Adidas-logo.webp'),
 (2, 'NIKE', 'swoosh-logo-black.jpeg'),
-(3, 'HUSHPUPPIES', 'png-clipart-hush-puppies-logo-icons-logos-emojis-shop-logos-thumbnail.png'),
+(3, 'HUSHPUPPIES', 'png-clipart-hush-puppies-logo-icons-logos-emojis-shop-logos-thumbnail-removebg-preview.png'),
 (4, 'Puma', '6ccdc81387540fceb241474103f0af5f.w828.h828.png'),
 (5, 'New Balance', 'new-balance.jpg'),
 (6, 'Vans', 'png-clipart-vans-t-shirt-logo-shoe-brand-t-shirt-angle-text.png'),
