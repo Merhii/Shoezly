@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<nav class="fadein">
+<nav style="background-color: rgb(124, 110, 91);" class="fadein">
     <div id="logo">Shoezly</div>
     <button class="navbar-mobile " type="button" id="menu-trigger">
       <i class="fas fa-bars"></i>
@@ -88,8 +88,9 @@ if(isset($_SESSION['User'])) {
             <div class="left-inner-container">
             <h2>Let's Chat</h2>
             <p>Whether you have a question, want to report something or simply want to connect.</p>
-              <br>
-              <p>Feel free to send us a message in the contact form</p>
+              <p>Feel free to send us a message in the contact form or contact us through &darr;</p>
+              <p>Email: Shoezly@gmail.com</p>
+              <p>Phone number: 71345731</p>
           </div>
             </div>
           <div class="right-container">
@@ -114,12 +115,24 @@ if(isset($_SESSION['User'])) {
 <h1 class="text-center pt-3 fadein " id="faq" style="color: #4b4237;">Frequently Asked Questions</h1>
 
 <div class="faqs-container fadein">
-	<div class="faq active">
+<div class="faq">
 		<h3 class="faq-title">
-			Why shouldn't we trust atoms?
+    What payment methods do you accept?
 		</h3>
 		<p class="faq-text">
-			They make up everything.
+			For delivery our only payment method is through cash on delivery arrival
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	<div class="faq">
+		<h3 class="faq-title">
+    What is your return policy?
+		</h3>
+		<p class="faq-text">
+    Our return policy allows you to return unworn shoes within 30 days of purchase for a full refund or exchange. Please refer to our Returns & Exchanges page for more details.
 		</p>
 		<button class="faq-toggle">
 			<i class="fas fa-chevron-down"></i>
@@ -129,10 +142,10 @@ if(isset($_SESSION['User'])) {
 	
 	<div class="faq">
 		<h3 class="faq-title">
-			What do you call someone with no body and no nose?
+    How can I track my order?
 		</h3>
 		<p class="faq-text">
-			Nobody knows.
+    Once your order has been shipped, you will receive a tracking number via email. You can use this tracking number to monitor the status of your delivery.
 		</p>
 		<button class="faq-toggle">
 			<i class="fas fa-chevron-down"></i>
@@ -142,10 +155,10 @@ if(isset($_SESSION['User'])) {
 	
 	<div class="faq">
 		<h3 class="faq-title">
-			What's the object-oriented way to become wealthy?
+    Do you offer discounts for bulk orders?
 		</h3>
 		<p class="faq-text">
-			Inheritance.
+    Yes, we offer discounts for bulk orders. Please contact our sales team for more information on bulk pricing.
 		</p>
 		<button class="faq-toggle">
 			<i class="fas fa-chevron-down"></i>
@@ -155,23 +168,35 @@ if(isset($_SESSION['User'])) {
 	
 	<div class="faq">
 		<h3 class="faq-title">
-			How many tickles does it take to tickle an octopus?
+    Can I cancel my order after it has been placed?
 		</h3>
 		<p class="faq-text">
-			Ten-tickles!
+    Orders can typically be canceled within 24 hours of placement. Please contact our customer service team as soon as possible if you need to cancel your order.
 		</p>
 		<button class="faq-toggle">
 			<i class="fas fa-chevron-down"></i>
 			<i class="fas fa-times"></i>
 		</button>
 	</div>
-	
-	<div class="faq">
+  <div class="faq">
 		<h3 class="faq-title">
-			What is: 1 + 1?
+    Are your shoes suitable for [specific activity/sport]?
 		</h3>
 		<p class="faq-text">
-			Depends on who are you asking.
+    We offer a range of shoes designed for various activities and sports. Please check the product descriptions for information on specific features and suitability.
+		</p>
+		<button class="faq-toggle">
+			<i class="fas fa-chevron-down"></i>
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+  <div class="faq">
+		<h3 class="faq-title">
+    Do you offer shoe customization or personalization services?
+		</h3>
+		<p class="faq-text">
+    At this time, we do not offer customization or personalization services for our shoes.
+
 		</p>
 		<button class="faq-toggle">
 			<i class="fas fa-chevron-down"></i>
@@ -179,6 +204,7 @@ if(isset($_SESSION['User'])) {
 		</button>
 	</div>
 </div>
+
 <h2 class="text-center pt-5 pb-2 fs-1 fadein" style="color: #4b4237;" id="our-policies">Our Policies</h2>
 <div id="policies" class="d-flex justify-content-center fadein">
 
@@ -192,26 +218,35 @@ if(isset($_SESSION['User'])) {
 
     </div>
     <div class="col-6">
-    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
-   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
-   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
-   - Returns and exchanges can be made in-store or online. <br>
-   - A 10% restocking fee applies to all returns made after 30 days. <br>
-
+    <h5 class="text-center fs-3" style="color: #4b4237;">Shipping Policy: </h5><br>
+   - We offer standard and expedited shipping options to cater to your needs. <br>
+- Estimated delivery times: Standard shipping (3-7 business days), expedited shipping (1-3 business days). <br>
+- Shipping is free for orders over $50; otherwise, standard shipping fee is $5 and expedited shipping fee is $15. <br>
+- We currently only ship within the United States. <br>
+- Tracking information will be provided once your order is processed.  <br>
     </div>
     <div class="col-6">
-    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
-   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
-   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
-   - Returns and exchanges can be made in-store or online. <br>
-   - A 10% restocking fee applies to all returns made after 30 days. <br>
+    <h5 class="text-center fs-3" style="color: #4b4237;">Privacy Policy: </h5><br>
+   - We respect the privacy of our customers and are committed to protecting their personal information. <br>
+ - Customer information, including name, address, and payment details, is securely stored and used solely for order processing and communication purposes. <br>
+- We do not sell or share customer information with third parties without consent. <br>
     </div>
     <div class="col-6">
-    <h5 class="text-center fs-3" style="color: #4b4237;">Return and Exchange Policy: </h5><br>
-   - Customers may return or exchange shoes within 30 days of purchase with original receipt. <br>
-   - Shoes must be unworn, in original packaging, and accompanied by tags. <br>
-   - Returns and exchanges can be made in-store or online. <br>
-   - A 10% restocking fee applies to all returns made after 30 days. <br>
+    <h5 class="text-center fs-3" style="color: #4b4237;">Quality Guarantee: </h5><br>
+    - We stand behind the quality of our products and offer a guarantee against manufacturing defects. <br> 
+- If a customer receives a defective product, they can contact customer service for a replacement or refund. <br>
+- The quality guarantee is valid for a specified period from the date of purchase, ranging from 6 months to 1 year. <br>
+    </div>
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Terms and Conditions: </h5><br>
+   - By making a purchase on our website, customers agree to abide by our terms and conditions, including those related to returns, shipping, and privacy. <br>
+ -We reserve the right to update or modify our policies at any time, with any changes being effective immediately upon posting on our website. <br>
+    </div>
+    <div class="col-6">
+    <h5 class="text-center fs-3" style="color: #4b4237;">Customer Service Policy: </h5><br>
+   - Our customer service team is available via email or phone during business hours to assist with any inquiries or issues. <br>
+- We strive to respond to all customer inquiries within 24 hours. <br>
+- Customer feedback is valued and helps us improve our products and services. <br>
     </div>
   </div>
   
