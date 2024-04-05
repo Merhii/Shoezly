@@ -13,18 +13,18 @@ if(isset($_GET['product_id'])) {
             <img src="shoes_imgs/'.$row['imageURL'].'" alt="" />
           </div>
           <div class="popup-container">
-            <h2>' . $product_name . '</h2>
-            <div class="d-flex mb-1">
-              <h5 class="me-5">Price:</h5>
+            <h2 class="text-center">' . $product_name . '</h2>
+            <div class="d-flex mb-2">
+              <h5 class="me-4">Price:</h5>
               <h5>' . $price . '$</h5>
             </div>
-            <div class="d-flex size">
-              <h5>Size:</h5>
-              <div class="sizes">
-                <div class="size-box">' . $size .'</div>"
-              </div>
+            <div class="d-flex mb-2">
+              <h5 class="me-5">Size:</h5>
+             
+                <h5>' . $size .'</h5>
+             
             </div>
-            <div class="d-flex">
+            <div class="d-flex mb-2">
               <h5 class="mb-0 me-2">Quantity:</h5>
               <input type="number" name="quantity" value="1" />
             </div>
