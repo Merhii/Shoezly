@@ -4,18 +4,22 @@ session_start();
 
 if(isset($_POST['email']) && isset($_POST['password']))
 {
-    $query="SELECT * FROM customers WHERE email='".$_POST['email']."' and password='".$_POST['password']."'  ";
-    $result=mysqli_query($conn,$query);
-    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Using prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM customers WHERE email=? AND password=?");
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $_SESSION['User']=$row['first_name']."   ".$row['last_name'];
+        $_SESSION['User'] = $row['first_name'] . " " . $row['last_name'];
         echo "Login successful";
-    }
-    else{
+    } else {
         echo "Wrong UserName or Password";
     }
-}
-else{
+} else {
     echo "not working";
 }

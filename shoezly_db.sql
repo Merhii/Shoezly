@@ -204,8 +204,9 @@ CREATE TABLE `shipments` (
 
 CREATE TABLE `Testimonial` (
   `id` int(11) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
   `Rating` int(11) NOT NULL,
-  `descripton` text NOT NULL
+  `description_txt` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

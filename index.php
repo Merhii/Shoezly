@@ -122,7 +122,7 @@ if(isset($_SESSION['User'])) {
 </div>
 <div class="pt-2" id="testimonial">
 <h5 style="color: white;" class="text-center">&darr; Write Us a Testimonial &darr;</h5>
-<textarea class="m-4" name="" id="" cols="10" rows="7" placeholder="Share Your Thoughts!"></textarea>
+<textarea class="m-4" name="" id="testimonialDescription" cols="10" rows="7" placeholder="Share Your Thoughts!"></textarea>
 <div class="d-flex justify-content-center">
   <button type="submit"  class="submit-btn">
     <p id="btnText">Submit</p>

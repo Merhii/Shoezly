@@ -6,6 +6,17 @@ $(function () {
       $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     });
 });
+
+$.ajax({
+  url: 'getTestimonials.php',
+  type: 'GET',
+  success: function(data) {
+      $('.swiper-wrapper').html(data);
+  },
+  error: function(xhr, status, error) {
+      console.error(error);
+  }
+});
 });
 
 
@@ -52,6 +63,3 @@ var swiper = new Swiper(".swiper-container", {
     },
   },
 });
-
-
-
