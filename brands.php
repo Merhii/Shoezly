@@ -214,6 +214,10 @@ if(isset($_SESSION['User'])) {
     <!-- cards -->
     <div class="all-cards-container"></div>
     </div>
+
+    <div class="product-popup">
+    </div>
+    
     <!-- cart -->
     <div class="cartPOPUP">
         <h1>Shopping Cart</h1>
@@ -315,5 +319,5 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
 <script src="filteringnav.js"></script>
 <script src="nav&signin.js"></script>
 <script src="login.js"></script>
-<script src="Card&Cart.js"></script>
+  <script src="Card&Cart.js"></script>
 </html>

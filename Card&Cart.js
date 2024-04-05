@@ -13,6 +13,10 @@ $(document).ready(function(){
                 $("body").addClass("modal-open").css("overflow", "hidden");
             }
         });
+        if ($(".cartPOPUP").hasClass("open")) {
+            $('.cartPOPUP').removeClass('open');
+            $("body").removeClass("modal-open").css("overflow", "");
+        }
     });
 
     // Close product popup

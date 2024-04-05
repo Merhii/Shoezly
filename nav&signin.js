@@ -10,17 +10,19 @@ $(document).ready(function() {
    $("#loginbtn").click(function() {
        $(".logsign").toggle();
        $(".modallogsign").toggle();
+       $("body").addClass("modal-open").css("overflow", "hidden");
    });
-   // Close Rate Us modal if clicked outside of it
    $(window).click(function(event) {
        if (event.target == $(".modallogsign")[0]) {
            $(".logsign").toggle();
            $(".modallogsign").toggle();
+           $("body").removeClass("modal-open").css("overflow", "");
        }
    });
    $("#X-btn2").click(function() {
        $(".logsign").toggle();
        $(".modallogsign").toggle();
+       $("body").removeClass("modal-open").css("overflow", "");
    })
 
    // Rate Us functionality
@@ -31,6 +33,7 @@ $(document).ready(function() {
        $("#rateUsModal").toggle();
        $(".rate-us-content").toggle();
        resetSubmitButton();
+       $("body").addClass("modal-open").css("overflow", "hidden");
    });
    // Close Rate Us modal if clicked outside of it
    $(window).click(function(event) {
@@ -38,6 +41,7 @@ $(document).ready(function() {
            $("#rateUsModal").toggle();
            $(".rate-us-content").toggle();
            resetSubmitButton();
+       $("body").removeClass("modal-open").css("overflow", "");
        }
    });
 
@@ -45,6 +49,8 @@ $(document).ready(function() {
        $("#rateUsModal").toggle();
        $(".rate-us-content").toggle();
        resetSubmitButton();
+       $("body").removeClass("modal-open").css("overflow", "");
+
    })
 
    // rate us stars
