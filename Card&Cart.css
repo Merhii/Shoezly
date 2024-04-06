@@ -278,6 +278,7 @@ body.modal-open .main {
 
 .CartItems{
     margin-top: 10px;
+    height: 400px;
 }
 
 .CartItems .item{
@@ -296,6 +297,7 @@ body.modal-open .main {
 
 .CartItems .remove button{
     background-color: #6b6154;
+    width: 30px;
 }
 
 

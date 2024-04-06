@@ -2,7 +2,7 @@
 session_start();
 include "config.php";
 
-if (isset($_POST['product_id'])) {
+if (isset($_POST['product_id'])){
     $product_id = $_POST['product_id'];
     $_SESSION['id'] = $product_id;
     $cartHtml = generateCartHtml($_SESSION['id'], $conn);

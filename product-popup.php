@@ -1,7 +1,8 @@
 <?php
 include "config.php";
 
-if(isset($_GET['product_id'])) {
+if(isset($_GET['product_id']) && isset($_GET['itemCount'])) {
+    $itemCount = $_GET['itemCount'];
     $product_id = $_GET['product_id'];
     $sql = "SELECT * FROM products WHERE product_id = $product_id";
     $result = mysqli_query($conn, $sql);
@@ -28,16 +29,16 @@ if(isset($_GET['product_id'])) {
             <div class="d-flex mb-2">
               <h5 class="mb-0 me-2">Available quantity:</h5>
                <h5>' .$quantity.'</h5>
-            </div>'
+            </div>
+            <div class="add-to-cart-c text-center">'
           
             ?>
             <?php
-            if($quantity!=0){
-            echo  '  <div class="add-to-cart-c text-center">
-            <button class="add-to-cart">Add to Cart</button>';
-            }else
+            if($quantity!=0 && $quantity > $itemCount){
+            echo  '<button class="add-to-cart">Add to Cart</button>';
+            }else if($quantity==0 || $quantity <= $itemCount) {
           echo '<h4 class=out-of-stock>Product out of Stock</h4>';
-
+            }
         echo '</div>
             </div>
             <button class="close-popup-btn">&times;</button>
