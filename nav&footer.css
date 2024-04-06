@@ -458,7 +458,9 @@ justify-content: center;
  flex-direction: column;
  justify-content: center;
 }
-
+#testimonial textarea{
+  padding: 5px;
+}
 
 
 .submit-btn {

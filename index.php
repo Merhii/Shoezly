@@ -177,11 +177,11 @@ if(isset($_SESSION['User'])) {
             </p>
            
             <p class="text-blk info">
-              Lorem ipsum dolor sit amet, consectvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+             
             </p>
-           <h3>Rating: 5/5</h3>
+           <h3></h3>
             <p class="text-blk name">
-              Jane Doe
+              
             </p>
            
           </div>
@@ -193,11 +193,11 @@ if(isset($_SESSION['User'])) {
             </p>
            
             <p class="text-blk info">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elemsadsad  sad sad sad sad sad sadvdsfdsfentum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed estsads sadsadsad sadsa dsad sad sadas daa aa.
+             
             </p>
-              <h3>Rating: 5/5</h3>
+              <h3></h3>
             <p class="text-blk name">
-              Jane Doe
+             
             </p>
            
           </div>
@@ -209,11 +209,11 @@ if(isset($_SESSION['User'])) {
           </p>
          
           <p class="text-blk info">
-            Lorem ipsum dols elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+            
           </p>
-            <h3>Rating: 5/5</h3>
+            <h3></h3>
           <p class="text-blk name">
-            Jane Doe
+           
           </p>
          
         </div>
@@ -225,11 +225,11 @@ if(isset($_SESSION['User'])) {
           </p>
          
           <p class="text-blk info">
-           sadsadsa Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+         
           </p>
-            <h3>Rating: 5/5</h3>
+            <h3></h3>
           <p class="text-blk name">
-            Jane Doe
+           
           </p>
          
         </div>
@@ -241,11 +241,11 @@ if(isset($_SESSION['User'])) {
           </p>
          
           <p class="text-blk info">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+           
           </p>
-            <h3>Rating: 5/5</h3>
+            <h3></h3>
           <p class="text-blk name">
-            Jane Doe
+           
           </p>
          
         </div>
@@ -257,11 +257,11 @@ if(isset($_SESSION['User'])) {
           </p>
          
           <p class="text-blk info">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+           
           </p>
-            <h3>Rating: 5/5</h3>
+            <h3></h3>
           <p class="text-blk name">
-            Jane Doe
+           
           </p>
          
         </div>

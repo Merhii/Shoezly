@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if(isset($_SESSION['User'])) {
+    $userName = $_SESSION['User'];
+}
+
+if (isset($_GET['logout'])) {
+  session_unset();
+  session_destroy();
+  header("Location: login.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -377,6 +391,7 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
         </div>
       </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="nav&signin.js"></script>
   <script src="contactus.js"></script>
 </body>

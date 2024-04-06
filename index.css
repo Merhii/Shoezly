@@ -209,6 +209,7 @@ background-attachment:fixed;
   }
   
   .responsive-container-block.bg {
+    cursor: default;
     flex-direction: column;
     align-items: center;
     height: auto;
