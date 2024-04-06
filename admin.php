@@ -9,6 +9,9 @@ session_start();
     <title>Admin</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+<?php
+echo $_SESSION["User'"];
+?>
 <body>
 <h2>Add Item </h2>
 
