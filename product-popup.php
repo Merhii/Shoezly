@@ -9,6 +9,7 @@ if(isset($_GET['product_id'])) {
     $product_name = $row['product_name'];
     $price = $row['price'];
     $size = $row['shoe_size'];
+    $quantity=$row['stock_quantity'];
     echo '<div class="shoe ' . $product_id . '">
             <img src="shoes_imgs/'.$row['imageURL'].'" alt="" />
           </div>
@@ -25,12 +26,19 @@ if(isset($_GET['product_id'])) {
              
             </div>
             <div class="d-flex mb-2">
-              <h5 class="mb-0 me-2">Quantity:</h5>
-              <input id="quantity-input" type="number" name="quantity" value="1" />
-            </div>
-            <div class="add-to-cart-c text-center">
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
+              <h5 class="mb-0 me-2">Available quantity:</h5>
+               <h5>' .$quantity.'</h5>
+            </div>'
+          
+            ?>
+            <?php
+            if($quantity!=0){
+            echo  '  <div class="add-to-cart-c text-center">
+            <button class="add-to-cart">Add to Cart</button>';
+            }else
+          echo '<h4 class=out-of-stock>Product out of Stock</h4>';
+
+        echo '</div>
             </div>
             <button class="close-popup-btn">&times;</button>
           </div>';

@@ -173,7 +173,7 @@ mix-blend-mode: darken;
     }
 }
 .add-to-cart {
-    width: 70%;
+    width: 80%;
     align-self: center;
     margin-top: 30px;
     border: 1px solid gray;
@@ -181,6 +181,10 @@ mix-blend-mode: darken;
     padding: 5px 10px;
     background-color: #4b4237;
     color: white;
+    }
+    .out-of-stock{
+        color: red;
+        margin-top: 5%;
     }
 
     .close-popup-btn {
