@@ -365,6 +365,12 @@ body.modal-open .main {
     }
 }
 
+@media only screen and (max-width: 930px) {
+    .cartPOPUP h1{
+        font-size: larger;
+    }
+}
+
 @media only screen and (max-width: 700px) {
     .cartPOPUP h1{
         font-size: x-large;
@@ -373,7 +379,7 @@ body.modal-open .main {
 
 @media only screen and (max-width: 600px) {
     .cartPOPUP h1{
-        font-size: larger;
+        font-size: medium;
     }
     .CartItems .totalPrice{
         display: none;
