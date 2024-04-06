@@ -122,10 +122,6 @@
     background-color: white;
 }
 
-.filtercategories:first-child, .filtersizes:first-child{
-    border: none;
-}
-
 .filtercategories, .filtersizes, .ascdesc{
     cursor: pointer;
     margin-right: 20px;

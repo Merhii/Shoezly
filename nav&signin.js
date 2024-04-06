@@ -20,8 +20,8 @@ $(document).ready(function() {
        }
    });
    $("#X-btn2").click(function() {
-       $(".logsign").toggle();
-       $(".modallogsign").toggle();
+       $(".logsign").hide();
+       $(".modallogsign").hide();
        $("body").removeClass("modal-open").css("overflow", "");
    })
 
@@ -30,10 +30,23 @@ $(document).ready(function() {
    $(".rate-us-content").hide();
    $("#rate-us-link").click(function(event) {
        event.preventDefault();
-       $("#rateUsModal").toggle();
-       $(".rate-us-content").toggle();
-       resetSubmitButton();
-       $("body").addClass("modal-open").css("overflow", "hidden");
+       $.ajax({
+        type: 'POST',
+        url: 'checklogged.php',
+        success: function(response) {
+            if (response.trim() === 'logged') {
+                $("#rateUsModal").toggle();
+                $(".rate-us-content").toggle();
+                resetSubmitButton();
+                $("body").addClass("modal-open").css("overflow", "hidden");
+            } else {
+                $(".logsign").show();
+                $(".modallogsign").show();
+                $("body").addClass("modal-open").css("overflow", "hidden");
+            }
+        }
+    });
+       
    });
    // Close Rate Us modal if clicked outside of it
    $(window).click(function(event) {

@@ -358,21 +358,5 @@ Welcome to Shoezly, your premier destination for footwear! With multiple conveni
   <script src="index.js"></script>
   <script src="nav&signin.js"></script>
   <script src="login.js"></script>
-  <script>
-  $(document).ready(function() {
-    // Function to handle click on "Rate Us" link
-    $('#rate-us-link').click(function(event) {
-      // Check if the user is not logged in
-      <?php if(!isset($_SESSION['User'])) { ?>
-        event.preventDefault(); // Prevent the default link behavior
-
-        $("#rateUsModal").hide();
-   $(".rate-us-content").hide();
-        $(".logsign").toggle();
-           $(".modallogsign").toggle();
-
-      <?php } ?>
-    });
-  });
 </script>
 </html>
