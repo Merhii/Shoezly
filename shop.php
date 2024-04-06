@@ -160,6 +160,7 @@ if(isset($_SESSION['User'])) {
       <!-- filtering nav -->
       <div class="filtering">
           <ul>
+              <li id="resetfiltering">All</li>
               <li class="filterItem">Men</li>
               <li class="filterItem">Women</li>
               <li class="filterItem">Kids</li>

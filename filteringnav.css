@@ -17,7 +17,7 @@
     margin: 0;
 }
 
-.filterItem, .togglefilterItem{
+.filterItem, .togglefilterItem, #resetfiltering{
     margin-right: 100px;
     position: relative;
     padding: 10px;
@@ -29,12 +29,12 @@
     cursor: pointer;
 }
 
-.filterItem:last-child, .togglefilterItem:last-child {
+.togglefilterItem:last-child {
     margin-right: 0;
 }
 
 
-.filterItem::after, .togglefilterItem::after {
+.filterItem::after, .togglefilterItem::after, #resetfiltering::after {
     content: '';
     position: absolute;
     left: 0;
@@ -46,7 +46,7 @@
     transition: 0.3s;
 }
 
-.filterItem:hover::after {
+.filterItem:hover::after, #resetfiltering:hover::after {
     width: 100%;
 }
 

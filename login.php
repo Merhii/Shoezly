@@ -17,8 +17,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
         $row = $result->fetch_assoc();
         if($row['user_type']=="admin"){
             $_SESSION['User'] = $row['first_name'];
-            header("location:admin.php");
-            exit();
+            echo "admin logged in";
         }
         elseif($row['user_type']=="user"){
         $_SESSION['User'] = $row['first_name'] . " " . $row['last_name'];

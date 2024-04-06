@@ -17,6 +17,18 @@ $(document).ready(function(){
     });
 
     let selectedFilters = {};
+
+    $('.filtering ul #resetfiltering').on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'GET',
+            url: 'getBrandCards.php',
+            success: function(data) {
+                $('.all-cards-container').empty().append(data); 
+        }
+        });
+        selectedFilters = {};
+    });
     
     $('.logos').on('click', '.brandlogo', function(e) {
         e.preventDefault();

@@ -17,7 +17,9 @@ $(document).ready(function(){
             success: function(response) {
             if (response.trim() === 'Login successful') {
                 location.reload();
-            } else {
+            } else if((response.trim() === 'admin logged in')) {
+                window.location.href = 'admin.php';
+            } else{
                 $('#responseMessage').html(response);
             }
             }
