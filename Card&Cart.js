@@ -58,25 +58,22 @@ $(document).ready(function(){
 
     // add to cart
     $('.product-popup').on('click', '.add-to-cart', function(e) {
-        console.log("hello");
         e.preventDefault();
         e.preventDefault();
         let product_id = $(this).closest('.product-popup').find('.shoe').attr('class').split(' ')[1];
-        let quantity = $(this).closest('.product-popup').find('#quantity-input').val();
-
-        console.log(product_id, quantity);
         $.ajax({
             url: 'addToCart.php',
             type: 'POST',
-            data: { product_id: product_id, quantity: quantity },
+            data: { product_id: product_id },
             success: function(cartHtml) {
-                $('.CartItems').html(cartHtml);
+                $('.CartItems').append(cartHtml);
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
             }
         });
     });
+
 
     // Close cart popup
     $('.close').click(function() {

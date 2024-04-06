@@ -19,7 +19,7 @@ function generateCartHtml($product_id, $conn) {
     $result = $stmt->get_result();
 
     if ($product = $result->fetch_assoc()) {
-        $html .= '<div class="item">
+        $html .= '<div class="item ' . $product_id . '">
                         <div class="image">
                             <img src="shoes_imgs/'.$product['imageURL'].'">
                         </div>

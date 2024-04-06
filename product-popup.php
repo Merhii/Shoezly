@@ -45,4 +45,3 @@ if(isset($_GET['product_id'])) {
 }
 
 mysqli_close($conn);
-?>
