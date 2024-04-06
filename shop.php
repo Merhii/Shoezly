@@ -200,18 +200,6 @@ if(isset($_SESSION['User'])) {
     <div class="cartPOPUP">
         <h1>Shopping Cart</h1>
         <div class="CartItems">
-            <div class="item">
-                <div class="image">
-                    <img src="image.png">
-                </div>
-                <div class="name">NAME
-                </div>
-                <div class="totalPrice">50$</div>
-                <div class="remove">
-                    <button>&times;</button>
-                </div>
-            </div>
-
         </div>
         <div class="btn">
             <button class="close">Close</button>
