@@ -9,27 +9,33 @@ include 'config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Select Location</title>
+    <link rel="stylesheet" href="Card&Cart.css">
     <!-- Include Google Maps API script with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <style>
 #img-container {
-    background-image: url("/imgs/ship.jpg");
-    height: 125vh;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-background-position: right top;
-display: flex;
-background-attachment:fixed;
+    background-image: url("imgs/ship.jpg");
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
+    display: flex;
+    background-attachment:fixed;
+    position: absolute;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.ca{
+    height: 350px;
 }
         #map {
             height: 400px;
@@ -59,14 +65,14 @@ background-attachment:fixed;
         if (!empty($cartItemsArray)) {
             $_SESSION['cart-toPurchase'] = [];
             echo "<h2>Cart Items:</h2>";
-    
+            echo '<div class="all-cards-container">';
             $productIds = array_map(function($item) {
                 return $item['productId'];
             }, $cartItemsArray);
     
             $productIdsString = implode(",", $productIds);
     
-            $sql = "SELECT `product_id`, `product_name`, `shoe_size`, `description`, `Brand`, `price`, `category`, `imageURL`, `stock_quantity`, `gender` FROM `products` WHERE `product_id` IN ($productIdsString)";
+            $sql = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE `product_id` IN ($productIdsString)";
             $result = mysqli_query($conn, $sql);
       if ($result) {
         $Bill = 0; 
@@ -88,10 +94,18 @@ background-attachment:fixed;
             }
         }
 
-      
-        echo "Product Name: " . $row['product_name'] . "<br>";
-        echo "Quantity: " . $quantity . "<br>";
-        echo "Price: " . $total . "<br>";
+        echo '
+        <div class="ca 26">
+        <div class="card-header">
+          <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt="">
+        </div>
+        <h5 class="shoe-name text-center">' . $row['product_name'] . '</h5>
+        <div class="d-flex justify-content-center">
+        <img class="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="">
+        </div>
+        <div style="
+        align-self: center;
+       transform: translateY(-80px);">Quantity: ' . $quantity . '<br> Price: ' . $total . '</div></div>';
         $Bill += $total;
     }
 
@@ -162,6 +176,6 @@ echo "Form was not submitted.";
     <button type="submit" name="submit" class="btn btn-primary">Confitm Payment</button>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script> -->
 </body>
 </html>
