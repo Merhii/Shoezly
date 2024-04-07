@@ -226,7 +226,11 @@ if(isset($_SESSION['User'])) {
         </div>
         <div class="btn">
             <button class="close">Close</button>
-            <button class="checkOut">Check Out</button>
+            <form id="checkOut" action="checkout.php" method="post">
+            
+            <input type="hidden" id="cartItemsInput" name="cartItems" value="">
+            <button class="checkOut" name="checkOut" type="submit">Check Out</button>
+        </form>
         </div>
     </div>
 
