@@ -1,71 +1,6 @@
 <?php
 session_start();
-include 'config.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_SESSION['User'])) {
-        $userFullName = $_SESSION['User'];
-        $userName = $userFullName;
-    }
-
-    $cartItemsJson = $_POST["cartItems"];
-    $cartItemsArray = json_decode($cartItemsJson, true);
-    
-    echo "User Name: " . $userName . "<br>";
-
-    if (!empty($cartItemsArray)) {
-        $_SESSION['cart-toPurchase'] = [];
-        echo "<h2>Cart Items:</h2>";
-
-        $productIds = array_map(function($item) {
-            return $item['productId'];
-        }, $cartItemsArray);
-
-        $productIdsString = implode(",", $productIds);
-
-        $sql = "SELECT `product_id`, `product_name`, `shoe_size`, `description`, `Brand`, `price`, `category`, `imageURL`, `stock_quantity`, `gender` FROM `products` WHERE `product_id` IN ($productIdsString)";
-        $result = mysqli_query($conn, $sql);
-      
-        if ($result) {
-            $Bill = 0;
-        
-            while ($row = mysqli_fetch_assoc($result)) {
-                $total = 0;
-                $quantity = 0;
-        
-                foreach ($cartItemsArray as $item) {
-                    if ($item['productId'] == $row['product_id']) {
-                        $quantity = $item['quantity'];
-                        $total += $row['price'] * $quantity;
-
-                        $_SESSION['cart-toPurchase'][] = [
-                            'productId' => $item['productId'],
-                            'quantity' => $quantity,
-                            'total' => $total
-                        ];
-                        break;
-                    }
-                }
-
-                echo "Product ID: " . $row['product_id'] . "<br>";
-                echo "Product Name: " . $row['product_name'] . "<br>";
-                echo "Quantity: " . $quantity . "<br>";
-                echo "Total: " . $total . "<br>";
-                $Bill += $total;
-            }
-        
-            echo "Total Bill: " . $Bill . "<br>";
-            $_SESSION['Bill'] = $Bill; 
-        }
-        else {
-            echo "No items in the cart.";
-        }
-    } else {
-        echo "Cart is empty.";
-    }
-} else {
-    echo "Form was not submitted.";
-}
+include 'config.php';          
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,13 +12,102 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Include Google Maps API script with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <style>
+#img-container {
+    background-image: url("/imgs/ship.jpg");
+    height: 125vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+background-position: right top;
+display: flex;
+background-attachment:fixed;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
         #map {
             height: 400px;
             width: 100%;
         }
+
     </style>
 </head>
 <body>
+    <div id="img-container">
+        <div class="overlay"></div>
+        <div>
+        </div>
+</div>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_SESSION['User'])) {
+            $userFullName = $_SESSION['User'];
+            $userName = $userFullName;
+        }
+    
+        $cartItemsJson = $_POST["cartItems"];
+        $cartItemsArray = json_decode($cartItemsJson, true);
+        
+        echo "User Name: " . $userName . "<br>";
+    
+        if (!empty($cartItemsArray)) {
+            $_SESSION['cart-toPurchase'] = [];
+            echo "<h2>Cart Items:</h2>";
+    
+            $productIds = array_map(function($item) {
+                return $item['productId'];
+            }, $cartItemsArray);
+    
+            $productIdsString = implode(",", $productIds);
+    
+            $sql = "SELECT `product_id`, `product_name`, `shoe_size`, `description`, `Brand`, `price`, `category`, `imageURL`, `stock_quantity`, `gender` FROM `products` WHERE `product_id` IN ($productIdsString)";
+            $result = mysqli_query($conn, $sql);
+      if ($result) {
+        $Bill = 0; 
+      while ($row = mysqli_fetch_assoc($result)) {
+        $total = 0;
+        $quantity = 0;
+
+        foreach ($cartItemsArray as $item) {
+            if ($item['productId'] == $row['product_id']) {
+                $quantity = $item['quantity'];
+                $total += $row['price'] * $quantity;
+
+                $_SESSION['cart-toPurchase'][] = [
+                    'productId' => $item['productId'],
+                    'quantity' => $quantity,
+                    'total' => $total
+                ];
+                break;
+            }
+        }
+
+      
+        echo "Product Name: " . $row['product_name'] . "<br>";
+        echo "Quantity: " . $quantity . "<br>";
+        echo "Price: " . $total . "<br>";
+        $Bill += $total;
+    }
+
+    echo "Total Bill: " . $Bill . "<br>";
+    $_SESSION['Bill'] = $Bill; 
+}
+else {
+    echo "No items in the cart.";
+}
+} else {
+echo "Cart is empty.";
+}
+} else {
+echo "Form was not submitted.";
+}?>
+
     <!-- <h1>Select Your Location</h1>
     <div id="map"></div>
     <script>

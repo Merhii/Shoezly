@@ -23,9 +23,8 @@ $resultproduct = $resultproduct->fetch_assoc()
 <body>
     <a href="index.php" class="btn btn-primary mb-3" >Back</a>
     <h2 class="text-center mb-5">View Product </h2>
-    <div>
+    <div class="d-flex justify-content-center align-items-center flex-column">
         <img class="mb-4" style="width: 30%;" src="../shoes_imgs/<?php echo $resultproduct['imageURL'] ?>" alt="" />
-        <div>ID: <?php echo $id ?></div>
         <div>Name: <?php echo $resultproduct['product_name'] ?></div>
         <div>Price: <?php echo $resultproduct['price'] ?></div>
         <div>Brand: <?php echo $resultproduct['Brand'] ?></div>
