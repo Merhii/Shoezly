@@ -1,7 +1,8 @@
 <?php
 session_start(); // Start the session
-
-if (!empty($_SESSION['order_info'] && !empty($_SESSION['lat']))) {
+include 'config.php';
+if (isset($_POST['submit'])) {
+    if (!empty($_SESSION['order_info'])) {
     $orderDetails = explode('<br>', $_SESSION['order_info']);
 
 
@@ -19,7 +20,7 @@ if (!empty($_SESSION['order_info'] && !empty($_SESSION['lat']))) {
     $sql1 = "SELECT customer_id FROM customers WHERE first_name = ".$orderDetails[0].";"
     $result = $conn->query($sql1);
     $customer = $result->fetch_assoc();
-
+echo $customer;
     $today = date('Y-m-d');
  
     // Query 2: Insert into orders
@@ -46,9 +47,8 @@ $conn->query($sql67);
 
 $conn->close();
 
-} 
-else {
-    
+} }
+else { 
     echo "No order information available.";
 }
 ?>

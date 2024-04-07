@@ -2,8 +2,12 @@
 session_start();
 include 'config.php';
 
-if(isset($_SESSION['UserName'])) {
-    $userName = $_SESSION['UserName'];
+if(isset($_SESSION['User'])) {
+    $userFullName = $_SESSION['User'];
+    $nameParts = explode(" ", $userFullName);
+
+    // Access the first name
+    $userName = $nameParts[0];
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -146,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </script>
     <form  method="post" action="confirm.php">
-<button type="submit" class="btn btn-primary">Confitm Payment</button>
+<button type="submit" name="submit" class="btn btn-primary">Confitm Payment</button>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script>
