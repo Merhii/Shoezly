@@ -155,18 +155,18 @@ if(isset($_SESSION['User'])) {
       </h2>
   </div>
   </div>
-<div class="white-bg">
+
   <h2 class="text-center text-blk title">Our Featured Shoe</h2>
 
   <div class="text-center" id="video-container">
   <video id="main-video" controls muted autoplay>
-    <source src="/imgs/video.mp4" type="video/mp4">
+    <source src="video.mp4" type="video/mp4">
   
   </video>
   </div>
 
  <!-- testimonials -->
- <div id="testimonials" >
+ <div id="testimonials" class="white-bg">
  <div class="responsive-container-block bg">
     <p class="text-blk title">Testimonials</p>
     <div class="btn-testimonials ">
@@ -280,7 +280,7 @@ if(isset($_SESSION['User'])) {
     
   </div>
   </div>
-  </div>
+ 
       <!-- Site footer -->
       <footer class="site-footer">
       <div class="container">

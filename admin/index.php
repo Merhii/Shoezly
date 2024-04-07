@@ -20,19 +20,20 @@ $resultproduct = mysqli_query($conn, $sqlproduct);
 </head>
 
 <body>
-    <h2>Shoes Shop </h2>
-    <div>
-        <a href="index.php">View Shop</a>
+    <h2 class="text-center">Shoezly</h2>
+    <div class="d-flex justify-content-center">
+        <a href="index.php" class="btn btn-secondary m-5">View Shop</a>
+    
+    <a href='create.php' class="btn btn-secondary m-5">Add New Shoe</a>
     </div>
-    <a href='create.php'>Add New Shoe</a>
-    <table>
-        <thead>
-            <th scope="col" style="width:30%;border-right: 1px solid black;">Name</th>
-            <th scope="col" style="width:10%;border-right: 1px solid black;">Price</th>
-            <th scope="col" style="width:10%;border-right: 1px solid black;">Brand</th>
-            <th scope="col" style="width:5%;">&nbsp;</th>
-            <th scope="col" style="width:5%;">&nbsp;</th>
-            <th scope="col">&nbsp;</th>
+    <table class="table">
+        <thead >
+            <tr class="table-dark">
+            <th scope="col" style="width:12%;border-right: 1px solid black;">Name</th>
+            <th scope="col" style="width:3%;border-right: 1px solid black;">Price</th>
+            <th scope="col" style="width:2%;border-right: 1px solid black;">Brand</th>
+            <th scope="col" colspan="3" style="width:10%;border-right: 1px solid black;">Actions</th>
+            </tr>
         </thead>
         <tbody>
             <?php
@@ -40,9 +41,9 @@ $resultproduct = mysqli_query($conn, $sqlproduct);
                 echo "<tr><th scope='row' style='padding:20px;padding-left:10px;border-right: 1px solid black;'>". $row['product_name'] . "</th>";
                 echo "<td style='padding:20px;padding-left:10px;border-right: 1px solid black;'>" . $row['price'] . "</td>";
                 echo "<td style='padding:20px;padding-left:10px;border-right: 1px solid black;'>" . $row['Brand'] . "</td>";
-                echo "<td><a href='view.php?id=" . $row['product_id'] . "'>&#128065;</a></td>";
-                echo "<td><a href='edit.php?id=" . $row['product_id'] . "'>&#9998;</a></td>";
-                echo "<td><form action='delete.php' method='post'><input type='hidden' name='id' value='" . $row['product_id'] . "'><button type='submit'>Delete</button></form></td>";
+                echo "<td ><a href='view.php?id=" . $row['product_id'] . "'>&#128065;</a></td>";
+                echo "<td ><a href='edit.php?id=" . $row['product_id'] . "'>&#9998;</a></td>";
+                echo "<td ><form action='delete.php' method='post'><input type='hidden' name='id' value='" . $row['product_id'] . "'><button class='btn btn-danger' type='submit'>Delete</button></form></td>";
                 echo "</tr>";
             }
             ?>

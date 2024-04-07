@@ -23,13 +23,14 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
 <head>
     <link href="admin.css" rel="stylesheet">
     <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <h2>Edit Item </h2>
+    <h2 class="text-center">Edit Product </h2>
 
-    <a href="index.php">Back</a>
+    <a href="index.php" class="btn btn-primary">Back</a>
         <form action="/admin/update.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $resultproduct['product_id'] ?>">
 
@@ -63,8 +64,8 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
             Gender: <br><br>
             <select id="genders" class="form-select" name="gender">
             </select><br><br>
-
-            <input type="submit" value="Save Changes" name="submit">
+            <button class="btn btn-primary" type="submit" name="submit">Save Changes</button>
+          
         </form>
         <script src="admin.js"></script>
 

@@ -8,12 +8,7 @@ body {
 h2 {
     color: #333;
 }
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+
 input[type="file"], input[type="text"], textarea, input[type="submit"] {
     display: block;
     margin-bottom: 10px;
@@ -34,9 +29,7 @@ input[type="submit"]:hover {
 }
 a {
     display: block;
-    margin-top: 20px;
-    color: #007bff;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 select{
     width: 100%;

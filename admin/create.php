@@ -9,12 +9,13 @@ include "config.php";
 <head>
     <link href="admin.css" rel="stylesheet">
     <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <h2>Add Item </h2>
-    <a href="index.php">Back</a>
+    <h2 class="text-center">Add Product </h2>
+    <a href="index.php" class="btn btn-primary mb-5">Back</a>
     <?php
     // Check if a message is set in the session and if it's an array
     if (isset($_SESSION["message"]) && is_array($_SESSION["message"])) {
@@ -60,8 +61,8 @@ include "config.php";
         Gender: <br><br>
         <select id="genders" class="form-select" name="gender">
         </select><br><br>
-
-        <input type="submit" value="Add Shoe" name="submit">
+<button class="btn btn-primary" type="submit" name="submit">Add Product</button>
+        
     </form>
     <script src="admin.js"></script>
 
