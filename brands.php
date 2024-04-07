@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if(isset($_SESSION['User'])) {
-    $userName = $_SESSION['User'];
+if(isset($_SESSION['cid'])) {
+    $cid = $_SESSION['cid'];
+    
 }
 
 if (isset($_GET['logout'])) {

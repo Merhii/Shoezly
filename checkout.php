@@ -2,39 +2,32 @@
 session_start();
 include 'config.php';
 
-if(isset($_SESSION['User'])) {
-    $userFullName = $_SESSION['User'];
-    $nameParts = explode(" ", $userFullName);
-
-    // Access the first name
-    $userName = $nameParts[0];
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cartItemsJson = $_POST["cartItems"];
+    if(isset($_SESSION['User'])) {
+        $userFullName = $_SESSION['User'];
+        $userName = $userFullName;
+    }
 
+    $cartItemsJson = $_POST["cartItems"];
     $cartItemsArray = json_decode($cartItemsJson, true);
+    
+    echo "User Name: " . $userName . "<br>";
 
     if (!empty($cartItemsArray)) {
+        $_SESSION['cart-toPurchase'] = [];
         echo "<h2>Cart Items:</h2>";
 
-        // Construct an array of product IDs from cartItemsArray
         $productIds = array_map(function($item) {
             return $item['productId'];
         }, $cartItemsArray);
 
-        // Implode the array of product IDs into a comma-separated string
         $productIdsString = implode(",", $productIds);
 
-        // Construct the SQL query
         $sql = "SELECT `product_id`, `product_name`, `shoe_size`, `description`, `Brand`, `price`, `category`, `imageURL`, `stock_quantity`, `gender` FROM `products` WHERE `product_id` IN ($productIdsString)";
-
-        // Execute the SQL query
         $result = mysqli_query($conn, $sql);
       
         if ($result) {
             $Bill = 0;
-            $output = ''; // Initialize an empty string to store the output
         
             while ($row = mysqli_fetch_assoc($result)) {
                 $total = 0;
@@ -44,16 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($item['productId'] == $row['product_id']) {
                         $quantity = $item['quantity'];
                         $total += $row['price'] * $quantity;
+
+                        $_SESSION['cart-toPurchase'][] = [
+                            'productId' => $item['productId'],
+                            'quantity' => $quantity,
+                            'total' => $total
+                        ];
                         break;
                     }
                 }
-                $output .= $userName ;
-                $output .= $row['product_id'];
-                $output .=  $row['product_name'];
-                $output .= $quantity ;
-                $output .= $total ;
-                // Append the output with order information
-                echo "User Name: " . $userName . "<br>";
+
                 echo "Product ID: " . $row['product_id'] . "<br>";
                 echo "Product Name: " . $row['product_name'] . "<br>";
                 echo "Quantity: " . $quantity . "<br>";
@@ -61,11 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $Bill += $total;
             }
         
-            // Append the output with total bill information
-            $output .= $Bill;
-        echo "Total Bill: " . $Bill . "<br>";
-            // Store the output in session variable
-            $_SESSION['order_info'] = $output;
+            echo "Total Bill: " . $Bill . "<br>";
+            $_SESSION['Bill'] = $Bill; 
         }
         else {
             echo "No items in the cart.";
@@ -74,7 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Cart is empty.";
     }
 } else {
-    // If the form was not submitted, handle the case accordingly
     echo "Form was not submitted.";
 }
 ?>
@@ -86,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Select Location</title>
     <!-- Include Google Maps API script with your API key -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <style>
         #map {
             height: 400px;
@@ -95,14 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <h1>Select Your Location</h1>
+    <!-- <h1>Select Your Location</h1>
     <div id="map"></div>
     <script>
         // Initialize map
         function initMap() {
             // Default location (e.g., city center)
             var defaultLocation = { lat: 33.55159731531833, lng: 35.363276769904566};
-// saida : loc 33.55159731531833 35.363276769904566
+
             // Create map instance
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: defaultLocation,
@@ -127,30 +116,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 updateLocation(event.latLng.lat(), event.latLng.lng());
             });
 
-
-
             function updateLocation(lat, lng) {
-    console.log(lat, lng);
+                console.log(lat, lng);
 
-
-    <?php session_start(); ?>
-
-    <?php
-    $js_lat = "<script>document.write(lat)</script>";
-    $js_lng = "<script>document.write(lng)</script>";
-    ?>
-
-
-    <?php
-    $_SESSION['lat'] = $js_lat;
-    $_SESSION['lng'] = $js_lng;
-    ?>
-}
-
+                // Send the location data to the server using AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "update_location.php",
+                    data: { lat: lat, lng: lng },
+                    success: function(response) {
+                        console.log("Location updated successfully");
+                    }
+                });
+            }
         }
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </script>
     <form  method="post" action="confirm.php">
-<button type="submit" name="submit" class="btn btn-primary">Confitm Payment</button>
+    <button type="submit" name="submit" class="btn btn-primary">Confitm Payment</button>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script>

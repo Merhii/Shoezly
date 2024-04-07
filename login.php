@@ -16,12 +16,16 @@ if(isset($_POST['email']) && isset($_POST['password']))
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if($row['user_type']=="admin"){
+            $_SESSION['cid'] = $row['customer_id'];
             $_SESSION['User'] = $row['first_name'];
             echo "admin logged in";
         }
         elseif($row['user_type']=="user"){
-        $_SESSION['User'] = $row['first_name'] . " " . $row['last_name'];
-        }} 
+            $_SESSION['cid'] = $row['customer_id'];
+            $_SESSION['User'] = $row['first_name'] . " " . $row['last_name'];
+        }
+        echo "Login successful";
+    } 
     else {
         echo "Wrong UserName or Password";
     }
