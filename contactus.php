@@ -165,15 +165,14 @@ if(isset($_SESSION['User'])) {
             </div>
           <div class="right-container">
             <div class="right-inner-container">
-              <form action="#">
+              <form action="mailScript.php" method="post">
                   <h2 class="lg-view">Contact Us</h2>
             <h2 class="sm-view">Let's Chat</h2>
-               
-                <input type="text" id="name" placeholder="Name" required  />
-            <input type="email" id="email" placeholder="Email" required />
-                  <input type="phone" placeholder="Phone" required />
-                <textarea rows="4" id="message" placeholder="Message" required></textarea>
-                  <button>Submit</button>
+            <input type="email" id="email" placeholder="Email"  name="email" required />
+                <input type="text" id="name" placeholder="Name" name="name" required  />
+                <input type="text" id="subject" placeholder="subject" name="subject" required  />
+                <textarea rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                  <button  id="send" name="send">Submit</button>
                   <p id="output"></p>
               </form>
             </div>
