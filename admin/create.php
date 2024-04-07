@@ -1,6 +1,21 @@
 <?php
 session_start();
 include "config.php";
+$sqlproduct = "SELECT products.* FROM products";
+$resultproduct = mysqli_query($conn, $sqlproduct);
+$resultproduct = $resultproduct->fetch_assoc();
+
+// fetch brand names from brand
+$sqlbrand = "SELECT * FROM Brand";
+$resultbrand = mysqli_query($conn, $sqlbrand);
+
+// Fetch distinct categories from the products table
+$sqlcategories = "SELECT DISTINCT category FROM products";
+$resultcategories = mysqli_query($conn, $sqlcategories);
+
+// Fetch distinct genders from the products table
+$sqlgenders = "SELECT DISTINCT gender FROM products";
+$resultgenders = mysqli_query($conn, $sqlgenders);
 ?>
 
 <!DOCTYPE html>
@@ -48,23 +63,38 @@ include "config.php";
 
         Brand: <br><br>
         <select id="Brand" class="form-select" name="Brand">
+        <?php
+            while ($rowbrand = mysqli_fetch_assoc($resultbrand)) {
+                echo "<option value='" . $rowbrand['Brand_Name'] . "'>" . $rowbrand['Brand_Name'] . "</option>";
+            }
+            ?>
         </select><br><br>
 
         Price: <input type="text" name="Price" required><br><br>
 
         Category: <br><br>
         <select id="Cat" class="form-select" name="Cat">
+        <?php
+            while ($rowcategory = mysqli_fetch_assoc($resultcategories)) {
+                echo "<option value='" . $rowcategory['category'] . "'>" . $rowcategory['category'] . "</option>";
+            }
+            ?>
         </select><br><br>
 
         Stock: <input type="text" name="Stock" required><br><br>
 
         Gender: <br><br>
         <select id="genders" class="form-select" name="gender">
+        <?php
+            while ($rowgender = mysqli_fetch_assoc($resultgenders)) {
+                echo "<option value='" . $rowgender['gender'] . "'>" . $rowgender['gender'] . "</option>";
+            }
+            ?>
         </select><br><br>
 <button class="btn btn-primary" type="submit" name="submit">Add Product</button>
         
     </form>
-    <script src="admin.js"></script>
+    
 
 </body>
 

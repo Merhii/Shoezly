@@ -8,9 +8,17 @@ $sqlproduct = "SELECT products.* FROM products WHERE product_id = '$id'";
 $resultproduct = mysqli_query($conn, $sqlproduct);
 $resultproduct = $resultproduct->fetch_assoc();
 
+// fetch brand names from brand
 $sqlbrand = "SELECT * FROM Brand";
 $resultbrand = mysqli_query($conn, $sqlbrand);
 
+// Fetch distinct categories from the products table
+$sqlcategories = "SELECT DISTINCT category FROM products";
+$resultcategories = mysqli_query($conn, $sqlcategories);
+
+// Fetch distinct genders from the products table
+$sqlgenders = "SELECT DISTINCT gender FROM products";
+$resultgenders = mysqli_query($conn, $sqlgenders);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +34,7 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
 <body>
     <h2 class="text-center">Edit Product </h2>
 
-    <a href="index.php" class="btn btn-primary">Back</a>
+    <a href="index.php" class="mb-3 btn btn-primary">Back</a>
         <form action="update.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $resultproduct['product_id'] ?>">
 
@@ -39,11 +47,13 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
             Description: <textarea name="description"> <?= $resultproduct['description'] ?> </textarea><br><br>
 
             Brand:<br><br>
+           
             <select id="Brand" class="form-select" name="Brand">
                 <?php
+               
                 while ($rowbrand = mysqli_fetch_assoc($resultbrand)) {
-                    $selected = ($resultproduct['brand_id'] == $rowbrand['brand_id']) ? "selected" : "";
-                    echo "<option $selected value='" . $rowbrand['brand_id'] . "'>" . $rowbrand['brand_name'] . "</option>";
+                    $selected = ($resultproduct['Brand'] == $rowbrand['Brand_Name']) ? "selected='selected'" : "";
+                    echo "<option $selected value='" . $rowbrand['Brand_Name'] . "'>" . $rowbrand['Brand_Name'] . "</option>";
                 }
                 ?>
             </select><br><br>
@@ -53,7 +63,12 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
 
             Category: <br><br>
             <select id="Cat" class="form-select" name="Cat">
-
+            <?php
+                while ($rowcategory = mysqli_fetch_assoc($resultcategories)) {
+                    $selected = ($resultproduct['category'] == $rowcategory['category']) ? "selected='selected'" : "";
+                    echo "<option $selected value='" . $rowcategory['category'] . "'>" . $rowcategory['category'] . "</option>";
+                }
+                ?>
             </select><br><br>
 
             Stock: <br><br>
@@ -61,11 +76,17 @@ $resultbrand = mysqli_query($conn, $sqlbrand);
 
             Gender: <br><br>
             <select id="genders" class="form-select" name="gender">
+            <?php
+                while ($rowgender = mysqli_fetch_assoc($resultgenders)) {
+                    $selected = ($resultproduct['gender'] == $rowgender['gender']) ? "selected='selected'" : "";
+                    echo "<option $selected value='" . $rowgender['gender'] . "'>" . $rowgender['gender'] . "</option>";
+                }
+                ?>
             </select><br><br>
             <button class="btn btn-primary" type="submit" name="submit">Save Changes</button>
           
         </form>
-        <script src="admin.js"></script>
+       
 
 </body>
 

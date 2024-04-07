@@ -49,7 +49,7 @@ $resultproduct = mysqli_query($conn, $sqlproduct);
             ?>
         </tbody>
     </table>
-    <script src="admin.js"></script>
+
 </body>
 
 </html>
