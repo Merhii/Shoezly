@@ -75,13 +75,13 @@ $(document).ready(function(){
                         type: 'POST',
                         data: { product_id: product_id },
                         success: function(response) {
-                            var parts = response.split('|');
-        var cartHtml = parts[0];
-        var priceIncrement = parseFloat(parts[1]); // Parse as float
-        var currentTotal = parseFloat($("#totalPriceValue").text().replace("$", ""));
-        var newTotal = (currentTotal + priceIncrement).toFixed(2); // Use toFixed here
-        $(".CartItems").append(cartHtml);
-        $("#totalPriceValue").text(newTotal + "$");
+                            let parts = response.split('|');
+                            let cartHtml = parts[0];
+                            let priceIncrement = parseFloat(parts[1]);
+                            let currentTotal = parseFloat($("#totalPriceValue").text().replace("$", ""));
+                            let newTotal = (currentTotal + priceIncrement).toFixed(2);
+                            $(".CartItems").append(cartHtml);
+                            $("#totalPriceValue").text(newTotal + "$");
                         
                             let product_count = parseInt(shopping_cart.attr('data-product-count')) || 0;
                             shopping_cart.attr('data-product-count', product_count + 1);
