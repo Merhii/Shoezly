@@ -249,15 +249,18 @@ body.modal-open .main {
     text-align: center;
     border-bottom: 1px solid gray;
 }
-.cartPOPUP .btn {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 40px;
+.cartPOPUP .fixed-bottom {
+    display: flex;
+   flex-direction: column;
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+}
+.btns-container{
+    display: flex;
+    justify-content: center;
 }
     .cartPOPUP button{
     border: none;
@@ -269,11 +272,14 @@ body.modal-open .main {
 
 .cartPOPUP .checkOut{
     background-color: #4b4237;
+    width: 130px;
 }
 
 .cartPOPUP .close{
     background-color: #eee;
     color: black;
+    width: 150px;
+    min-width: 80px;
 }
 
 .CartItems{
@@ -358,6 +364,25 @@ body.modal-open .main {
 .cart-icon:hover {
     color: #333;
 }
+@media only screen and (max-width: 800px) {
+    .cartPOPUP {
+        width: 50%;
+      right: -100px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .cartPOPUP {
+        width: 60%;
+      right: -150px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .cartPOPUP {
+        width: 70%;
+        right: -200px;
+    }
+}
+
 
 @media only screen and (max-width: 900px) {
     .CartItems .name{
@@ -380,8 +405,5 @@ body.modal-open .main {
 @media only screen and (max-width: 600px) {
     .cartPOPUP h1{
         font-size: medium;
-    }
-    .CartItems .totalPrice{
-        display: none;
     }
 }
