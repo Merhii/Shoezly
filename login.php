@@ -21,7 +21,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
         }
         elseif($row['user_type']=="user"){
         $_SESSION['User'] = $row['first_name'] . " " . $row['last_name'];
-        echo "Login successful";
+        $_SESSION['UserName'] = $row['first_name'];
         }} 
     else {
         echo "Wrong UserName or Password";

@@ -1,5 +1,10 @@
 <?php
+session_start();
 include 'config.php';
+
+if(isset($_SESSION['UserName'])) {
+    $userName = $_SESSION['UserName'];
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cartItemsJson = $_POST["cartItems"];
@@ -22,34 +27,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the SQL query
         $result = mysqli_query($conn, $sql);
-
-        // Check if the query was successful
+      
         if ($result) {
-
-    $Bill=0;
-          
+            $Bill = 0;
+            $output = ''; // Initialize an empty string to store the output
+        
             while ($row = mysqli_fetch_assoc($result)) {
-                $total=0;
+                $total = 0;
                 $quantity = 0;
+        
                 foreach ($cartItemsArray as $item) {
                     if ($item['productId'] == $row['product_id']) {
                         $quantity = $item['quantity'];
-                        $total+=$row['price']*$quantity;
+                        $total += $row['price'] * $quantity;
                         break;
                     }
                 }
-
+                $output .= $userName ;
+                $output .= $row['product_id'];
+                $output .=  $row['product_name'];
+                $output .= $quantity ;
+                $output .= $total ;
+                // Append the output with order information
+                echo "User Name: " . $userName . "<br>";
                 echo "Product ID: " . $row['product_id'] . "<br>";
                 echo "Product Name: " . $row['product_name'] . "<br>";
                 echo "Quantity: " . $quantity . "<br>";
                 echo "Total: " . $total . "<br>";
-            $Bill+=$total;
-
-
+                $Bill += $total;
             }
-            echo "Total Bill :".$Bill."<br>";
-        }
         
+            // Append the output with total bill information
+            $output .= $Bill;
+        echo "Total Bill: " . $Bill . "<br>";
+            // Store the output in session variable
+            $_SESSION['order_info'] = $output;
+        }
         else {
             echo "No items in the cart.";
         }
@@ -110,17 +123,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 updateLocation(event.latLng.lat(), event.latLng.lng());
             });
 
-            // Function to update location display
+
+
             function updateLocation(lat, lng) {
-                console.log('Selected location:', lat, lng);
-                // You can perform further actions with the selected location here
-            }
+    console.log(lat, lng);
+
+
+    <?php session_start(); ?>
+
+    <?php
+    $js_lat = "<script>document.write(lat)</script>";
+    $js_lng = "<script>document.write(lng)</script>";
+    ?>
+
+
+    <?php
+    $_SESSION['lat'] = $js_lat;
+    $_SESSION['lng'] = $js_lng;
+    ?>
+}
+
         }
     </script>
     <form  method="post" action="confirm.php">
 <button type="submit" class="btn btn-primary">Confitm Payment</button>
     </form>
-    <!-- Call the initMap function when the page loads -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script>
 </body>
 </html>
