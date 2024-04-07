@@ -201,8 +201,7 @@ if(isset($_SESSION['User'])) {
     <div class="cartPOPUP">
         <h1>Shopping Cart</h1>
         <div class="CartItems">
-        </div>  
-       
+        </div>     
         <div class="fixed-bottom">
         <div class="totalPriceText text-center">Total Price: <span id="totalPriceValue">0.00$</span></div>
         <div class="btns-container">
