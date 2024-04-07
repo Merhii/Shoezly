@@ -15,7 +15,7 @@ include 'config.php';
     <style>
 #img-container {
     background-image: url("imgs/ship-modified.jpg");
-    height: 100%;
+    height: 1000vh;
     width:100%;
     background-repeat: no-repeat;
     background-size: cover;
