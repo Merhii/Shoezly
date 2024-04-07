@@ -4,7 +4,7 @@ $(document).ready(function () {
     let email = $("#email");
     let output = $("#output");
     let emailvalid = /^[\w\d._%+-]+@(?:[\w\d-]+\.)+(\w{2,})(,|$)/ ;
-    $("button").on('click', (event) => {
+    $("#send").on('click', (event) => {
         event.preventDefault();
        $.ajax({
         type: 'POST',
