@@ -14,7 +14,7 @@ include 'config.php';
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <style>
 #img-container {
-    background-image: url("imgs/ship.jpg");
+    background-image: url("imgs/ship-modified.jpg");
     height: 100%;
     width:100%;
     background-repeat: no-repeat;
@@ -23,6 +23,7 @@ include 'config.php';
     display: flex;
     background-attachment:fixed;
     position: absolute;
+    z-index: -1;
 }
 
 .overlay {
@@ -33,10 +34,16 @@ include 'config.php';
   top: 0;
   left: 0;
 }
-
-.ca{
-    height: 350px;
+.confirm{
+    width: 15%;
+    color: white;
+    background-color: #4b4237;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 0;
 }
+
+
         #map {
             height: 400px;
             width: 100%;
@@ -60,11 +67,11 @@ include 'config.php';
         $cartItemsJson = $_POST["cartItems"];
         $cartItemsArray = json_decode($cartItemsJson, true);
         
-        echo "User Name: " . $userName . "<br>";
+        echo "<h2 class='text-light text-center'>Shipped to: " . $userName . "</h2>";
     
         if (!empty($cartItemsArray)) {
             $_SESSION['cart-toPurchase'] = [];
-            echo "<h2>Cart Items:</h2>";
+          
             echo '<div class="all-cards-container">';
             $productIds = array_map(function($item) {
                 return $item['productId'];
@@ -76,6 +83,7 @@ include 'config.php';
             $result = mysqli_query($conn, $sql);
       if ($result) {
         $Bill = 0; 
+        echo '<div class="cards-container d-flex justify-content-center flex-wrap">';
       while ($row = mysqli_fetch_assoc($result)) {
         $total = 0;
         $quantity = 0;
@@ -95,7 +103,7 @@ include 'config.php';
         }
 
         echo '
-        <div class="ca 26">
+        <div style="background-color: rgb(177, 177, 177);" class="ca 26">
         <div class="card-header">
           <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt="">
         </div>
@@ -109,7 +117,7 @@ include 'config.php';
         $Bill += $total;
     }
 
-    echo "Total Bill: " . $Bill . "<br>";
+    echo "</div><h4 class='text-light text-center'> Total Bill: " . $Bill . "$</h4>";
     $_SESSION['Bill'] = $Bill; 
 }
 else {
@@ -172,8 +180,8 @@ echo "Form was not submitted.";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </script>
-    <form  method="post" action="confirm.php">
-    <button type="submit" name="submit" class="btn btn-primary">Confitm Payment</button>
+    <form  method="post" action="confirm.php" class="d-flex justify-content-center">
+    <button type="submit" name="submit" class="confirm">Confirm Shipment</button>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script> -->
