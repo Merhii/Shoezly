@@ -225,6 +225,7 @@ if(isset($_SESSION['User'])) {
         <h1>Shopping Cart</h1>
         <div class="CartItems">
         </div>
+        <div class="totalPriceText">Total Price: <span id="totalPriceValue">0.00$</span></div>
         <div class="btn">
             <button class="close">Close</button>
             <form id="checkOut" action="checkout.php" method="post">

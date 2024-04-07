@@ -13,12 +13,14 @@ if (isset($_POST['product_id'])){
 
 function generateCartHtml($product_id, $conn) {
     $html = '';
+    $totalPrice = 0;
+
     $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
     $stmt->bind_param("i", $product_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($product = $result->fetch_assoc()) {
+    while ($product = $result->fetch_assoc()) {
         $html .= '<div class="item ' . $product_id . '">
                         <div class="image">
                             <img src="shoes_imgs/'.$product['imageURL'].'">
@@ -29,6 +31,8 @@ function generateCartHtml($product_id, $conn) {
                             <button>&times;</button>
                         </div>
                     </div>';
+        $totalPrice += $product['price'];
     }
-    return $html;
+
+    return $html . '|' . $totalPrice;
 }

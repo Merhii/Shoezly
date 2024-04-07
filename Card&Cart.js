@@ -74,8 +74,15 @@ $(document).ready(function(){
                         url: 'addToCart.php',
                         type: 'POST',
                         data: { product_id: product_id },
-                        success: function(cartHtml) {
-                            $('.CartItems').append(cartHtml);
+                        success: function(response) {
+                            var parts = response.split('|');
+        var cartHtml = parts[0];
+        var priceIncrement = parseFloat(parts[1]); // Parse as float
+        var currentTotal = parseFloat($("#totalPriceValue").text().replace("$", ""));
+        var newTotal = (currentTotal + priceIncrement).toFixed(2); // Use toFixed here
+        $(".CartItems").append(cartHtml);
+        $("#totalPriceValue").text(newTotal + "$");
+                        
                             let product_count = parseInt(shopping_cart.attr('data-product-count')) || 0;
                             shopping_cart.attr('data-product-count', product_count + 1);
                             shopping_cart.addClass('active');
@@ -144,14 +151,14 @@ $(document).ready(function(){
             }
         });
     });
-$(".checkOut").click(function(){
-    let cartItemsJson = JSON.stringify(cartItemsArr);
+    $(".checkOut").click(function(){
+        let cartItemsJson = JSON.stringify(cartItemsArr);
 
-    $("#cartItemsInput").val(cartItemsJson);
+        $("#cartItemsInput").val(cartItemsJson);
 
 
-    $("#checkOut").submit();
-})
+        $("#checkOut").submit();
+    });
 
     // Close cart popup
     $('.close').click(function() {
