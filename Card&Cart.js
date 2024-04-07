@@ -120,7 +120,23 @@ $(document).ready(function(){
                  cartItemsArr=[];
                  $('.CartItems .item').each(function() {
                     let itemId = $(this).attr('class').split(' ')[1];
-                    cartItemsArr.push(itemId);
+                    let existingItem = cartItemsArr.find(item => item.productId === itemId);
+                    if(!existingItem){
+
+                    
+                    let quantity = 0;
+                 $('.CartItems .item').each(function() {
+                 let currentItemId=  $(this).attr('class').split(' ')[1];
+                 if (currentItemId === itemId) {
+                    quantity++;
+                };
+            });
+                    let item = {
+                        productId: itemId,
+                        quantity: quantity
+                    };
+                    cartItemsArr.push(item);
+                }
                 });
                 } else {
                     $(".logsign").show();
