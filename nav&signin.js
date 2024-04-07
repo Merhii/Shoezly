@@ -65,6 +65,14 @@ $(document).ready(function() {
        $("body").removeClass("modal-open").css("overflow", "");
 
    })
+   $("#X-btn3").click(function() {
+    $("#deliveryModal").hide();
+    $(".delivery-content").hide();
+    
+    $("body").removeClass("modal-open").css("overflow", "");
+
+})
+
 
    // rate us stars
    $(".ratings span").click(function() {

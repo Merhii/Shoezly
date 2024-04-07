@@ -197,7 +197,7 @@ include 'config.php';
                     if (response == "Cart is empty."){
                         window.location.href = "checkout.php";
                     }else{
-                        window.location.href = "index.php";
+                        window.location.href = "index.php?popup=1";
                     }
                 },
                 error: function(xhr, status, error) {

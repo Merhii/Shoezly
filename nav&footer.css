@@ -530,4 +530,21 @@ padding: 0;
 .X-btn{
   transform: translate3d(345px, -230px, 10px);
 }
-
+.delivery{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delivery-content{
+  width: 350px;
+  height: 300px;
+  overflow: hidden;
+  background-color: #4b4237;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}

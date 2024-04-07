@@ -138,6 +138,21 @@ if(isset($_SESSION['User'])) {
 </form>
   </div>
 </div>
+<?php
+if(isset($_GET['popup'])) {
+ if($_GET['popup']==1)
+ echo '<div id="deliveryModal" class="delivery">
+ <button style="transform: translate3d(345px, -130px, 10px);" type="button" id="X-btn3"  class="btn-close X-btn" aria-label="Close"></button>
+<div class="delivery-content">
+ <h3 class="text-center text-light">Thank You <br> For Your Purchase</h3>
+<div class="ps-3 pt-2" id="delivery-message">
+<P class="fs-5 text-light">Your shipment will be prepared as soon as possible. Please expect to be contacted through our delivery man for your preffered pickup location</P>
+</div>
+</div>
+</div>';
+};
+?>
+
 
 
   <div id="img-container">
