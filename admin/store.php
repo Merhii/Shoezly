@@ -1,5 +1,4 @@
 <?php
-echo "hello";
 session_start();
 include 'config.php';
 

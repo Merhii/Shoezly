@@ -21,7 +21,6 @@ if (isset($_SESSION['cart-toPurchase'])) {
 
             $sql2 = "INSERT INTO order_details(order_id, product_id, quantity, price) VALUES ($order_id, '$productId', '$quantity', '$total')";
             $conn->query($sql2);
-            
         }
     }
 } else {

@@ -81,54 +81,55 @@ include 'config.php';
     
             $sql = "SELECT products.*, Brand.Brand_Name, Brand.img_URL FROM Brand INNER JOIN products ON Brand.Brand_Name LIKE products.Brand WHERE `product_id` IN ($productIdsString)";
             $result = mysqli_query($conn, $sql);
-      if ($result) {
-        $Bill = 0; 
-        echo '<div class="cards-container d-flex justify-content-center flex-wrap">';
-      while ($row = mysqli_fetch_assoc($result)) {
-        $total = 0;
-        $quantity = 0;
+            if ($result) {
+                $Bill = 0; 
+                echo '<div class="cards-container d-flex justify-content-center flex-wrap">';
+            while ($row = mysqli_fetch_assoc($result)) {
+                $total = 0;
+                $quantity = 0;
 
-        foreach ($cartItemsArray as $item) {
-            if ($item['productId'] == $row['product_id']) {
-                $quantity = $item['quantity'];
-                $total += $row['price'] * $quantity;
+                foreach ($cartItemsArray as $item) {
+                    if ($item['productId'] == $row['product_id']) {
+                        $quantity = $item['quantity'];
+                        $total += $row['price'] * $quantity;
 
-                $_SESSION['cart-toPurchase'][] = [
-                    'productId' => $item['productId'],
-                    'quantity' => $quantity,
-                    'total' => $total
-                ];
-                break;
+                        $_SESSION['cart-toPurchase'][] = [
+                            'productId' => $item['productId'],
+                            'quantity' => $quantity,
+                            'total' => $total
+                        ];
+                        break;
+                    }
+                }
+
+                echo '
+                <div style="background-color: rgb(177, 177, 177);" class="ca 26">
+                <div class="card-header">
+                <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt="">
+                </div>
+                <h5 class="shoe-name text-center">' . $row['product_name'] . '</h5>
+                <div class="d-flex justify-content-center">
+                <img class="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="">
+                </div>
+                <div style="
+                align-self: center;
+                transform: translateY(-80px);">Quantity: ' . $quantity . '<br> Price: ' . $total . '</div></div>';
+                    $Bill += $total;
             }
+
+            echo "</div><h4 class='text-light text-center'> Total Bill: " . $Bill . "$</h4>";
+            $_SESSION['Bill'] = $Bill; 
+            $cartItemsJson = '';
         }
-
-        echo '
-        <div style="background-color: rgb(177, 177, 177);" class="ca 26">
-        <div class="card-header">
-          <img id="logoimg" src="brands_imgs/'.$row['img_URL'].'" alt="">
-        </div>
-        <h5 class="shoe-name text-center">' . $row['product_name'] . '</h5>
-        <div class="d-flex justify-content-center">
-        <img class="shoeimg" src="shoes_imgs/'.$row['imageURL'].'" alt="">
-        </div>
-        <div style="
-        align-self: center;
-       transform: translateY(-80px);">Quantity: ' . $quantity . '<br> Price: ' . $total . '</div></div>';
-        $Bill += $total;
-    }
-
-    echo "</div><h4 class='text-light text-center'> Total Bill: " . $Bill . "$</h4>";
-    $_SESSION['Bill'] = $Bill; 
-}
-else {
-    echo "No items in the cart.";
-}
-} else {
-echo "Cart is empty.";
-}
-} else {
-echo "Form was not submitted.";
-}?>
+        else {
+            echo "No items in the cart.";
+        }
+        } else {
+            echo "<p style='color:white; text-align:center'>Cart is empty.</p>";
+        }
+    } else {
+    echo "<p style='color:white; text-align:center'>Form was not submitted.";
+    }?>
 
     <!-- <h1>Select Your Location</h1>
     <div id="map"></div>
@@ -180,10 +181,31 @@ echo "Form was not submitted.";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </script>
-    <form  method="post" action="confirm.php" class="d-flex justify-content-center">
+    <form  method="post" id="shipform" action="confirm.php" class="d-flex justify-content-center">
     <button type="submit" name="submit" class="confirm">Confirm Shipment</button>
-    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script> -->
+    <script>
+    $(document).ready(function() {
+        $('#shipform').submit(function(e) {
+            e.preventDefault(); 
+            
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                success: function(response) {
+                    if (response == "Cart is empty."){
+                        window.location.href = "checkout.php";
+                    }else{
+                        window.location.href = "index.php";
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

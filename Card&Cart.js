@@ -169,9 +169,14 @@ $(document).ready(function(){
     });
     
     $('.CartItems').on('click', '.remove button', function() {
-        $(this).closest('.item').remove();
-        // Update the data-product-count attribute
-        updateProductCount();
+        
+    let item = $(this).closest('.item');
+    let price = parseFloat(item.find('.totalPrice').text().replace('$', ''));
+    let currentTotal = parseFloat($("#totalPriceValue").text().replace("$", ""));
+    let newTotal = (currentTotal - price).toFixed(2);
+    item.remove();
+    $("#totalPriceValue").text(newTotal + "$");
+    updateProductCount();
     });
 
     function updateProductCount() {
