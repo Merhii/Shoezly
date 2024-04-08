@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssssssi", $name, $size, $description, $brand, $price, $category, $stock, $gender, $id);
     if ($stmt->execute()) {
-        header("Location:index.php");
+        header("Location:admin.php");
     } else {
         $_SESSION["message"] = array(
             "text" => "Error: " . $sql . "<br>" . $conn->error,

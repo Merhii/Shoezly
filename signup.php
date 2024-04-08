@@ -3,7 +3,7 @@ include 'config.php';
 session_start();
 if(isset($_POST['signupbtn']))
 {
-    if(empty($_POST['fnsignup']) ||empty($_POST['lnsignup']) ||empty($_POST['phonesignup']) || empty($_POST['emailsignup']) || empty($_POST['pswdsignup']) )
+    if(empty($_POST['fnsignup']) ||empty($_POST['lnsignup']) || empty($_POST['emailsignup']) || empty($_POST['pswdsignup']) )
     {
         header("location:index.php?SignupEmpty= Please fill in the Blanks");
     }

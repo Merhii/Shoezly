@@ -9,5 +9,5 @@ $id = $_POST['id'];
 $sql = "DELETE FROM products WHERE product_id = $id";
 $result = mysqli_query($conn, $sql);
 
-header("Location:index.php");
+header("Location:admin.php");
 exit();

@@ -20,6 +20,14 @@
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-list" id="navbarList">
+      <?php  
+        if(isset($_SESSION['User'])){
+    $userName = $_SESSION['User'];
+    if ($userName == 'admin'){
+        echo "<li><a href='admin.php'>Admin Page</a></li>";
+    }
+        }
+      ?>
       <li><a href="index.php" >Home </a></li>
       <li><a href="Shop.php">Shop</a></li>
       <li><a href="brands.php">Brands</a></li>

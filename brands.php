@@ -179,7 +179,7 @@ if(isset($_SESSION['User'])) {
         </div>
     </div>
 
-    <div class="main" style="padding-top: 7%;">
+    <div class="main" style="padding-top: 2%;">
       <!-- filtering nav -->
       <div class="filtering">
           <ul>
@@ -226,7 +226,6 @@ if(isset($_SESSION['User'])) {
         <div class="CartItems">
         </div>
         <div class="fixed-bottom">
-        <div class="totalPriceText text-center">Total Price: <span id="totalPriceValue">0.00$</span></div>
         <div class="btns-container">
             <button class="close">Close</button>
             <form id="checkOut" action="checkout.php" method="post">

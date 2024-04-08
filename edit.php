@@ -34,7 +34,7 @@ $resultgenders = mysqli_query($conn, $sqlgenders);
 <body>
     <h2 class="text-center">Edit Product </h2>
 
-    <a href="index.php" class="mb-3 btn btn-primary">Back</a>
+    <a href="admin.php" class="mb-3 btn btn-primary">Back</a>
         <form action="update.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $resultproduct['product_id'] ?>">
 

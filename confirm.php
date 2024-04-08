@@ -21,10 +21,15 @@ if (isset($_SESSION['cart-toPurchase'])) {
 
             $sql2 = "INSERT INTO order_details(order_id, product_id, quantity, price) VALUES ($order_id, '$productId', '$quantity', '$total')";
             $conn->query($sql2);
+
+            $sql3 = "UPDATE products SET stock_quantity = stock_quantity - $quantity WHERE product_id = '$productId'";
+            $conn->query($sql3);
         }
     }
+    unset($_SESSION['cart-toPurchase']);
+    unset($_SESSION['Bill']);
+    unset($_SESSION['cart_items']);
 } else {
     echo "Cart is empty.";
 }
 $conn->close();
-?>

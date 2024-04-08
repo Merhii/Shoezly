@@ -203,7 +203,6 @@ if(isset($_SESSION['User'])) {
         <div class="CartItems">
         </div>     
         <div class="fixed-bottom">
-        <div class="totalPriceText text-center">Total Price: <span id="totalPriceValue">0.00$</span></div>
         <div class="btns-container">
             <button class="close">Close</button>
             <form id="checkOut" action="checkout.php" method="post">

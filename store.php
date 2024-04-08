@@ -2,7 +2,7 @@
 session_start();
 include 'config.php';
 
-$basePath = dirname(__DIR__);
+$basePath = __DIR__;
 
 if (isset($_POST["submit"])) {
 
@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
             // "debug" => $debugMessage
         );
     }
-    header("Location:index.php");
+    header("Location:admin.php");
     exit();
 }
 ?>

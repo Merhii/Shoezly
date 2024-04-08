@@ -8,7 +8,7 @@ include 'config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Select Location</title>
+    <title>Shipment</title>
     <link rel="stylesheet" href="Card&Cart.css">
     <!-- Include Google Maps API script with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
@@ -43,12 +43,6 @@ include 'config.php';
     border: 0;
 }
 
-
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-
     </style>
 </head>
 <body>
@@ -57,6 +51,16 @@ include 'config.php';
         <div>
         </div>
 </div>
+
+<button id="backButton" style="margin:10px; border-radius: 15px; padding:10px; width:100px; background-color:gray">Back</button>
+
+
+<script>
+document.getElementById("backButton").addEventListener("click", function() {
+    window.history.back();
+});
+</script>
+
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_SESSION['User'])) {
@@ -128,63 +132,14 @@ include 'config.php';
             echo "<p style='color:white; text-align:center'>Cart is empty.</p>";
         }
     } else {
-    echo "<p style='color:white; text-align:center'>Form was not submitted.";
+    echo "<p style='color:white; text-align:center'>Cart is empty.";
     }?>
 
-    <!-- <h1>Select Your Location</h1>
-    <div id="map"></div>
-    <script>
-        // Initialize map
-        function initMap() {
-            // Default location (e.g., city center)
-            var defaultLocation = { lat: 33.55159731531833, lng: 35.363276769904566};
-
-            // Create map instance
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: defaultLocation,
-                zoom: 10
-            });
-
-            // Add marker when user clicks on map
-            var marker = new google.maps.Marker({
-                position: defaultLocation,
-                map: map,
-                draggable: true
-            });
-
-            // Update marker position when user drags it
-            marker.addListener('dragend', function(event) {
-                updateLocation(event.latLng.lat(), event.latLng.lng());
-            });
-
-            // Update marker position when user clicks on map
-            map.addListener('click', function(event) {
-                marker.setPosition(event.latLng);
-                updateLocation(event.latLng.lat(), event.latLng.lng());
-            });
-
-            function updateLocation(lat, lng) {
-                console.log(lat, lng);
-
-                // Send the location data to the server using AJAX
-                $.ajax({
-                    type: "POST",
-                    url: "update_location.php",
-                    data: { lat: lat, lng: lng },
-                    success: function(response) {
-                        console.log("Location updated successfully");
-                    }
-                });
-            }
-        }
-    </script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </script>
     <form  method="post" id="shipform" action="confirm.php" class="d-flex justify-content-center">
     <button type="submit" name="submit" class="confirm">Confirm Shipment</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1cs3TabqBB-hM5RpM_nGaJUxrLggjko&callback=initMap"></script> -->
     <script>
     $(document).ready(function() {
         $('#shipform').submit(function(e) {

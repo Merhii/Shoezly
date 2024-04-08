@@ -30,7 +30,7 @@ $resultgenders = mysqli_query($conn, $sqlgenders);
 
 <body>
     <h2 class="text-center">Add Product </h2>
-    <a href="index.php" class="btn btn-primary mb-5">Back</a>
+    <a href="admin.php" class="btn btn-primary mb-5">Back</a>
     <?php
     // Check if a message is set in the session and if it's an array
     if (isset($_SESSION["message"]) && is_array($_SESSION["message"])) {

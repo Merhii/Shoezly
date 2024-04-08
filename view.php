@@ -21,13 +21,15 @@ $resultproduct = $resultproduct->fetch_assoc()
 </head>
 
 <body>
-    <a href="index.php" class="btn btn-primary mb-3" >Back</a>
+    <a href="admin.php" class="btn btn-primary mb-3" >Back</a>
     <h2 class="text-center mb-5">View Product </h2>
     <div class="d-flex justify-content-center align-items-center flex-column">
-        <img class="mb-4" style="width: 30%;" src="../shoes_imgs/<?php echo $resultproduct['imageURL'] ?>" alt="" />
+        <img class="mb-4" style="width: 30%;" src="shoes_imgs/<?php echo $resultproduct['imageURL'] ?>" alt="" />
         <div>Name: <?php echo $resultproduct['product_name'] ?></div>
         <div>Price: <?php echo $resultproduct['price'] ?></div>
         <div>Brand: <?php echo $resultproduct['Brand'] ?></div>
+        <div>Quantity: <?php echo $resultproduct['stock_quantity'] ?></div>
+
     </div>
 </body>
 
