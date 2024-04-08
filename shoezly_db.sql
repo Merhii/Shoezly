@@ -3,15 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2024 at 12:31 PM
+-- Generation Time: Apr 08, 2024 at 09:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-CREATE DATABASE IF NOT EXISTS shoezly_db;
-USE shoezly_db;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -69,7 +68,11 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`customer_id`, `first_name`, `last_name`, `email`, `phone_number`, `password`, `user_type`) VALUES
 (1, 'Karim', 'Merhi', 'merhikarim@hotmail.com', '81138807', 'merhi123', 'user'),
-(5, 'admin', 'admin', 'admin@shoezly.db.com', NULL, 'admin', 'admin');
+(5, 'admin', 'admin', 'admin@shoezly.db.com', NULL, 'admin', 'admin'),
+(6, 'BoB', 'Dayraki', 'dayraki@hotmail.com', '71360681', 'bob123', 'user'),
+(7, 'Majd', 'Abo Ghosh', 'abg@gmail.com', '11223344', 'majd123', 'user'),
+(8, 'mohamad', 'ali', 'ali@gmail.com', '123456789', 'ali123', 'user'),
+(9, 'Roaa', 'Soloh', 'roaasoloh@gmail.com', '7163876', 'soloh123', 'user');
 
 -- --------------------------------------------------------
 
@@ -85,6 +88,13 @@ CREATE TABLE `orders` (
   `total_amount` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `customer_id`, `order_date`, `order_status`, `total_amount`) VALUES
+(2, 1, '2024-04-08 00:00:00', 'pending', 380.00);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +108,14 @@ CREATE TABLE `order_details` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`order_details_id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
+(4, 2, 26, 1, 140.00),
+(5, 2, 29, 2, 240.00);
 
 -- --------------------------------------------------------
 
@@ -123,12 +141,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `shoe_size`, `description`, `Brand`, `price`, `category`, `imageURL`, `stock_quantity`, `gender`) VALUES
-(26, 'NMD_R1 Flash Red', 36.50, 'ABC', 'ADIDAS', 140.00, 'CASUAL', 'NMD_R1.avif', 5, 'WOMEN'),
+(26, 'NMD_R1 Flash Red', 36.50, 'ABC', 'ADIDAS', 140.00, 'CASUAL', 'NMD_R1.avif', 4, 'WOMEN'),
 (27, 'Nike React Infinity Run Flyknit', 40.50, 'ABC', 'NIKE', 160.00, 'RUNNING', 'Nike React.webp', 3, 'MEN'),
 (28, 'Nike React Miler', 39.50, 'ABC', 'NIKE', 130.00, 'RUNNING', 'Nike React Miler.jpg', 3, 'MEN'),
-(29, 'Nike Air Zoom Pegasus 37', 37.00, 'ABC', 'NIKE', 120.00, 'RUNNING', 'Nike Air Zoom.jpg', 3, 'WOMEN'),
-(30, 'Nike Joyride Run Flyknit', 36.50, 'ABC', 'NIKE', 180.00, 'RUNNING', 'Nike Joyride Run.jpg', 3, 'WOMEN'),
-(31, 'Nike Mercurial Vapor 13 Elite FG', 35.00, 'ABC', 'NIKE', 250.00, 'FOOTBALL', 'Nike Mercurial.jpg', 3, 'WOMEN'),
+(29, 'Nike Air Zoom Pegasus 37', 37.00, 'ABC', 'NIKE', 120.00, 'RUNNING', 'Nike Air Zoom.jpg', 0, 'WOMEN'),
+(30, 'Nike Joyride Run Flyknit', 36.50, 'ABC', 'NIKE', 180.00, 'RUNNING', 'Nike Joyride Run.jpg', 2, 'WOMEN'),
 (32, 'Nike Phantom Vision Elite Dynamic Fit FG', 37.00, 'ABC', 'NIKE', 150.00, 'FOOTBALL', 'Nike Phantom.jpeg', 3, 'WOMEN'),
 (33, 'Nike Phantom Venom Academy FG', 37.50, 'ABC', 'NIKE', 80.00, 'FOOTBALL', 'Nike Phantom Venom.jpg', 3, 'WOMEN'),
 (34, 'Nike Mercurial Vapor 13 Elite Tech Craft FG', 44.00, 'ABC', 'NIKE', 145.00, 'FOOTBALL', 'Nike Mercurial Vapor.jpg', 3, 'MEN'),
@@ -137,8 +154,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `shoe_size`, `description`
 (37, 'Nike Renew Run', 32.00, 'ABC', 'NIKE', 80.00, 'RUNNING', 'Nike Renew Run.jpg', 3, 'KIDS'),
 (38, 'Bridgeport Advice', 43.00, 'ABC', 'HUSHPUPPIES', 30.00, 'FORMAL', 'Bridgeport Advice.jpeg', 4, 'MEN'),
 (40, 'Fester', 46.00, 'ABC', 'HUSHPUPPIES', 70.00, 'FORMAL', 'Fester.webp', 6, 'MEN'),
-(41, 'Pixel', 41.00, 'ABC', 'HUSHPUPPIES', 75.00, 'FORMAL', 'Pixel.jpeg', 7, 'MEN'),
-(42, 'Austin', 45.00, 'ABC', 'HUSHPUPPIES', 75.00, 'FORMAL', 'Austin.webp', 2, 'MEN'),
+(42, 'Austin', 45.00, ' ABC ', 'HUSHPUPPIES', 75.00, 'FORMAL', 'Austin.webp', 5, 'MEN'),
 (43, 'SS-HL-0135', 36.50, 'ABC', 'HUSHPUPPIES', 30.00, 'FORMAL', 'HighHeels.webp', 6, 'WOMEN'),
 (44, 'SS-HL-0136', 39.00, 'ABC', 'HUSHPUPPIES', 50.00, 'FORMAL', 'Grey Heels.jpeg', 4, 'WOMEN'),
 (45, 'SS-HL-0128', 39.00, 'ABC', 'HUSHPUPPIES', 35.00, 'FORMAL', 'low heels.webp', 3, 'WOMEN'),
@@ -195,6 +211,17 @@ CREATE TABLE `Testimonial` (
   `Rating` int(11) NOT NULL,
   `description_txt` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Testimonial`
+--
+
+INSERT INTO `Testimonial` (`id`, `customer_name`, `Rating`, `description_txt`) VALUES
+(1, 'Karim Merhi', 5, 'This shoe store is a gem! Impeccable selection, affordable prices, and outstanding service. My go-to for stylish footwear. Highly recommend!'),
+(3, 'mohamad ali', 4, 'Absolutely thrilled with my purchase from this shoe store! The selection is fantastic, prices are unbeatable, and the customer service is exceptional. I\'ll definitely be coming back for more and recommending to all my friends and family!'),
+(4, 'Bob Dayraki', 5, 'Exceptional experience! Incredible variety, great prices, and excellent service. My go-to for stylish footwear. Highly recommend this store!'),
+(5, 'Majd Abo Ghosh', 4, 'Outstanding selection, unbeatable prices, and top-notch service! This shoe store exceeded all my expectations. Highly recommend!'),
+(6, 'Karim Merhi', 4, 'i love dayarki so much <3\n');
 
 --
 -- Indexes for dumped tables
@@ -263,19 +290,19 @@ ALTER TABLE `Brand`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -293,7 +320,7 @@ ALTER TABLE `shipments`
 -- AUTO_INCREMENT for table `Testimonial`
 --
 ALTER TABLE `Testimonial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
