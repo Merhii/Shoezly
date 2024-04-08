@@ -97,7 +97,7 @@ if(isset($_SESSION['User'])) {
             <input type="text" name="fnsignup" placeholder="First name">
             <input type="text" name="lnsignup" placeholder="Last name">
             <input type="email" name="emailsignup" placeholder="Email">
-            <input type="tel" name="phonesignup" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            <input type="tel" name="phonesignup" placeholder="Phone number">
           <input type="password" name="pswdsignup" placeholder="Password">
             <button id="signupbtn" name="signupbtn">Sign up</button>
           </form>

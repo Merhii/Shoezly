@@ -43,6 +43,7 @@ include 'config.php';
     border: 0;
 }
 
+
     </style>
 </head>
 <body>
@@ -117,7 +118,9 @@ document.getElementById("backButton").addEventListener("click", function() {
                 </div>
                 <div style="
                 align-self: center;
-                transform: translateY(-80px);">Quantity: ' . $quantity . '<br> Price: ' . $total . '</div></div>';
+                transform: translateY(-80px);">Quantity: ' . $quantity . '<br> Price: ' . $total . '
+                <h5 style="  color: rgba(0, 0, 0,0.7);" class="s fs-6">Size:'.$row['shoe_size'].'</h5></div>
+                </div>';
                     $Bill += $total;
             }
 
